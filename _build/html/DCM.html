@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discontinuous Conduction Mode (DCM) &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Converter Circuit Manipulation" href="CircuitManipulation.html" />
+    <link rel="prev" title="Realising Switches Using Semi-conductor Devices" href="SwitchRealisation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Power Systems and Power Electronics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Steady State Analysis of Converters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="SteadyState.html">
+   Principles of Steady-State Converter Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SteadyStateEquivCirc.html">
+   Equivalent Circuit Model of Steady-State Converter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SwitchRealisation.html">
+   Realising Switches Using Semi-conductor Devices
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Discontinuous Conduction Mode (DCM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CircuitManipulation.html">
+   Converter Circuit Manipulation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Power Sysems Principles
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ACCircuits.html">
+   AC Voltage, Current, and Power
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Poly.html">
+   Polyphase Systems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/RLC_Respone.html">
+   An RLC low pass filter
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/DCM.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#origins-of-the-discontinuous-conduction-mode-and-mode-boundary">
+   Origins of the discontinuous conduction mode and mode boundary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivation-of-the-conversion-ratio-m-d-k-of-a-converter-in-dcm">
+   Derivation of the conversion ratio
+   <span class="math notranslate nohighlight">
+    \(M(D,K)\)
+   </span>
+   of a converter in DCM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Discontinuous Conduction Mode (DCM)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#origins-of-the-discontinuous-conduction-mode-and-mode-boundary">
+   Origins of the discontinuous conduction mode and mode boundary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivation-of-the-conversion-ratio-m-d-k-of-a-converter-in-dcm">
+   Derivation of the conversion ratio
+   <span class="math notranslate nohighlight">
+    \(M(D,K)\)
+   </span>
+   of a converter in DCM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="discontinuous-conduction-mode-dcm">
+<h1>Discontinuous Conduction Mode (DCM)<a class="headerlink" href="#discontinuous-conduction-mode-dcm" title="Permalink to this headline">¶</a></h1>
+<p>The discontinuous conduction mode (DCM) occurs because switching ripple in inductor current or capacitor voltage causes polarity of applied switch current or voltage to reverse, such that the current- or voltage-unidirectional assumptions made in realising the switch are violated. It commonly occurs in dc-dc converters and rectifiers, having single- quadrant switches. May also occur in converters having two-quadrant switches.
+Typical examples of cases where DCM occurs are dc-dc converter operating at light load (small load current). Sometimes, dc-dc converters and rectifiers are purposely designed to operate in DCM at all loads.</p>
+<p>Properties of converters change radically in DCM:</p>
+<ul class="simple">
+<li><p>The conversion ratio <span class="math notranslate nohighlight">\(M\)</span> becomes load-dependent</p></li>
+<li><p>Output impedance is increased</p></li>
+<li><p>Dynamics are altered</p></li>
+<li><p>Control of output voltage may be lost when load is removed</p></li>
+</ul>
+<div class="section" id="origins-of-the-discontinuous-conduction-mode-and-mode-boundary">
+<h2>Origins of the discontinuous conduction mode and mode boundary<a class="headerlink" href="#origins-of-the-discontinuous-conduction-mode-and-mode-boundary" title="Permalink to this headline">¶</a></h2>
+<p>We start this section by considering a buck converter with single-quadrant switches.</p>
+<div class="figure align-default" id="buck-with-diode">
+<a class="reference internal image-reference" href="_images/buck-figure0.svg"><img alt="_images/buck-figure0.svg" src="_images/buck-figure0.svg" width="500px" /></a>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Schematic of a buck converter with single-quadrant switches.</span><a class="headerlink" href="#buck-with-diode" title="Permalink to this image">¶</a></p>
+</div>
+<p>Minimum diode current: <span class="math notranslate nohighlight">\(I-\Delta i_L\)</span>
+DC component <span class="math notranslate nohighlight">\(I=V/R\)</span>
+Current ripple:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta i_L = \dfrac{V_g-V}{2L}DT_s=\dfrac{V_g D D' T_s}{2L}
+\]</div>
+<p>The inductor and diode currents for the case where the converter operates <em>normally</em> in the continuous conduction mode (CCM) are depicted in <a class="reference internal" href="#buck-ccm-current"><span class="std std-numref">Fig. 72</span></a>.
+Note that <span class="math notranslate nohighlight">\(I\)</span> depends on the load, but <span class="math notranslate nohighlight">\(\Delta i_L\)</span> does not.</p>
+<div class="figure align-default" id="buck-ccm-current">
+<a class="reference internal image-reference" href="_images/buck_ccm.svg"><img alt="_images/buck_ccm.svg" src="_images/buck_ccm.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in continuous conduction mode (CCM).</span><a class="headerlink" href="#buck-ccm-current" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now consider the case where <span class="math notranslate nohighlight">\(R\)</span> is increased until until <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>. The inductor and diode currents for this case are presented in <a class="reference internal" href="#buck-ccm-dcm-boundary"><span class="std std-numref">Fig. 73</span></a>.</p>
+<div class="figure align-default" id="buck-ccm-dcm-boundary">
+<a class="reference internal image-reference" href="_images/buck_CCM_DCM_boundary.svg"><img alt="_images/buck_CCM_DCM_boundary.svg" src="_images/buck_CCM_DCM_boundary.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">Inductor and diode currents in a buck converter operating at the boundary between the continuous conduction mode (CCM) and the discontinuous conduction mode (DCM) where <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>.</span><a class="headerlink" href="#buck-ccm-dcm-boundary" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the next case, let’s increase <span class="math notranslate nohighlight">\(R\)</span>, until <span class="math notranslate nohighlight">\(I&lt;\Delta i_L\)</span>. We note that the load current will remain positive and nonzero.</p>
+<div class="figure align-default" id="buck-dcm">
+<a class="reference internal image-reference" href="_images/buck_DCM.svg"><img alt="_images/buck_DCM.svg" src="_images/buck_DCM.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in discontinuous conduction mode (CCM).</span><a class="headerlink" href="#buck-dcm" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now we are ready to define <em>Mode Boundary</em> and <em>critical load resistance</em> <span class="math notranslate nohighlight">\(R_{crit}\)</span>.</p>
+<ul class="simple">
+<li><p>In CCM: <span class="math notranslate nohighlight">\(I&gt;\Delta i_L\)</span></p></li>
+<li><p>DCM: <span class="math notranslate nohighlight">\(I&lt;\Delta i_L\)</span>
+Using the expressions for <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(\Delta i_L\)</span> from the steady state analysis of buck converters, the DCM condition can be stated as</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{DV_g}{R}&lt;\dfrac{DD' T_S V_g}{2L} \implies \dfrac{2L}{R T_s}&lt;D'
+\]</div>
+<p>Define <span class="math notranslate nohighlight">\(K=\dfrac{2L}{R T_s}\)</span> and <span class="math notranslate nohighlight">\(K_{crit}(D')=D'\)</span>. We can write the DCM condition as</p>
+<div class="math notranslate nohighlight">
+\[
+ K&lt;K_{crit}(D).
+ \]</div>
+<p>Alternatively defining Critical load resistance <span class="math notranslate nohighlight">\(R_{crit}=\dfrac{2L}{D' T_S}\)</span>, one can express the CCM and DCM conditions as the following:</p>
+<div class="math notranslate nohighlight">
+\[
+ R&lt;R_{crit}(D),\quad \text{Converter operating in CCM}
+ \]</div>
+<div class="math notranslate nohighlight">
+\[
+ R&gt;R_{crit}(D),\quad \text{Converter operating in DCM}
+ \]</div>
+<p>The relationship among <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for the two cases of <span class="math notranslate nohighlight">\(K&lt;1\)</span> and <span class="math notranslate nohighlight">\(K&gt;1\)</span> in a buck converter is depicted in <a class="reference internal" href="#k-kcrit"><span class="std std-numref">Fig. 75</span></a>.</p>
+<div class="figure align-default" id="k-kcrit">
+<a class="reference internal image-reference" href="_images/K_Kcrit.svg"><img alt="_images/K_Kcrit.svg" src="_images/K_Kcrit.svg" width="700px" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">CCM and DCM for different values of <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for a buck converter.</span><a class="headerlink" href="#k-kcrit" title="Permalink to this image">¶</a></p>
+</div>
+<p>Next, we shift our focus to the analysis of a boost converter (<a class="reference internal" href="#boost-dcm"><span class="std std-numref">Fig. 76</span></a>) operating in DCM.</p>
+<div class="figure align-default" id="boost-dcm">
+<a class="reference internal image-reference" href="_images/boost_DCM.svg"><img alt="_images/boost_DCM.svg" src="_images/boost_DCM.svg" width="500px" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Schematic of a boost converter with single-quadrant switches.</span><a class="headerlink" href="#boost-dcm" title="Permalink to this image">¶</a></p>
+</div>
+<p>As in the case of a buck converter:</p>
+<ul class="simple">
+<li><p>In CCM: <span class="math notranslate nohighlight">\(I&gt;\Delta i_L\)</span></p></li>
+<li><p>DCM: <span class="math notranslate nohighlight">\(I&lt;\Delta i_L\)</span></p></li>
+</ul>
+<p>Using the expressions for <span class="math notranslate nohighlight">\(I=\dfrac{V_g}{D'^2 R}\)</span> and <span class="math notranslate nohighlight">\(\Delta i_L=\dfrac{V_g}{2L}DT_s\)</span> from the steady-state analysis of boost converters, the converter operates in CCM when</p>
+<div class="math notranslate nohighlight">
+\[
+ \dfrac{V_g}{C'^2R}&gt;\dfrac{D T_s V_g}{2L}
+ \]</div>
+<div class="math notranslate nohighlight">
+\[
+ \dfrac{2L}{R T_s}&gt;D D'^2
+ \]</div>
+<p>Similar to the buck converter case the mode boundary can be stated as</p>
+<div class="math notranslate nohighlight">
+\[
+ K&gt;K_{crit}(D),\quad \text{Converter operating in CCM}
+ \]</div>
+<div class="math notranslate nohighlight">
+\[
+ K&lt;K_{crit}(D),\quad \text{Converter operating in DCM}
+ \]</div>
+<p>where <span class="math notranslate nohighlight">\(K=\dfrac{2L}{R T_s}\)</span> and <span class="math notranslate nohighlight">\(K_{crit}(D)=D D'^2\)</span> as shown below.</p>
+<a class="reference internal image-reference" href="_images/boost_boundary_mode.svg"><img alt="_images/boost_boundary_mode.svg" class="align-center" src="_images/boost_boundary_mode.svg" width="350px" /></a>
+<p>CCM-DCM mode boundaries for the buck, boost, and buck-boost converters are summarised in the following tables</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Converter</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(K_{crit}(D)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\underset{0\leq D\leq 1}{\max} K_{crit}(D)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(R_{crit}(D)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\underset{0\leq D \leq 1}{\min} R_{crit}(D)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Buck</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(1-D\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{2L}{(1-D)T_s}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(2\dfrac{L}{T_s}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Boost</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(D(1-D)^2\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{4}{27}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{2L}{D(1-D)^2T_s}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{27}{2}\dfrac{L}{T_s}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Buck-boost</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\((1-D)^2\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{2L}{(1-D)^2T_s}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(2\dfrac{L}{T_s}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="derivation-of-the-conversion-ratio-m-d-k-of-a-converter-in-dcm">
+<h2>Derivation of the conversion ratio <span class="math notranslate nohighlight">\(M(D,K)\)</span> of a converter in DCM<a class="headerlink" href="#derivation-of-the-conversion-ratio-m-d-k-of-a-converter-in-dcm" title="Permalink to this headline">¶</a></h2>
+<p>In steady-state inductor volt-second balance and capacitor charge-second balance relationships are satisfied. In other words:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v_L \rangle =\dfrac{1}{T_s} \int_0^{T_s} v_L(t)dt=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\langle i_C \rangle =\dfrac{1}{T_s} \int_0^{T_s} i_C(t)dt=0
+\]</div>
+<p>Small ripple approximation, on the other hand, sometimes applies. Specifically,     <span class="math notranslate nohighlight">\(v(t)\approx V\)</span> is a good approximation because <span class="math notranslate nohighlight">\(\Delta v \ll V\)</span> while    <span class="math notranslate nohighlight">\(i(t)\approx I\)</span> is not a good approximation for the cases that <span class="math notranslate nohighlight">\(\Delta i &gt; I\)</span> which is the root cause of DCM.</p>
+<p>As in CCM, converter steady-state equations obtained via charge balance on each capacitor and volt-second balance on each inductor. One has to be careful in applying small ripple approximation.</p>
+<div class="proof example admonition" id="dcm-buck">
+<p class="admonition-title"><span>Example </span> (Analysis of buck converter in DCM)</p>
+<div class="example-content section" id="proof-content">
+<p>Here we consider the case where a buck converter is operating in DCM and how its conversion ratio, <span class="math notranslate nohighlight">\(M(D,K)\)</span>, can be derived. As the buck converter is operating in DCM, there will be an interval in which neither the diode nor the transistor is on. The buck converter and the <em>three</em> switching intervals are illustrated below.</p>
+<a class="reference internal image-reference" href="_images/Buck_DCM_Intervals.svg"><img alt="_images/Buck_DCM_Intervals.svg" class="align-center" src="_images/Buck_DCM_Intervals.svg" width="700px" /></a>
+<p>In Interval 1 where the diode is off and the transistor is on, applying KVL and KCL yield</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=V_g-v(t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=i_L(t)-v(t)/R
+\]</div>
+<p>Applying the small ripple approximation for <span class="math notranslate nohighlight">\(v(t)\)</span> (not for <span class="math notranslate nohighlight">\(i_L(t)\)</span>) results in</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)\approx V_g-V
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx i_L(t)-V/R.
+\]</div>
+<p>Similar to above, in Interval 2 where the diode is on and the transistor is off, applying KVL and KCL lead to</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=-v(t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=i_L(t)-v(t)/R
+\]</div>
+<p>Applying small ripple approximation for <span class="math notranslate nohighlight">\(v(t)\)</span> (not for <span class="math notranslate nohighlight">\(i_L(t)\)</span>) one obtains</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)\approx -V
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx i_L(t)-V/R
+\]</div>
+<p>Finally, in interval 3 where both the diode  and the transistor are off, we have</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=0,\quad i_L(t)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=i_L(t)-v(t)/R
+\]</div>
+<p>From Small ripple approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx -V/R
+\]</div>
+<p>The inductor voltage across these three intervals is depicted below.</p>
+<a class="reference internal image-reference" href="_images/buck_V_dcm.svg"><img alt="_images/buck_V_dcm.svg" class="align-center" src="_images/buck_V_dcm.svg" width="400px" /></a>
+<p>The inductor volt-second balance gives</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v_L(t) \rangle = D_1(V_g-V) + D_2 (-V) +D_3(0)=0
+\]</div>
+<p>Consequently,</p>
+<div class="math notranslate nohighlight">
+\[
+V = V_g \dfrac{D_1}{D_1+D_2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_2\)</span> is unknown.</p>
+<p>Now let’s focus on the behaviour of the inductor current. The inductor is connected to the load and the output capacitor in an RLC configuration as below</p>
+<a class="reference internal image-reference" href="_images/RLC.svg"><img alt="_images/RLC.svg" class="align-center" src="_images/RLC.svg" width="200px" /></a>
+<p>From the KCL we have</p>
+<div class="math notranslate nohighlight">
+\[
+i_L(t)=i_C(t)+V/R
+\]</div>
+<p>The inductor current graph is given below.</p>
+<a class="reference internal image-reference" href="_images/buck_iL_DCM.svg"><img alt="_images/buck_iL_DCM.svg" class="align-center" src="_images/buck_iL_DCM.svg" width="400px" /></a>
+<p>Capacitor charge balance leads to <span class="math notranslate nohighlight">\(\langle i_C\rangle =0\)</span>.
+Hence,</p>
+<div class="math notranslate nohighlight" id="equation-ave-cur-dcm">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ave-cur-dcm" title="Permalink to this equation">¶</a></span>\[
+\langle i_L \rangle = V/R
+\]</div>
+<p>In this buck converter example, the DC component of inductor current must be computed and equated to load current. To this end, let’s compute the inductor peak current:</p>
+<div class="math notranslate nohighlight">
+\[
+i_p=i_L(D_1 T_s) = \dfrac{V_g-V}{L}D_1T_s
+\]</div>
+<p>The average current is then computed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+  \langle i_L \rangle &amp;=\dfrac{1}{T_s}\int  i_L(t)dt\\
+  &amp;=\dfrac{1}{2} i_{p} (D_1+D_2) \\
+  &amp;=(V_g-V)\dfrac{D_1 T_s}{2 L} (D_1 + D_2 )
+\end{aligned}
+\end{split}\]</div>
+<p>Equating the DC component to DC load current:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{V}{R}=(V_g-V)\dfrac{D_1 T_s}{2 L} (D_1 + D_2 )
+\]</div>
+<p>Finding <span class="math notranslate nohighlight">\(V\)</span> involves solving two equations with unknowns).</p>
+<ul class="simple">
+<li><p>Inductor volt-balance: <span class="math notranslate nohighlight">\(V = V_g \dfrac{D_1}{D_1+D_2}\)</span></p></li>
+<li><p>Capacitor charge-balance: <span class="math notranslate nohighlight">\(\dfrac{V}{R}=(V_g-V)\dfrac{D_1 T_s}{2 L} (D_1 + D_2 )\)</span></p></li>
+</ul>
+<p>Solving for <span class="math notranslate nohighlight">\(V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{V}{V_g}= \dfrac{2}{1+\sqrt{1+4K/D_1^2}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(K=\dfrac{2L}{R T_s}\)</span> and <span class="math notranslate nohighlight">\(K&lt;K_{crit}(D)\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M(K,D)=\begin{cases}
+  D | K&gt;K_{crit}(D)\\
+  \dfrac{2}{1+\sqrt{1+4K/D_1^2}} | K&lt;K_{crit}(D)
+\end{cases}
+\end{split}\]</div>
+</div>
+</div><div class="proof example admonition" id="dcm-boost">
+<p class="admonition-title"><span>Example </span> (Analysis of boost converter in DCM)</p>
+<div class="example-content section" id="proof-content">
+<p>Here we consider the case where a bosot converter is operating in DCM and how its conversion ratio, <span class="math notranslate nohighlight">\(M(D,K)\)</span>, can be derived. As the buck converter is operating in DCM, there will be an interval in which neither the diode nor the transistor is on. The buck converter and the <em>three</em> switching intervals are illustrated below.</p>
+<a class="reference internal image-reference" href="_images/Boost_DCM_Intervals.svg"><img alt="_images/Boost_DCM_Intervals.svg" class="align-center" src="_images/Boost_DCM_Intervals.svg" width="700px" /></a>
+<p>In Interval 1 where the diode is off and the transistor is on, applying KVL and KCL yield</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=V_g
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=-v(t)/R
+\]</div>
+<p>Applying the small ripple approximation for <span class="math notranslate nohighlight">\(v(t)\)</span> (not for <span class="math notranslate nohighlight">\(i_L(t)\)</span>) results in</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)\approx V_g
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx -V/R
+\]</div>
+<p>Similar to above, in Interval 2 where the diode is on and the transistor is off, applying KVL and KCL lead to</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=V_g-v(t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=i_L(t)-v(t)/R
+\]</div>
+<p>Applying small ripple approximation for <span class="math notranslate nohighlight">\(v(t)\)</span> (not for <span class="math notranslate nohighlight">\(i_L(t)\)</span>) one obtains</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)\approx V_g-V
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx i_L(t)-V/R
+\]</div>
+<p>In interval 3 where both the diode  and the transistor are off, we have</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=0,\quad i_L(t)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)=-v(t)/R
+\]</div>
+<p>From Small ripple approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+v_L(t)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C(t)\approx -V/R
+\]</div>
+<p>The inductor voltage across these three intervals is depicted below.</p>
+<a class="reference internal image-reference" href="_images/boost_V_dcm.svg"><img alt="_images/boost_V_dcm.svg" class="align-center" src="_images/boost_V_dcm.svg" width="400px" /></a>
+<p>The inductor volt-second balance gives</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v_L(t) \rangle = D_1(V_g-V) + D_2 (-V) +D_3(0)=0
+\]</div>
+<p>Consequently,</p>
+<div class="math notranslate nohighlight">
+\[
+V = V_g \dfrac{D_1+D_2}{D_2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_2\)</span> is unknown.</p>
+<p>Now let’s focus on the behaviour of the diode current. The diode is connected to the load and the output capacitor in a configuration as below</p>
+<a class="reference internal image-reference" href="_images/DRC.svg"><img alt="_images/DRC.svg" class="align-center" src="_images/DRC.svg" width="200px" /></a>
+<p>From the KCL we have</p>
+<div class="math notranslate nohighlight">
+\[
+i_D(t)=i_C(t)+V/R
+\]</div>
+<p>The inductor current graph is given below.</p>
+<a class="reference internal image-reference" href="_images/boost_iL_DCM.svg"><img alt="_images/boost_iL_DCM.svg" class="align-center" src="_images/boost_iL_DCM.svg" width="400px" /></a>
+<p>In the second interval the diode current is the same as the inductor current. Thus, the diode current wave form would look like the graph presented next.</p>
+<p>The inductor current graph is given below.</p>
+<a class="reference internal image-reference" href="_images/boost_iD_DCM.svg"><img alt="_images/boost_iD_DCM.svg" class="align-center" src="_images/boost_iD_DCM.svg" width="400px" /></a>
+<p>Capacitor charge balance leads to <span class="math notranslate nohighlight">\(\langle i_C\rangle =0\)</span>.
+Hence,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle i_D \rangle = V/R
+\]</div>
+<p>In this boost converter example, the DC component of diode current must be computed and equated to load current. To this end, let’s compute the didoe peak current  (which is the same as the inductor peak current):</p>
+<div class="math notranslate nohighlight">
+\[
+i_p=i_L(D_1 T_s) = \dfrac{V_g}{L}D_1T_s
+\]</div>
+<p>The average current is then computed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle i_D \rangle &amp;=\dfrac{1}{T_s} \int i_D(t)dt\\
+&amp;=\dfrac{1}{2} i_{p} D_2\\
+&amp;=\dfrac{V_g D_1 D_2 T_s}{2 L}
+\end{aligned}
+\end{split}\]</div>
+<p>Equating the DC component to DC load current:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{V}{R}=\dfrac{V_g D_1 D_2 T_s}{2 L}
+\]</div>
+<p>Finding <span class="math notranslate nohighlight">\(V\)</span> involves solving two equations with unknowns).</p>
+<ul class="simple">
+<li><p>Inductor volt-balance: <span class="math notranslate nohighlight">\(V = V_g \dfrac{D_1+D_2}{D_2}\)</span></p></li>
+<li><p>Capacitor charge-balance: <span class="math notranslate nohighlight">\(\dfrac{V}{R}=\dfrac{V_g D_1 D_2 T_s}{2 L}\)</span></p></li>
+</ul>
+<p>Solving for <span class="math notranslate nohighlight">\(V\)</span>:
+<span class="math notranslate nohighlight">\(V^2-VV_g-\dfrac{V_g^2 D_1^2}{K}\)</span>, <span class="math notranslate nohighlight">\(K=\dfrac{2L}{RT_s}\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+V =V_g \left (\dfrac{1\pm \sqrt{1+4D_1^2/K}}{2} \right )
+\]</div>
+<p>Rejecting the negative root:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{V}{V_g} = M(D_1,K)=\dfrac{1+ \sqrt{1+4D_1^2/K}}{2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(K&lt;K_{crit}(D)\)</span>. (Note that the transistor duty cycle, <span class="math notranslate nohighlight">\(D\)</span>, is equal to <span class="math notranslate nohighlight">\(D_1\)</span>.)</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M(K,D)=\begin{cases}
+  \dfrac{1}{1-D} | K&gt;K_{crit}(D)\\
+  \dfrac{1+\sqrt{1+4D^2/K}}{2} | K&lt;K_{crit}(D)
+\end{cases}
+\end{split}\]</div>
+<p>Approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+M(D,K)\approx \dfrac{1}{2} + \dfrac{D}{\sqrt{K}}
+\]</div>
+</div>
+</div><p>In the following table CCM-DCM charactersitics of three famous converters are summarised. Remember that <span class="math notranslate nohighlight">\(K=\dfrac{2L}{R T_s}\)</span> and DCM occurs for <span class="math notranslate nohighlight">\(K&lt;K_{crit}\)</span>}.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Converter</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(K_{crit}(D)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(DCM\; M(D,K)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(DCM\; D_2(D,K)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(CCM\; M(D)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Buck</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(1-D\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{2}{1+\sqrt{1+4K/D^2}}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{K}{D}M(D,K)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Boost</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(D(1-D)^2\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{1+\sqrt{1+4D^2/K}}{2} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{K}{D}M(D,K)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\dfrac{D}{1-D}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Buck-boost</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\((1-D)^2\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\dfrac{D}{\sqrt{K}}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\sqrt{K}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\dfrac{D}{1-D}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>The DCM conversion ratio (DCM charactersitics) of buck, boost, and buck-boost converter are presented below.</p>
+<div class="figure align-default" id="dcm-summary">
+<a class="reference internal image-reference" href="_images/DCM_summary.svg"><img alt="_images/DCM_summary.svg" src="_images/DCM_summary.svg" width="500px" /></a>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">Summary of DCM characteristics of three converters.</span><a class="headerlink" href="#dcm-summary" title="Permalink to this image">¶</a></p>
+</div>
+<p>DCM buck and boost characteristics are asymptotic to <span class="math notranslate nohighlight">\(M = 1\)</span> and to the DCM buck-boost characteristic. DCM buck-boost characteristic is linear. CCM and DCM characteristics intersect at mode boundary. Actual <span class="math notranslate nohighlight">\(M\)</span> follows characteristic having larger magnitude. DCM boost characteristic is nearly linear.</p>
+<p>The discontinuous conduction mode occurs in converters containing current- or voltage-unidirectional switches, when the inductor current or capacitor voltage ripple is large enough to cause the switch current or voltage to reverse polarity.</p>
+<p>Conditions for operation in the discontinuous conduction mode can be found by determining when the inductor current or capacitor voltage ripples and DC components cause the switch on-state current or off-state voltage to reverse polarity.</p>
+<p>The DC conversion ratio <span class="math notranslate nohighlight">\(M\)</span> of converters operating in the discontinuous conduction mode can be found by application of the principles of inductor volt-second and capacitor charge balance.</p>
+<p>Extra care is required when applying the small-ripple approximation. Some waveforms, such as the output voltage, should have small ripple which can be neglected. Other waveforms, such as one or more inductor currents, may have large ripple that cannot be ignored.</p>
+<p>The characteristics of a converter changes significantly when the converter enters DCM. The output voltage becomes load- dependent, resulting in an increase in the converter output impedance.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="SwitchRealisation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Realising Switches Using Semi-conductor Devices</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CircuitManipulation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Converter Circuit Manipulation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

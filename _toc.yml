@@ -1,0 +1,23 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Steady State Analysis of Converters
+    chapters:
+    - file: SteadyState
+    - file: SteadyStateEquivCirc
+    - file: SwitchRealisation
+    - file: DCM
+    - file: CircuitManipulation
+  - caption: Power Sysems Principles
+    chapters:
+    - file: ACCircuits
+    - file: Poly
+#- file: markdown
+#- file: notebooks/notebooks
+#- file: markdown-notebooks
+  - caption: Appendix
+    chapters:
+    - file: notebooks/RLC_Respone.ipynb
