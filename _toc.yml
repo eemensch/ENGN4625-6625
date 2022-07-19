@@ -11,7 +11,7 @@ parts:
     - file: SwitchRealisation
     - file: DCM
     - file: CircuitManipulation
-  - caption: Power Sysems Principles
+  - caption: Power Systems Principles
     chapters:
     - file: ACCircuits
     - file: Poly
