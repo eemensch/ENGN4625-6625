@@ -474,6 +474,10 @@ $$
 $$
 ```
 
+```{warning}
+We have to be careful when we talk about charging a capacitor and a capacitor charge. There is a fundamental misunderstanding in thinking about capacitors as a place to store electric charge. We really store energy in a capacitor. A good discussion can be found [here](http://amasci.com/emotor/cap1.html). Please note that this discussion has no impact on how we use the principle of charge balance to study the behaviour of converters.  
+```
+
 ## Boost Converter Analysis
 
 Consider the Boost converter with ideal switch of {numref}`boost`. As we will see in future chapters this circuit can be realised in practice with
@@ -650,6 +654,7 @@ One may choose $L$ for a desired ripple magnitude given other circuit parameters
 
 ### Determination of capacitor voltage ripple in boost converters
 Using the defining equation for capacitors:
+
 $$
   \begin{align*}\dfrac{dv_C(t)}{\mathrm{d}t}&=\dfrac{i_C(t)}{C} \approx \begin{cases}
       \frac{-V}{RC} & \text{Position 1}\\

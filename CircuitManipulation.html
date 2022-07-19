@@ -137,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Power Sysems Principles
+  Power Systems Principles
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -505,13 +505,15 @@ V_{an}=V_1-V_n
 \[
 V_{bn}=V_2-V_n
 \]</div>
-<p>$$
-V_{cn}=V_3-V_n</p>
+<div class="math notranslate nohighlight">
+\[
+V_{cn}=V_3-V_n
+\]</div>
 <p>In practical realisations of such converters, we need to control converters such that their output voltages contain the same dc biases. This dc bias will appear at the neutral point <span class="math notranslate nohighlight">\(V_n\)</span>. It then cancels out, so phase voltages contain no dc bias.</p>
 <p>Similar to the single phase case, one can consider a three-phase differential connection of three buck converters:</p>
-<a class="reference internal image-reference" href="_images/3p_diff_conv.svg"><img alt="_images/3p_diff_conv.svg" class="align-center" src="_images/3p_diff_conv.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="_images/3p_diff_conv.svg"><img alt="_images/3p_diff_conv.svg" class="align-center" src="_images/3p_diff_conv.svg" width="500px" /></a>
 <p>Or equivalenly:</p>
-<a class="reference internal image-reference" href="_images/3p_diff_conv2.svg"><img alt="_images/3p_diff_conv2.svg" class="align-center" src="_images/3p_diff_conv2.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="_images/3p_diff_conv2.svg"><img alt="_images/3p_diff_conv2.svg" class="align-center" src="_images/3p_diff_conv2.svg" width="500px" /></a>
 <p>This is known as the <em>Voltage-source inverter</em> or buck-derived three-phase inverter.</p>
 </div>
 </div>
@@ -536,52 +538,52 @@ V_{cn}=V_3-V_n</p>
 <h3>Converters producing unipolar output voltage<a class="headerlink" href="#converters-producing-unipolar-output-voltage" title="Permalink to this headline">¶</a></h3>
 <p><strong>Buck converter, <span class="math notranslate nohighlight">\(M(D)=D\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e096bc61-cc37-489e-865b-f813c4a235b1" name="71eb5e6a-8e4a-4b33-b3f9-994bcb455938" type="radio">
-</input><label class="sd-tab-label" for="e096bc61-cc37-489e-865b-f813c4a235b1">
+<input checked="checked" id="168903ca-6be4-4bfd-a436-5bfa178c4a00" name="510fcb21-bd6f-4b31-9da3-49993b3ed56d" type="radio">
+</input><label class="sd-tab-label" for="168903ca-6be4-4bfd-a436-5bfa178c4a00">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck_mini.svg"><img alt="_images/buck_mini.svg" class="align-center" src="_images/buck_mini.svg" width="400px" /></a>
 </div>
-<input id="c90643d4-82a2-4109-bdae-55439fa03261" name="71eb5e6a-8e4a-4b33-b3f9-994bcb455938" type="radio">
-</input><label class="sd-tab-label" for="c90643d4-82a2-4109-bdae-55439fa03261">
+<input id="c73923fe-bd1c-48d0-ac6f-d6694f4685bb" name="510fcb21-bd6f-4b31-9da3-49993b3ed56d" type="radio">
+</input><label class="sd-tab-label" for="c73923fe-bd1c-48d0-ac6f-d6694f4685bb">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck_M.svg"><img alt="_images/buck_M.svg" class="align-center" src="_images/buck_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Boost converter, <span class="math notranslate nohighlight">\(M(D)=\dfrac{1}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="30e61489-b700-47d5-be74-9e2cd3ba95f9" name="36aa96bf-3fd9-4f5e-9668-2f49fe928c2f" type="radio">
-</input><label class="sd-tab-label" for="30e61489-b700-47d5-be74-9e2cd3ba95f9">
+<input checked="checked" id="65bf63b4-9663-4c0c-9392-d9102df1d29c" name="c8f8e01d-e12c-4551-ab2c-fe94db036b41" type="radio">
+</input><label class="sd-tab-label" for="65bf63b4-9663-4c0c-9392-d9102df1d29c">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/boost_mini.svg"><img alt="_images/boost_mini.svg" class="align-center" src="_images/boost_mini.svg" width="400px" /></a>
 </div>
-<input id="14899aae-326e-4e0f-8b12-ad4f6850b27e" name="36aa96bf-3fd9-4f5e-9668-2f49fe928c2f" type="radio">
-</input><label class="sd-tab-label" for="14899aae-326e-4e0f-8b12-ad4f6850b27e">
+<input id="4e58e41e-8520-45c6-825b-430c5df18020" name="c8f8e01d-e12c-4551-ab2c-fe94db036b41" type="radio">
+</input><label class="sd-tab-label" for="4e58e41e-8520-45c6-825b-430c5df18020">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/boost_M.svg"><img alt="_images/boost_M.svg" class="align-center" src="_images/boost_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Buck-boost converter, <span class="math notranslate nohighlight">\(M(D)=-\dfrac{D}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="248a992f-5694-42a6-89c4-cf79d5ede3ae" name="bd77f55f-16a8-4699-bbf3-718f65cd9901" type="radio">
-</input><label class="sd-tab-label" for="248a992f-5694-42a6-89c4-cf79d5ede3ae">
+<input checked="checked" id="1113d315-19d6-4f60-a8be-046de4f186bc" name="c23bbe4d-3ac6-4ad9-93aa-b3f2c7d93352" type="radio">
+</input><label class="sd-tab-label" for="1113d315-19d6-4f60-a8be-046de4f186bc">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/bb_mini.svg"><img alt="_images/bb_mini.svg" class="align-center" src="_images/bb_mini.svg" width="400px" /></a>
 </div>
-<input id="1ec80a80-642b-44e1-ac24-a59044b44d59" name="bd77f55f-16a8-4699-bbf3-718f65cd9901" type="radio">
-</input><label class="sd-tab-label" for="1ec80a80-642b-44e1-ac24-a59044b44d59">
+<input id="6439f17b-1431-4f38-a482-dc3c7bb556b0" name="c23bbe4d-3ac6-4ad9-93aa-b3f2c7d93352" type="radio">
+</input><label class="sd-tab-label" for="6439f17b-1431-4f38-a482-dc3c7bb556b0">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/BUCK_BOOST_M.svg"><img alt="_images/BUCK_BOOST_M.svg" class="align-center" src="_images/BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Noninverting buck-boost converter, <span class="math notranslate nohighlight">\(M(D)=\dfrac{D}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b75eae81-2b25-4b30-adb5-6ac7e78e7657" name="bab97afc-41c4-4406-96ed-264fc59d2c3b" type="radio">
-</input><label class="sd-tab-label" for="b75eae81-2b25-4b30-adb5-6ac7e78e7657">
+<input checked="checked" id="6a527508-a782-4dc8-85d9-59c9d146b032" name="8a8a5fc4-b135-4e45-9661-123a32c1c219" type="radio">
+</input><label class="sd-tab-label" for="6a527508-a782-4dc8-85d9-59c9d146b032">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_bb.svg"><img alt="_images/noninv_bb.svg" class="align-center" src="_images/noninv_bb.svg" width="400px" /></a>
 </div>
-<input id="2c8caf6b-d931-4ec9-b769-cfb85a8258ac" name="bab97afc-41c4-4406-96ed-264fc59d2c3b" type="radio">
-</input><label class="sd-tab-label" for="2c8caf6b-d931-4ec9-b769-cfb85a8258ac">
+<input id="818224ca-c029-4383-ac91-55885a5d59c7" name="8a8a5fc4-b135-4e45-9661-123a32c1c219" type="radio">
+</input><label class="sd-tab-label" for="818224ca-c029-4383-ac91-55885a5d59c7">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
@@ -591,52 +593,52 @@ Conversion Ratio</label><div class="sd-tab-content docutils">
 <h3>Converters producing bipolar output voltage<a class="headerlink" href="#converters-producing-bipolar-output-voltage" title="Permalink to this headline">¶</a></h3>
 <p><strong>Bridge, <span class="math notranslate nohighlight">\(M(D)=2D-1\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b4a1367f-42ac-4f97-9ec7-ababa9a823fd" name="afbcccea-0c97-4ac2-97aa-367eda9db711" type="radio">
-</input><label class="sd-tab-label" for="b4a1367f-42ac-4f97-9ec7-ababa9a823fd">
+<input checked="checked" id="c2fc4e1f-bfaa-4da0-a7a3-9026fa9cfd8e" name="fbb00a95-3e2c-4746-ae8f-6e4525c57feb" type="radio">
+</input><label class="sd-tab-label" for="c2fc4e1f-bfaa-4da0-a7a3-9026fa9cfd8e">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Lecture_10-figure26.svg"><img alt="_images/Lecture_10-figure26.svg" class="align-center" src="_images/Lecture_10-figure26.svg" width="400px" /></a>
 </div>
-<input id="793db6c7-8ae9-483f-9497-2c44b8eda2d2" name="afbcccea-0c97-4ac2-97aa-367eda9db711" type="radio">
-</input><label class="sd-tab-label" for="793db6c7-8ae9-483f-9497-2c44b8eda2d2">
+<input id="15e0bffb-36b3-4e32-8785-cafce4a09efd" name="fbb00a95-3e2c-4746-ae8f-6e4525c57feb" type="radio">
+</input><label class="sd-tab-label" for="15e0bffb-36b3-4e32-8785-cafce4a09efd">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/diff_buck_M.svg"><img alt="_images/diff_buck_M.svg" class="align-center" src="_images/diff_buck_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Watkins-Johnson, <span class="math notranslate nohighlight">\(M(D)=\dfrac{2D-1}{D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5728589e-1712-4eb0-8c3b-5c9cbaac91cb" name="8b4f8566-eb08-417d-b49d-49bf04406297" type="radio">
-</input><label class="sd-tab-label" for="5728589e-1712-4eb0-8c3b-5c9cbaac91cb">
+<input checked="checked" id="530e3b37-39f2-4f20-b682-1098d690b647" name="f794cf25-84b3-45d7-b370-6b13c933b085" type="radio">
+</input><label class="sd-tab-label" for="530e3b37-39f2-4f20-b682-1098d690b647">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/WJ.svg"><img alt="_images/WJ.svg" class="align-center" src="_images/WJ.svg" width="400px" /></a>
 </div>
-<input id="f0ca4921-1aaf-4d21-8b77-cc9534fbed61" name="8b4f8566-eb08-417d-b49d-49bf04406297" type="radio">
-</input><label class="sd-tab-label" for="f0ca4921-1aaf-4d21-8b77-cc9534fbed61">
+<input id="908e5a7d-f910-4975-af7d-9deff2af5021" name="f794cf25-84b3-45d7-b370-6b13c933b085" type="radio">
+</input><label class="sd-tab-label" for="908e5a7d-f910-4975-af7d-9deff2af5021">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/watkins.svg"><img alt="_images/watkins.svg" class="align-center" src="_images/watkins.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Current-fed bridge, <span class="math notranslate nohighlight">\(M(D)=\dfrac{1}{2D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="542260b6-b0cd-406f-a7c2-d22a40a7f32d" name="d3cfd0c6-2071-4e9d-92d4-1da5a1f76bc1" type="radio">
-</input><label class="sd-tab-label" for="542260b6-b0cd-406f-a7c2-d22a40a7f32d">
+<input checked="checked" id="16de05ac-5f5f-4de9-a827-ba52a4e34cfe" name="8fbf2082-3198-4c0b-96c6-edcf514749d4" type="radio">
+</input><label class="sd-tab-label" for="16de05ac-5f5f-4de9-a827-ba52a4e34cfe">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/current_fed_bridge.svg"><img alt="_images/current_fed_bridge.svg" class="align-center" src="_images/current_fed_bridge.svg" width="400px" /></a>
 </div>
-<input id="caaaed9f-f3d3-4e03-a17e-5384e60a9aa0" name="d3cfd0c6-2071-4e9d-92d4-1da5a1f76bc1" type="radio">
-</input><label class="sd-tab-label" for="caaaed9f-f3d3-4e03-a17e-5384e60a9aa0">
+<input id="3acff28b-6fba-4463-8a5a-92a46fce561c" name="8fbf2082-3198-4c0b-96c6-edcf514749d4" type="radio">
+</input><label class="sd-tab-label" for="3acff28b-6fba-4463-8a5a-92a46fce561c">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/current_fed.svg"><img alt="_images/current_fed.svg" class="align-center" src="_images/current_fed.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Inverse Watkins-Johnson, <span class="math notranslate nohighlight">\(M(D)=\dfrac{D}{2D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="71418a37-9930-4ec3-a610-00f5f3b56d45" name="cbf2914b-cf99-49d4-86ea-c8d3dac8f562" type="radio">
-</input><label class="sd-tab-label" for="71418a37-9930-4ec3-a610-00f5f3b56d45">
+<input checked="checked" id="d60abd37-0816-4319-b0c9-dbd11aed15c6" name="c17e1986-3f04-4773-9e35-797f2504aeb6" type="radio">
+</input><label class="sd-tab-label" for="d60abd37-0816-4319-b0c9-dbd11aed15c6">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Inverse_WJ.svg"><img alt="_images/Inverse_WJ.svg" class="align-center" src="_images/Inverse_WJ.svg" width="400px" /></a>
 </div>
-<input id="25e58c23-868e-41e4-ad4b-16ed6554f3be" name="cbf2914b-cf99-49d4-86ea-c8d3dac8f562" type="radio">
-</input><label class="sd-tab-label" for="25e58c23-868e-41e4-ad4b-16ed6554f3be">
+<input id="a7bca62b-f34b-4ed0-8253-4e0ec8ca813e" name="c17e1986-3f04-4773-9e35-797f2504aeb6" type="radio">
+</input><label class="sd-tab-label" for="a7bca62b-f34b-4ed0-8253-4e0ec8ca813e">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/inv_watkins.svg"><img alt="_images/inv_watkins.svg" class="align-center" src="_images/inv_watkins.svg" width="400px" /></a>
 </div>
@@ -646,52 +648,52 @@ Conversion Ratio</label><div class="sd-tab-content docutils">
 <h3>Some Converters in the class of two-inductor converters<a class="headerlink" href="#some-converters-in-the-class-of-two-inductor-converters" title="Permalink to this headline">¶</a></h3>
 <p><strong>Ćuk, <span class="math notranslate nohighlight">\(M(D)=-\dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8ad31b6a-3478-47a0-a42d-01e02bc84c4c" name="7ece99c1-f92c-4f93-a588-e1b8ae0d3009" type="radio">
-</input><label class="sd-tab-label" for="8ad31b6a-3478-47a0-a42d-01e02bc84c4c">
+<input checked="checked" id="1abf0d61-ed04-433a-ace0-235047d65db7" name="4ceb5b46-efbf-42b8-a64f-1bd732772a72" type="radio">
+</input><label class="sd-tab-label" for="1abf0d61-ed04-433a-ace0-235047d65db7">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/cuk_mini.svg"><img alt="_images/cuk_mini.svg" class="align-center" src="_images/cuk_mini.svg" width="400px" /></a>
 </div>
-<input id="361c207b-c862-43e5-9fdb-6c1d2207241d" name="7ece99c1-f92c-4f93-a588-e1b8ae0d3009" type="radio">
-</input><label class="sd-tab-label" for="361c207b-c862-43e5-9fdb-6c1d2207241d">
+<input id="b12a1d64-8732-4a1d-9f29-a697e0b41cb6" name="4ceb5b46-efbf-42b8-a64f-1bd732772a72" type="radio">
+</input><label class="sd-tab-label" for="b12a1d64-8732-4a1d-9f29-a697e0b41cb6">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/BUCK_BOOST_M.svg"><img alt="_images/BUCK_BOOST_M.svg" class="align-center" src="_images/BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>SEPIC, <span class="math notranslate nohighlight">\(M(D)= \dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="59bcf899-eb61-4549-982b-20ddd3aad14f" name="682474d6-3956-4f3b-b72d-6b21e0e57c0f" type="radio">
-</input><label class="sd-tab-label" for="59bcf899-eb61-4549-982b-20ddd3aad14f">
+<input checked="checked" id="1222eb3a-5849-413e-962b-6a3e4948eb6e" name="b22cfffa-08da-48e4-ac27-9f73df533106" type="radio">
+</input><label class="sd-tab-label" for="1222eb3a-5849-413e-962b-6a3e4948eb6e">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/SEPIC.svg"><img alt="_images/SEPIC.svg" class="align-center" src="_images/SEPIC.svg" width="400px" /></a>
 </div>
-<input id="acf824cb-5462-4b85-9ddb-09975fe21662" name="682474d6-3956-4f3b-b72d-6b21e0e57c0f" type="radio">
-</input><label class="sd-tab-label" for="acf824cb-5462-4b85-9ddb-09975fe21662">
+<input id="68567cc3-7c40-4897-980e-5357a9ace781" name="b22cfffa-08da-48e4-ac27-9f73df533106" type="radio">
+</input><label class="sd-tab-label" for="68567cc3-7c40-4897-980e-5357a9ace781">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Inverse of SEPIC, <span class="math notranslate nohighlight">\(M(D)= \dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="585e1842-f540-4a87-b63b-0a5b2188ded8" name="ec219069-f24d-49a9-9bcc-4b3d2b779159" type="radio">
-</input><label class="sd-tab-label" for="585e1842-f540-4a87-b63b-0a5b2188ded8">
+<input checked="checked" id="139022a0-e3f7-4917-949b-998c6257742a" name="4497813e-07f7-4a46-8401-8f744ae0b3bb" type="radio">
+</input><label class="sd-tab-label" for="139022a0-e3f7-4917-949b-998c6257742a">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Inverse_SEPIC.svg"><img alt="_images/Inverse_SEPIC.svg" class="align-center" src="_images/Inverse_SEPIC.svg" width="400px" /></a>
 </div>
-<input id="cf3c2652-f72a-4f98-8f46-5bb69913d600" name="ec219069-f24d-49a9-9bcc-4b3d2b779159" type="radio">
-</input><label class="sd-tab-label" for="cf3c2652-f72a-4f98-8f46-5bb69913d600">
+<input id="0a1f89f3-c9ba-4bec-b692-c5e8b997768d" name="4497813e-07f7-4a46-8401-8f744ae0b3bb" type="radio">
+</input><label class="sd-tab-label" for="0a1f89f3-c9ba-4bec-b692-c5e8b997768d">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Buck<span class="math notranslate nohighlight">\({}^2\)</span>, <span class="math notranslate nohighlight">\(M(D)= D^2\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="0b73bd79-4937-4b41-9845-005aff5842d8" name="c90ff09f-4de0-49c4-bbd5-35ba70d9de63" type="radio">
-</input><label class="sd-tab-label" for="0b73bd79-4937-4b41-9845-005aff5842d8">
+<input checked="checked" id="adaf3c6e-b98c-4762-8467-c00a37ac9c27" name="476f809b-f863-477a-8ca3-af88941bbbae" type="radio">
+</input><label class="sd-tab-label" for="adaf3c6e-b98c-4762-8467-c00a37ac9c27">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck2.svg"><img alt="_images/buck2.svg" class="align-center" src="_images/buck2.svg" width="400px" /></a>
 </div>
-<input id="8ee64d49-0994-487a-bf05-482fb0465997" name="c90ff09f-4de0-49c4-bbd5-35ba70d9de63" type="radio">
-</input><label class="sd-tab-label" for="8ee64d49-0994-487a-bf05-482fb0465997">
+<input id="d54877a6-004b-4367-aa28-2f9837727a61" name="476f809b-f863-477a-8ca3-af88941bbbae" type="radio">
+</input><label class="sd-tab-label" for="d54877a6-004b-4367-aa28-2f9837727a61">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck2_M.svg"><img alt="_images/buck2_M.svg" class="align-center" src="_images/buck2_M.svg" width="400px" /></a>
 </div>
