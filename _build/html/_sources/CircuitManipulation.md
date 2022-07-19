@@ -237,17 +237,18 @@ $$
 
 $$
 V_{cn}=V_3-V_n
+$$
 
 In practical realisations of such converters, we need to control converters such that their output voltages contain the same dc biases. This dc bias will appear at the neutral point $V_n$. It then cancels out, so phase voltages contain no dc bias.
 
 Similar to the single phase case, one can consider a three-phase differential connection of three buck converters:
 ```{image} fig/CircuitManip/3p_diff_conv.svg
-:width: 400px
+:width: 500px
 :align: center
 ```
 Or equivalenly:
 ```{image} fig/CircuitManip/3p_diff_conv2.svg
-:width: 400px
+:width: 500px
 :align: center
 ```
 This is known as the _Voltage-source inverter_ or buck-derived three-phase inverter.

@@ -137,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Power Sysems Principles
+  Power Systems Principles
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -953,6 +953,10 @@ v_C(T_s) - v_C(0) = \dfrac{1}{C} \int_0^{T_s} i_C(t) \mathrm{d}t
 0 = \dfrac{1}{T_s} \int_0^{T_s} i_C(t) \mathrm{d}t = \langle i_C \rangle
 \]</div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We have to be careful when we talk about charging a capacitor and a capacitor charge. There is a fundamental misunderstanding in thinking about capacitors as a place to store electric charge. We really store energy in a capacitor. A good discussion can be found <a class="reference external" href="http://amasci.com/emotor/cap1.html">here</a>. Please note that this discussion has no impact on how we use the principle of charge balance to study the behaviour of converters.</p>
+</div>
 </div>
 </div>
 <div class="section" id="boost-converter-analysis">
@@ -1080,13 +1084,14 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 </div>
 <div class="section" id="determination-of-capacitor-voltage-ripple-in-boost-converters">
 <h3>Determination of capacitor voltage ripple in boost converters<a class="headerlink" href="#determination-of-capacitor-voltage-ripple-in-boost-converters" title="Permalink to this headline">¶</a></h3>
-<p>Using the defining equation for capacitors:
-$<span class="math notranslate nohighlight">\(
+<p>Using the defining equation for capacitors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   \begin{align*}\dfrac{dv_C(t)}{\mathrm{d}t}&amp;=\dfrac{i_C(t)}{C} \approx \begin{cases}
       \frac{-V}{RC} &amp; \text{Position 1}\\
 \dfrac{I}{C}-\frac{V}{RC} &amp; \text{Position 2}
 \end{cases}\end{align*}
-\)</span>$</p>
+\end{split}\]</div>
 <p>The capacitor voltage waveform is presented in <a class="reference internal" href="#vc-boost"><span class="std std-numref">Fig. 19</span></a>.</p>
 <div class="figure align-default" id="vc-boost">
 <a class="reference internal image-reference" href="_images/vC_boost.svg"><img alt="_images/vC_boost.svg" src="_images/vC_boost.svg" width="500px" /></a>

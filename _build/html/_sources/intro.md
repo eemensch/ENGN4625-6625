@@ -8,5 +8,8 @@ For more information it is recommended that the students check out the following
 - Erickson, Robert W., and Dragan Maksimovic. Fundamentals of power electronics. Springer Science & Business Media, 2007.
 - Kirtley, James L. Electric power principles: sources, conversion, distribution and use. John Wiley & Sons, 2020.
 
+One way to describe this course is to call it an introduction to _Power Processing_ in the same way that we might have heard the word _signal processing_.
+It is about understanding, analysing, and designing systems that make it possible to transfer power from a source to users. We rely on our understanding of electric circuit theory to make sense of this process. 
+
 ```{tableofcontents}
 ```
