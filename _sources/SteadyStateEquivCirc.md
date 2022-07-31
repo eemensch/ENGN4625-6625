@@ -63,9 +63,9 @@ $$
 $$
 
 $$
-n_1 i'_1(t)+n_2i_2(t) +n_3 i_3(t)=0
+n_1 i_1(t)+n_2i_2(t) +n_3 i_3(t)=0
 $$
-One can reflext elements through the windings of a transformer to construct equivalent circuits.
+One can reflect elements through the windings of a transformer to construct equivalent circuits.
 
 The reflection of a voltage source, a current source, and an impedance through a transformer are presented below.
 

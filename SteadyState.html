@@ -668,8 +668,7 @@ const thebe_selector_output = ".output, .cell_output"
 \begin{align*}
   v_s(t) &amp;=V_g \left [\dfrac{DT_s}{T_s}  +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \dfrac{\pi n D T_s}{T_s}\right )\cos \left ( \dfrac{2\pi n }{T_s} \left (t-\dfrac{D T_s}{2} \right )\right )\right ]\\
   &amp;=V_g \left [D  +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \pi n D\right )\cos \left ( \dfrac{2\pi n }{T_s} \left (t-\dfrac{D T_s}{2} \right ) \right )\right ]\\
-  &lt;!-- \mathbf{v}_s(f) &amp;= V_g \left [D\delta(f) +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \pi n D\right ) \left ( \dfrac{\delta(f-n f_s)+\delta(f+n f_s)}{2}\right )\right ] --&gt;
-\end{align*}
+  \end{align*}
 \end{split}\]</div>
 <p>Consequently, its Fourier transform is</p>
 <div class="math notranslate nohighlight">
@@ -1271,10 +1270,11 @@ M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
 <p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_1\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vc1-cuk" title="Permalink to this image">¶</a></p>
 </div>
 <!-- ![](fig/vC1_ripple.svg) -->
-<p>Doing the same to <span class="math notranslate nohighlight">\(C_2\)</span> yields
-$<span class="math notranslate nohighlight">\(
+<p>Doing the same to <span class="math notranslate nohighlight">\(C_2\)</span> yields</p>
+<div class="math notranslate nohighlight">
+\[
 \dfrac{dv_2(t)}{\mathrm{d}t}=\dfrac{i_{C2}(t)}{L}\approx 0 ???
-\)</span>$</p>
+\]</div>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <p>This is weird! Of course there is ripple in the waveform. The small ripple approximation does not explain everything here. We need a better approximation.</p>

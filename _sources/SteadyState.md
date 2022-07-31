@@ -100,8 +100,7 @@ $$
 \begin{align*}
   v_s(t) &=V_g \left [\dfrac{DT_s}{T_s}  +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \dfrac{\pi n D T_s}{T_s}\right )\cos \left ( \dfrac{2\pi n }{T_s} \left (t-\dfrac{D T_s}{2} \right )\right )\right ]\\
   &=V_g \left [D  +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \pi n D\right )\cos \left ( \dfrac{2\pi n }{T_s} \left (t-\dfrac{D T_s}{2} \right ) \right )\right ]\\
-  <!-- \mathbf{v}_s(f) &= V_g \left [D\delta(f) +\sum_{n=1}^\infty \dfrac{2}{n\pi}\sin \left ( \pi n D\right ) \left ( \dfrac{\delta(f-n f_s)+\delta(f+n f_s)}{2}\right )\right ] -->
-\end{align*}
+  \end{align*}
 $$
 
 Consequently, its Fourier transform is
@@ -923,6 +922,7 @@ $C_1$ voltage waveform in {ref}`cuk`
 <!-- ![](fig/vC1_ripple.svg) -->
 
 Doing the same to $C_2$ yields
+
 $$
 \dfrac{dv_2(t)}{\mathrm{d}t}=\dfrac{i_{C2}(t)}{L}\approx 0 ???
 $$
