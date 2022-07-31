@@ -1,10 +1,10 @@
 # Equivalent Circuit Model of Steady-State Converter
 
-The first ingredient of am equivalent circuit model is the _DC Transformer_.
+The first ingredient of an equivalent circuit model is the _DC Transformer_.
 
 ## DC Transformer Model
 
-For an ideal converter with efficienct $\eta =100 \%$:
+For an ideal converter with efficient $\eta =100 \%$:
 
 $$
 P_{in}=P_{out}, \quad V_g I_g = V I
@@ -96,7 +96,7 @@ Similarly, one can reflect voltage sources, current sources, and impedances thro
 :width: 400px
 :align: center
 ```
-An ideal DC transfoemr would conversion  DC voltages and currents with 100\% efficiency where the conversion ratio $M(D)$ controllable via the duty cycle.
+An ideal DC transformer would convert  DC voltages and currents with 100\% efficiency where the conversion ratio $M(D)$ controllable via the duty cycle.
 
 ```{figure} fig/dc_trans_d.svg
 ---
@@ -131,7 +131,7 @@ $$
 
 The DC transformer model can be extended to include converter nonidealities, in this case the copper loss of the inductor.
 
-The equivalent circuit of an inductor with some opper loss modelled as a resistance $R_L$ is given below.
+The equivalent circuit of an inductor with some copper loss modelled as a resistance $R_L$ is given below.
 
 ```{image} fig/L_copper.svg
 :width: 200px
