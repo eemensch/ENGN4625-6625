@@ -385,10 +385,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="equivalent-circuit-model-of-steady-state-converter">
 <h1>Equivalent Circuit Model of Steady-State Converter<a class="headerlink" href="#equivalent-circuit-model-of-steady-state-converter" title="Permalink to this headline">¶</a></h1>
-<p>The first ingredient of am equivalent circuit model is the <em>DC Transformer</em>.</p>
+<p>The first ingredient of an equivalent circuit model is the <em>DC Transformer</em>.</p>
 <div class="section" id="dc-transformer-model">
 <h2>DC Transformer Model<a class="headerlink" href="#dc-transformer-model" title="Permalink to this headline">¶</a></h2>
-<p>For an ideal converter with efficienct <span class="math notranslate nohighlight">\(\eta =100 \%\)</span>:</p>
+<p>For an ideal converter with efficient <span class="math notranslate nohighlight">\(\eta =100 \%\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 P_{in}=P_{out}, \quad V_g I_g = V I
@@ -441,7 +441,7 @@ n_1 i_1(t)+n_2i_2(t) +n_3 i_3(t)=0
 <a class="reference internal image-reference" href="_images/dc_v_reflect.svg"><img alt="_images/dc_v_reflect.svg" class="align-center" src="_images/dc_v_reflect.svg" width="400px" /></a>
 <a class="reference internal image-reference" href="_images/dc_i_reflect.svg"><img alt="_images/dc_i_reflect.svg" class="align-center" src="_images/dc_i_reflect.svg" width="400px" /></a>
 <a class="reference internal image-reference" href="_images/dc_z_reflect.svg"><img alt="_images/dc_z_reflect.svg" class="align-center" src="_images/dc_z_reflect.svg" width="400px" /></a>
-<p>An ideal DC transfoemr would conversion  DC voltages and currents with 100% efficiency where the conversion ratio <span class="math notranslate nohighlight">\(M(D)\)</span> controllable via the duty cycle.</p>
+<p>An ideal DC transformer would convert  DC voltages and currents with 100% efficiency where the conversion ratio <span class="math notranslate nohighlight">\(M(D)\)</span> controllable via the duty cycle.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="_images/dc_trans_d.svg"><img alt="_images/dc_trans_d.svg" src="_images/dc_trans_d.svg" width="400px" /></a>
 <p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">The choice of the duty cycle <span class="math notranslate nohighlight">\(D\)</span> changes the turn-ratio in a DC transformer model.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -464,7 +464,7 @@ V = M(D) V_1 \dfrac{R}{R+M^2(D)R_1}
 <div class="section" id="converter-analysis-in-the-presence-of-inductor-copper-loss">
 <h3>Converter analysis in the presence of inductor copper loss<a class="headerlink" href="#converter-analysis-in-the-presence-of-inductor-copper-loss" title="Permalink to this headline">¶</a></h3>
 <p>The DC transformer model can be extended to include converter nonidealities, in this case the copper loss of the inductor.</p>
-<p>The equivalent circuit of an inductor with some opper loss modelled as a resistance <span class="math notranslate nohighlight">\(R_L\)</span> is given below.</p>
+<p>The equivalent circuit of an inductor with some copper loss modelled as a resistance <span class="math notranslate nohighlight">\(R_L\)</span> is given below.</p>
 <a class="reference internal image-reference" href="_images/L_copper.svg"><img alt="_images/L_copper.svg" class="align-center" src="_images/L_copper.svg" width="200px" /></a>
 <p>A boost converter with this lossy inductor would look like:</p>
 <a class="reference internal image-reference" href="_images/lossy_L_boost.svg"><img alt="_images/lossy_L_boost.svg" class="align-center" src="_images/lossy_L_boost.svg" width="400px" /></a>
