@@ -69,7 +69,7 @@ $$
 \dfrac{DV_g}{R}<\dfrac{DD' T_S V_g}{2L} \implies \dfrac{2L}{R T_s}<D'
 $$
 
-Define $K=\dfrac{2L}{R T_s}$ and $K_{crit}(D')=D'$. We can write the DCM condition as
+Define $K=\dfrac{2L}{R T_s}$ and $K_{crit}(D)=D'$. We can write the DCM condition as
 
  $$
  K<K_{crit}(D).

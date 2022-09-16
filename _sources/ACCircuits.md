@@ -305,7 +305,6 @@ $$
 \end{align*}
 $$
 ````{prf:example}
-:nonumber:
 
 Suppose the voltage source in the circuit of the bottom circuit of {numref}`RL` provides a sine wave with an RMS magnitude of $V_{g,RMS} = 10 kV$, the load resistor is $R = 10 \Omega$, the inductance is $L = 10$ mH, and the system frequency is $\omega = 2\pi × 60$ Hz = 377 rad/s. The relative magnitude of the output voltage is calculated as a function of the capacitor value and is shown  below.
 

@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Transformers &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="An RLC low pass filter" href="notebooks/RLC_Respone.html" />
+    <link rel="prev" title="Polyphase Systems" href="Poly.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Power Systems and Power Electronics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Steady State Analysis of Converters
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="SteadyState.html">
+   Principles of Steady-State Converter Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SteadyStateEquivCirc.html">
+   Equivalent Circuit Model of Steady-State Converter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SwitchRealisation.html">
+   Realising Switches Using Semi-conductor Devices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DCM.html">
+   Discontinuous Conduction Mode (DCM)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CircuitManipulation.html">
+   Converter Circuit Manipulation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Power Systems Principles
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ACCircuits.html">
+   AC Voltage, Current, and Power
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Poly.html">
+   Polyphase Systems
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Transformers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/RLC_Respone.html">
+   An RLC low pass filter
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Transformers.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-phase-transformers">
+   Single-phase Transformers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideal-trasnformers">
+     Ideal Trasnformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-idealities-in-transformers">
+     Non-Idealities in Transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autotransformers">
+     Autotransformers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#three-phase-transformers">
+   Three-phase Transformers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Transformers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-phase-transformers">
+   Single-phase Transformers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideal-trasnformers">
+     Ideal Trasnformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-idealities-in-transformers">
+     Non-Idealities in Transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autotransformers">
+     Autotransformers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#three-phase-transformers">
+   Three-phase Transformers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="transformers">
+<h1>Transformers<a class="headerlink" href="#transformers" title="Permalink to this headline">#</a></h1>
+<p>Transformers are essential parts of most power systems. Their role is to convert electrical
+energy at one voltage to some other voltage. Transmission lines are typically operated at
+voltages that are substantially higher than either the generation or utilisation voltage,
+for at least two reasons.</p>
+<ul class="simple">
+<li><p>Because power is voltage multiplied by current, and because transmission line losses are proportional to the square of current, higher voltages generally produce lower transmission line losses.</p></li>
+<li><p>Transmission line capacity to carry power is roughly proportional to the square of voltage, so to make intensive use of transmission line right-of-way, that is, to enable transmission lines to carry high power levels, high transmission voltages are required. This is true for underground cables as well as for above the ground transmission lines.</p></li>
+</ul>
+<p>For these reasons, a transformer is usually situated right at the output of each generating
+unit to transform the power from generation voltage, which is usually between 10 and 30 kV, and transmission voltage which is in the high or extra high voltage range, typically between 138 and 765 kV. At substations that connect transmission lines to distribution circuits the power is stepped down in voltage. Distribution circuits generally operate in the range of 6–35 kV. (However, there are still lower voltage distribution primaries and some higher voltage circuits might be classified as distribution.) Then, before electric power is connected to customer loads, there is yet another transformer to transform it from the distribution primary voltage to the customer at a voltage that is typically on the order of 240 V. In the United States that last transformer is center tapped to give the familiar 120 V, RMS, single-phase voltage used for most appliances. Figure 6.1 is an annotated cutaway drawing of a large power transformer manufactured by ABB, illustrating some of the major
+parts of such a transformer unit.</p>
+<section id="single-phase-transformers">
+<h2>Single-phase Transformers<a class="headerlink" href="#single-phase-transformers" title="Permalink to this headline">#</a></h2>
+<p>Many transformers used in electric power systems are built as three-phase transformers. However, as seen earlier, three-phase systems can be viewed as three single-phased subsystems. We start by considering such single-phase units.</p>
+<section id="ideal-trasnformers">
+<h3>Ideal Trasnformers<a class="headerlink" href="#ideal-trasnformers" title="Permalink to this headline">#</a></h3>
+<p>A multiple winding ideal transformer is given below.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="400px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 109 </span><span class="caption-text">A general multi-port transformer.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{v_1(t)}{n_1}=\dfrac{v_2(t)}{n_2}=\dfrac{v_3(t)}{n_3}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+n_1 i_1(t)+n_2i_2(t) +n_3 i_3(t)=0
+\]</div>
+<ol class="simple">
+<li><p>A transformer turns ratio between the primary and output port is often chosen so
+that the desired voltages appear at the proper terminals. For
+example, to convert 8 kV distribution voltage to the 120/240
+V level suitable for residential or commercial single-phase service, one would use a transformer with a turns ratio of <span class="math notranslate nohighlight">\(\frac{8000}{240} = 33\frac{1}{3}\)</span>.
+To split the low voltage in half, a center tap on the low voltage winding would be used.</p></li>
+<li><p>An ideal transformer does not consume, produce or store energy. From the equations above, the sum of power flows into an ideal
+transformer (with multiple output windings) is identically zero:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sum_{i} p_i = 0\]</div>
+<ol class="simple">
+<li><p>One can reflect elements through the windings of a transformer to construct equivalent circuits. The reflection of a voltage source, a current source, and an impedance through a transformer are presented below.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/v_reflect.svg"><img alt="_images/v_reflect.svg" class="align-center" src="_images/v_reflect.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="_images/i_reflect.svg"><img alt="_images/i_reflect.svg" class="align-center" src="_images/i_reflect.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="_images/z_reflect.svg"><img alt="_images/z_reflect.svg" class="align-center" src="_images/z_reflect.svg" width="400px" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In writing the relationship between the currents and the voltages of different ports of a transformer we can use the sinusoidal-steady state (phasor notation) representation of the currents and voltages. In other words, for the example above:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\mathbf{V}_1}{n_1}=\dfrac{\mathbf{V}_2}{n_2}=\dfrac{\mathbf{V}_3}{n_3}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+n_1 \mathbf{I}_1+n_2\mathbf{I}_2 +n_3 \mathbf{I}_3=0
+\]</div>
+<p>where the bold variables are the phasors of the corresponding circuit variable.</p>
+</div>
+</section>
+<section id="non-idealities-in-transformers">
+<h3>Non-Idealities in Transformers<a class="headerlink" href="#non-idealities-in-transformers" title="Permalink to this headline">#</a></h3>
+<p>Real transformers behaviour differs from the ideal case due to two major factors. One is related to the transformer cores themselves, and the second is due to the resistance and leakage reactance of the transformer windings.</p>
+<p>Transformers are wound on magnetic circuits (cores) made of thin sheets, called <em>laminations</em>, of steel. The core material draws some reactive power and
+has losses from hysteresis and eddy
+currents. The reactive power and loss might be approximated by shunt (parallel) reactive and resistive elements.</p>
+<p>If real and reactive power drawn by the core are <span class="math notranslate nohighlight">\(P_c\)</span> and <span class="math notranslate nohighlight">\(Q_c\)</span>, respectively, the resistance and reactance elements that describe transformer behaviour are</p>
+<div class="math notranslate nohighlight">
+\[
+R_\phi \approx \dfrac{V_1^2}{P_c},\quad X_\phi \approx \dfrac{V_1^2}{Q_c}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_1\)</span> is the magnitude of the voltage at the primary. Assuming that the transformer has <span class="math notranslate nohighlight">\(n_1\)</span> turns in the winding connected to
+the voltage of magnitude <span class="math notranslate nohighlight">\(V_1\)</span> and frequency <span class="math notranslate nohighlight">\(\omega\)</span>, and that the core
+itself has an area <span class="math notranslate nohighlight">\(A_c\)</span>, then the flux density in the core is</p>
+<div class="math notranslate nohighlight">
+\[
+B_c \approx \dfrac{V_1}{\omega n_1 A_c}.
+\]</div>
+<p>It is possible to use tabulated data on core materials in conjunction with the flux density <span class="math notranslate nohighlight">\(B_c\)</span> and frequency <span class="math notranslate nohighlight">\(\omega\)</span> to deduce a watts per kilogram and a VARs per kilogram number for a given core material. The values of <span class="math notranslate nohighlight">\(P_c\)</span> and <span class="math notranslate nohighlight">\(Q_c\)</span> are then calculated by using those two numbers and multiplying by the mass of the core. It is important to realise here that the behaviour of magnetic iron is nonlinear with respect to flux density, so these resistive and
+reactive core elements are only approximations to actual transformer behaviour, and their values will be functions of operating point. Core loss is a very important element of transformer behaviour since power transformers in utility systems are virtually always energised, so that “no-load” loss in power transformers is relatively expensive.</p>
+<p>The windings in the power transformer, of course, have resistance. They also make magnetic flux, not all of which is mutually coupled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The flux in the core is all mutually coupled, but there will be some leakage flux in the air around the core, and this is what gives rise to the leakage flux elements.
+$$</p>
+</div>
+<p>The circuit model of a nonideal transformer with is given below:</p>
+<figure class="align-default" id="trans-nonideal">
+<a class="reference internal image-reference" href="_images/transformer1.svg"><img alt="_images/transformer1.svg" src="_images/transformer1.svg" width="700px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 110 </span><span class="caption-text">A nonideal transformer model.</span><a class="headerlink" href="#trans-nonideal" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Reflecting the elements from the secondary yields:</p>
+<figure class="align-default" id="trans-nonideal-primary">
+<a class="reference internal image-reference" href="_images/transformer_eq.svg"><img alt="_images/transformer_eq.svg" src="_images/transformer_eq.svg" width="700px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 111 </span><span class="caption-text">A nonideal transformer model with all elements on the primary side.</span><a class="headerlink" href="#trans-nonideal-primary" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+R = R_1 + \left ( \dfrac{n_1}{n_2} \right )^2 R_2, \quad X = X_1 + \left ( \dfrac{n_1}{n_2} \right )^2 X_2
+\]</div>
+<p>Typically, the core elements of the power transformer are fairly large, so they have little effect on the behaviour of the power system, although the core loss element is economically important. Also, the series resistance tends to be quite small, so in system studies it is often found that only the series leakage reactance need be represented.</p>
+</section>
+<section id="autotransformers">
+<h3>Autotransformers<a class="headerlink" href="#autotransformers" title="Permalink to this headline">#</a></h3>
+<p>A special transformer connection is shown in <a class="reference internal" href="#auto-trans"><span class="std std-numref">Fig. 112</span></a>,
+called an <em>autotransformer</em>: two windings on the same core
+are connected in series. If the two windings have <span class="math notranslate nohighlight">\(n_1\)</span> and
+<span class="math notranslate nohighlight">\(n_2\)</span> turns, respectively, the voltages and currents are</p>
+<figure class="align-center" id="auto-trans">
+<a class="reference internal image-reference" href="_images/autotransformer.svg"><img alt="_images/autotransformer.svg" src="_images/autotransformer.svg" width="700px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 112 </span><span class="caption-text">An autotransformer</span><a class="headerlink" href="#auto-trans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>An equivalent representation of an autoransformer is given in the right-most figure above.</p>
+<p>From transformer equations we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{v_a-v_b}{n_1} = \dfrac{v_b-v_c}{n_2}
+\]</div>
+<p>It is common in applications for ground the <span class="math notranslate nohighlight">\(c\)</span> terminal. Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+v_a = \dfrac{n_1+n_2}{n_2}v_b
+\]</div>
+<p>Similarly, for the currents we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+i_a = \dfrac{n_2}{n_1+n_2}i_b
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(i_b\)</span> is the current exiting the middle tap.</p>
+<p>Hence, an autotransformer with grounded <span class="math notranslate nohighlight">\(c\)</span> can be seen as a transformer with turn ratio of <span class="math notranslate nohighlight">\(n = 1 + {n_1}{n_2}\)</span>. The rating (colloquial for the total power transferred through the transformer), denoted by <span class="math notranslate nohighlight">\(VA\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+VA = v_a i_a = v_b i_b
+\]</div>
+<p>The motivation for winding a transformer this way is that it uses less material than a two winding transformer, for which the total winding rating must be <span class="math notranslate nohighlight">\(2VA\)</span> because there are two windings, both carrying the same product of volts and amperes. The ratings of windings of an autotransformer are</p>
+<div class="math notranslate nohighlight">
+\[
+VA_1 = (v_a -v_b) i_a = v_a i_a \left (1-\dfrac{1}{N} \right )
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+VA_2 = v_b (i_a-i_b) = v_b i_b \left (1-\dfrac{1}{N} \right )
+\]</div>
+<p>The sum of the two winding ratings is <span class="math notranslate nohighlight">\(2 VA \left (1-\dfrac{1}{N} \right )\)</span>.</p>
+<p>If the voltage ratio is not large, there can be appreciable savings in material. Autotransformers are often used for connection between very high and extra high voltage circuits where the ratio of voltages is not
+very large, such as connecting 138 and 345 kV circuits. They are also used in transformer isolated switched power converters.</p>
+</section>
+</section>
+<section id="three-phase-transformers">
+<h2>Three-phase Transformers<a class="headerlink" href="#three-phase-transformers" title="Permalink to this headline">#</a></h2>
+<p>Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. Figure 6.8 shows a cartoon of a three-phase core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.</p>
+<p>A three-phase transformer operates as three single-phase transformers. The complication is that there are a number of ways of winding them and a number of ways of interconnecting them. On either side of a transformer connection (i.e. the high-voltage and low-voltage sides), it is possible to connect transformer windings either line to neutral (wye) or line to line (delta). Thus we may speak of transformer connections being wye–wye, delta–delta, wye–delta, or delta–wye.
+Connection of transformers in either wye–wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye–wye) or line–line (in the case of delta–delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye–delta or delta–wye transformers are a little more complex. <a class="reference internal" href="#delta-wye-trans"><span class="std std-numref">Fig. 113</span></a> depicts a delta–wye connection. In that picture,
+winding elements that appear parallel are wound on the same core segment, and so constitute a single-phase transformer.</p>
+<p>One might ask why bother with delta connections in the first place. As it turns out, transformer cores are nonlinear and draw harmonic currents. Third harmonic currents are in phase with each other, leading to currents flowing into the neutral connection in a wye, but that simply circulate around a delta. Thus in order to keep the core happy, most transformer connections include a delta on one side or the other. On the other hand, in order to oad phase to ground, one needs to have a wye connection. Thus many situations involve a
+delta/wye, where the wye is on the side to be loaded.</p>
+<figure class="align-center" id="delta-wye-trans">
+<a class="reference internal image-reference" href="_images/delta_wye_trans.png"><img alt="_images/delta_wye_trans.png" src="_images/delta_wye_trans.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 113 </span><span class="caption-text">A a delta–wye transformer</span><a class="headerlink" href="#delta-wye-trans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assume that <span class="math notranslate nohighlight">\(N_{\Delta}\)</span> and <span class="math notranslate nohighlight">\(N_Y\)</span> are numbers of turns. If the individual transformers are considered to be ideal, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+v_{aY} &amp; = \dfrac{N_Y}{N_{\Delta}} (v_{a\Delta} - v_{b\Delta}),\qquad i_{a\Delta}  = \dfrac{N_Y}{N_{\Delta}} (i_{aY} - i_{cY})\\
+v_{bY} &amp; = \dfrac{N_Y}{N_{\Delta}} (v_{b\Delta} - v_{c\Delta}),\qquad i_{b\Delta}  = \dfrac{N_Y}{N_{\Delta}} (i_{bY} - i_{aY})\\
+v_{cY} &amp; = \dfrac{N_Y}{N_{\Delta}} (v_{c\Delta} - v_{a\Delta}),\qquad i_{c\Delta}  = \dfrac{N_Y}{N_{\Delta}} (i_{cY} - i_{bY})
+\end{aligned}
+\end{split}\]</div>
+<p>where each of the voltages are line–neutral and the currents are in the lines at the transformer terminals.
+Consider the case where a delta–wye transformer is connected to a balanced three-phase voltage source:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+v_{a\Delta}  &amp;= \Re\left \{\mathbf{V} \mathrm{e}^{\jmath \omega t} \right \}, \\
+v_{b\Delta} &amp;= \Re\left \{\mathbf{V} \mathrm{e}^{\jmath (\omega t-\frac{2\pi}{3})}\right \}\\
+v_{c\Delta} &amp;= \Re\left \{\mathbf{V} \mathrm{e}^{\jmath (\omega t + \frac{2\pi}{3})}\right \}
+\end{aligned}
+\end{split}\]</div>
+<p>Then, the complex amplitudes on the wye side are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{V}_{aY} &amp;= \dfrac{N_Y}{N_{\Delta}} \mathbf{V}  \left (1- \mathrm{e}^{-\jmath \frac{2\pi}{3}} \right ) = \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V} \mathrm{e}^{\frac{\jmath\pi}{6}}, \\
+\mathbf{V}_{bY} &amp;= \dfrac{N_Y}{N_{\Delta}}\mathbf{V}  \left ( \mathrm{e}^{-\jmath \frac{2\pi}{3}} -  \mathrm{e}^{\jmath \frac{2\pi}{3}}\right )= \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V}\mathrm{e}^{ \frac{-\jmath\pi}{3}}\\
+\mathbf{V}_{cY} &amp;= \dfrac{N_Y}{N_{\Delta}} \mathbf{V} \left ( \mathrm{e}^{\jmath \frac{2\pi}{3}} -1  \right )= \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V}\mathrm{e}^{\frac{\jmath 5 \pi }{6}}
+\end{aligned}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The ratio of voltages (i.e. the ratio of either line–line or line–neutral) is different from the turns ratio by a factor of <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>.</p></li>
+<li><p>All wye side voltages are shifted in phase by <span class="math notranslate nohighlight">\(30^\circ\)</span> with respect to the delta side voltages.</p></li>
+</ul>
+</div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<section class="example-content" id="proof-content">
+<p>A balanced three-phase wye-connected resistor is connected to the delta side of a wye–delta transformer with a nominal voltage ratio of</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{v_{\Delta}}{v_y} = N
+\]</div>
+<p>as depicted below.</p>
+<a class="reference internal image-reference" href="_images/example_3phase_trans.png"><img alt="_images/example_3phase_trans.png" class="align-center" src="_images/example_3phase_trans.png" style="width: 700px;" /></a>
+<p><em>What is the impedance looking into the wye side of the transformer, assuming drive with a balanced source?</em></p>
+<p>The relationship between the voltage ratio and the turns ratio is</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{v_{\Delta}}{v_y} = N = \dfrac{N_{\Delta}}{\sqrt{3}N_Y}.
+\]</div>
+<p>Applyintg the wye–delta equivalent transform to the load yields:</p>
+<a class="reference internal image-reference" href="_images/example_3phase_trans_eq.png"><img alt="_images/example_3phase_trans_eq.png" class="align-center" src="_images/example_3phase_trans_eq.png" style="width: 700px;" /></a>
+<p>each transformer secondary winding is connected directly across one of
+the three resistors. Currents in the resistors are given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+i_1 &amp;= \dfrac{v_{ab\Delta}}{3R}\\
+i_2 &amp;= \dfrac{v_{bc\Delta}}{3R}\\
+i_3 &amp;= \dfrac{v_{ca\Delta}}{3R}
+\end{aligned}
+\end{split}\]</div>
+<p>Line currents are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+i_{a\Delta} &amp;= i_1 - i_3= \dfrac{v_{ab\Delta} - v_{ca\Delta}}{3R} = i_{1\Delta} - i_{3\Delta}\\
+i_{b\Delta} &amp;= i_2-i_1 = \dfrac{v_{bc\Delta}-v_{ab\Delta}}{3R}= i_{2\Delta} - i_{1\Delta}\\
+i_{c\Delta} &amp;= i_3-i_2 = \dfrac{v_{ca\Delta}-v_{bc\Delta}}{3R}= i_{3\Delta} - i_{2\Delta}
+\end{aligned}
+\end{split}\]</div>
+<p>Solving for currents in the legs of the transformer <span class="math notranslate nohighlight">\(\Delta\)</span>, subtract, for example, the second expression from the first:</p>
+<div class="math notranslate nohighlight">
+\[
+2i_{1\Delta} - i_{2\Delta} - i_{3\Delta} = \dfrac{2v_{ab\Delta} - v_{bc\Delta}- v_{ca\Delta}}{3R}
+\]</div>
+<p>The system is balance, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[
+i_{1\Delta} + i_{2\Delta} + i_{3\Delta} =0,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_{ab\Delta} + v_{bc\Delta} + v_{ca\Delta} = 0.
+\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+i_{1\Delta} &amp;= \dfrac{v_{ab\Delta} }{3R} \\
+i_{2\Delta} &amp;= \dfrac{v_{bc\Delta}}{3R}\\
+i_{3\Delta} &amp;= \dfrac{v_{ca\Delta}}{3R}
+\end{aligned}
+\end{split}\]</div>
+<p>From the ideal transformer relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+v_{ab\Delta} &amp;= \dfrac{N_{\Delta}}{N_Y} v_{aY}, \qquad i_{aY} = \dfrac{N_{\Delta}}{N_Y} i_{1\Delta}\\
+v_{bc\Delta} &amp;= \dfrac{N_{\Delta}}{N_Y} v_{bY}, \qquad i_{bY} = \dfrac{N_{\Delta}}{N_Y} i_{2\Delta}\\
+v_{ca\Delta} &amp;= \dfrac{N_{\Delta}}{N_Y} v_{cY}, \qquad i_{cY} = \dfrac{N_{\Delta}}{N_Y} i_{3\Delta}\\
+i_{aY} &amp;= \left ( \dfrac{N_{\Delta}}{N_Y} \right )^2 \dfrac{v_{aY}}{3R}\\
+i_{bY} &amp;= \left ( \dfrac{N_{\Delta}}{N_Y} \right )^2 \dfrac{v_{bY}}{3R}\\
+i_{cY} &amp;= \left ( \dfrac{N_{\Delta}}{N_Y} \right )^2 \dfrac{v_{cY}}{3R}
+\end{aligned}
+\end{split}\]</div>
+<p>The apparent resistance (i.e. the resistance value reflected to the wye side) at the wye terminals of the transformer is</p>
+<div class="math notranslate nohighlight">
+\[
+R_{eq}= 3R \left ( \dfrac{N_Y}{N_{\Delta}} \right )^2
+\]</div>
+<p>Expressed in voltage ratio <span class="math notranslate nohighlight">\(v_Y/v_\Delta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{eq}= 3R \left ( \dfrac{N}{\sqrt{3}} \right )^2 = R \left ( \dfrac{v_Y}{v_\Delta} \right )^2.
+\]</div>
+<p>It is important to note that this solution took the long way around. Taken consistently (uniformly on a line–neutral or uniformly on a line–line basis), impedances transform across transformers by the square of the voltage ratio, no matter what connection is used.</p>
+</section>
+</div></section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>We were reintroduced to transformers. We saw their ideal and nonideal models. We further investigated how they behave in three-phase interconnections.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Poly.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Polyphase Systems</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="notebooks/RLC_Respone.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">An RLC low pass filter</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Iman Shames<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
