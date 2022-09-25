@@ -9,8 +9,7 @@ for at least two reasons.
 - Transmission line capacity to carry power is roughly proportional to the square of voltage, so to make intensive use of transmission line right-of-way, that is, to enable transmission lines to carry high power levels, high transmission voltages are required. This is true for underground cables as well as for above the ground transmission lines.
 
 For these reasons, a transformer is usually situated right at the output of each generating
-unit to transform the power from generation voltage, which is usually between 10 and 30 kV, and transmission voltage which is in the high or extra high voltage range, typically between 138 and 765 kV. At substations that connect transmission lines to distribution circuits the power is stepped down in voltage. Distribution circuits generally operate in the range of 6–35 kV. (However, there are still lower voltage distribution primaries and some higher voltage circuits might be classified as distribution.) Then, before electric power is connected to customer loads, there is yet another transformer to transform it from the distribution primary voltage to the customer at a voltage that is typically on the order of 240 V. In the United States that last transformer is center tapped to give the familiar 120 V, RMS, single-phase voltage used for most appliances. Figure 6.1 is an annotated cutaway drawing of a large power transformer manufactured by ABB, illustrating some of the major
-parts of such a transformer unit.
+unit to transform the power from generation voltage, which is usually between 10 and 30 kV, and transmission voltage which is in the high or extra high voltage range, typically between 138 and 765 kV. At substations that connect transmission lines to distribution circuits the power is stepped down in voltage. Distribution circuits generally operate in the range of 6–35 kV. (However, there are still lower voltage distribution primaries and some higher voltage circuits might be classified as distribution.) Then, before electric power is connected to customer loads, there is yet another transformer to transform it from the distribution primary voltage to the customer at a voltage that is typically on the order of 240 V. In the United States that last transformer is center tapped to give the familiar 120 V, RMS, single-phase voltage used for most appliances. 
 
 ## Single-phase Transformers
 
@@ -102,7 +101,6 @@ The windings in the power transformer, of course, have resistance. They also mak
 
 ```{note}
 The flux in the core is all mutually coupled, but there will be some leakage flux in the air around the core, and this is what gives rise to the leakage flux elements.
-$$
 ```
 
 The circuit model of a nonideal transformer with is given below:
@@ -128,6 +126,7 @@ where
 $$
 R = R_1 + \left ( \dfrac{n_1}{n_2} \right )^2 R_2, \quad X = X_1 + \left ( \dfrac{n_1}{n_2} \right )^2 X_2
 $$
+and $n_1/n_2$ is the turn ratio of the primary to the secondary windings.
 
 Typically, the core elements of the power transformer are fairly large, so they have little effect on the behaviour of the power system, although the core loss element is economically important. Also, the series resistance tends to be quite small, so in system studies it is often found that only the series leakage reactance need be represented.
 

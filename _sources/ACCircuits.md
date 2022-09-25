@@ -288,7 +288,7 @@ lines are largely inductive. The voltage across the
 resistor is
 
 $$
-\mathbf{V}_g = \mathbf{V} \dfrac{R}{R+\jmath \omega L }
+\mathbf{V} = \mathbf{V}_g \dfrac{R}{R+\jmath \omega L }
 $$
  The relationship between the complex vectors is depicted in the midle diagram of {numref}`RL`.
 

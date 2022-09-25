@@ -131,6 +131,7 @@ $$
 \end{align*}
 $$
 The sum of these three expressions is total instantaneous power, which is constant:
+
 $$
   p=p_a+p_b+p_c = \dfrac{3}{2} \dfrac{V^2}{Z}\cos\psi.
 $$
@@ -169,9 +170,9 @@ A balanced three-phase set of voltages has a well-defined set of line&ndash;line
 
 $$
 \begin{align}
-\mathbf{V}_{ab} &= v_a - v_b = \Re \left \{ V \left (1-\mathrm{e}^{-\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \} = \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{6}} \right \}\\
-\mathbf{V}_{bc} &= v_b - v_c = \Re \left \{ V \left (\mathrm{e}^{-\jmath \frac{2\pi}{3}}- \mathrm{e}^{\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{2}} \right \}\\
-\mathbf{V}_{ca} &= v_c - v_a = \Re \left \{ V \left (\mathrm{e}^{\jmath \frac{2\pi}{3}} - 1 \right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{5\pi}{6}} \right \}
+\mathbf{V}_{ab} &= v_a - v_b = \Re \left \{ V \left (1-\mathrm{e}^{-\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \} = \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{6}} \mathrm{e}^{\jmath \omega t}\right \}\\
+\mathbf{V}_{bc} &= v_b - v_c = \Re \left \{ V \left (\mathrm{e}^{-\jmath \frac{2\pi}{3}}- \mathrm{e}^{\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{-\pi}{2}}\mathrm{e}^{\jmath \omega t} \right \}\\
+\mathbf{V}_{ca} &= v_c - v_a = \Re \left \{ V \left (\mathrm{e}^{\jmath \frac{2\pi}{3}} - 1 \right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{5\pi}{6}} \mathrm{e}^{\jmath \omega t} \right \}
 \end{align}
 $$
 The phasor relationship of line&ndash;neutral and line&ndash;line voltages is shown in {numref}`ll` and {numref}`llln`.

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proof Index &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Polyphase Systems &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,21 +51,18 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
+    <link rel="next" title="An RLC low pass filter" href="notebooks/RLC_Respone.html" />
+    <link rel="prev" title="Transformers" href="Transformers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
     
-
-    <script>
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -155,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
   Power Systems Principles
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ACCircuits.html">
    AC Voltage, Current, and Power
@@ -171,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
    Transformers
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="PolySingleEq.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Polyphase Systems
   </a>
  </li>
@@ -253,22 +251,105 @@ title="Fullscreen mode"
 
 </button>
 
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/PolySingleEq.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polyphase-transmission-and-distribution-lines">
+   Polyphase Transmission and Distribution Lines
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>Polyphase Systems</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polyphase-transmission-and-distribution-lines">
+   Polyphase Transmission and Distribution Lines
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -276,96 +357,68 @@ title="Fullscreen mode"
                 
               <div>
                 
+  <section class="tex2jax_ignore mathjax_ignore" id="polyphase-systems">
+<h1>Polyphase Systems<a class="headerlink" href="#polyphase-systems" title="Permalink to this headline">#</a></h1>
+<p>Although the three phases in a balanced polyphase system are physically interconnected they may be considered as three single-phase systems. This is reinforced by the equivalence between wye- and delta-connected sources and impedances. One more step is required to show that single-phase equivalence has merit, and this concerns situations in which the phases have mutual coupling.</p>
+<section id="polyphase-transmission-and-distribution-lines">
+<h2>Polyphase Transmission and Distribution Lines<a class="headerlink" href="#polyphase-transmission-and-distribution-lines" title="Permalink to this headline">#</a></h2>
+<p><em>Lines</em> are system elements as transmission or distribution lines: overhead wires, cables or in-plant buswork. Such elements have impedance, so that there is some voltage drop
+between the two ends of the lines (called <em>sending</em> and <em>receiving</em> ends). This impedance is more than just conductor resistance: the conductors have both self and mutual inductance because currents in the conductors make magnetic flux which, in turn, is linked by all conductors of the line.</p>
+<p>The phase conductors are arranged as parallel conductors in bundles. These wires are supported by insulators. In many cases these insulators are actually strings of individual plates, often made of ceramic material, arranged to have a very
+long surface between the conductor and ground. Usually there are also accompanying ground wires that serve to carry the inevitable but usually small neutral currents that result
+from system unbalance and fault currents, and that partially shield the active conductors from lightning.</p>
+<p>A schematic view of a line is shown <a class="reference internal" href="#mutual-coupling"><span class="std std-numref">Fig. 114</span></a>. Actually, only the inductance components of line impedance are shown, since they are the most interesting parts of line impedance. A simplifying approximation is made that the mutual inductance is the same for all pairs of conductors.</p>
+<figure class="align-default" id="mutual-coupling">
+<a class="reference internal image-reference" href="_images/mutual_coupling.png"><img alt="_images/mutual_coupling.png" src="_images/mutual_coupling.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 114 </span><span class="caption-text">Schematic of a balanced three-phase line with mutual coupling.</span><a class="headerlink" href="#mutual-coupling" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Working in complex amplitudes, it is possible to write the voltage drops for the three phases by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+V_{a1} - V_{a2} &amp;= \jmath \omega L I_a + \jmath \omega M (I_b + I_c)\\
+V_{b1} - V_{b2} &amp;= \jmath \omega LI_b + \jmath \omega M (I_a + I_c)\\
+V{c1} - V_{c2} &amp;= \jmath \omega LI_c + \jmath \omega M (I_a + I_b)
+\end{align*}
+\end{split}\]</div>
+<p>If the currents form a balanced set:</p>
+<div class="math notranslate nohighlight" id="equation-balanced-i">
+<span class="eqno">(8)<a class="headerlink" href="#equation-balanced-i" title="Permalink to this equation">#</a></span>\[
+Ia + Ib + Ic = 0
+\]</div>
+<p>Then the voltage drops are simply</p>
+<p>$<span class="math notranslate nohighlight">\(
+\begin{align*}
+V_{a1} - V_{a2} &amp;= \jmath \omega \overbrace{( L -M)}^{:= L_1} I_a \\
+V_{b1} - V_{b2} &amp;= \jmath \omega ( L -M)I_b\\
+V{c1} - V_{c2} &amp;= \jmath \omega ( L -M)I_c
+\end{align*}
+In this case, an apparent inductance, suitable for the balanced case, \)</span>L_1$, describes the behaviour of one phase in terms of its own current. It is most important
+to note that this inductance is a valid description of the line only if <a class="reference internal" href="#equation-balanced-i">(8)</a> holds.</p>
+</section>
+</section>
 
-   <h1>Proof Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-bb-cascade"><strong>bb-cascade</strong></a> | 
-   <a href="#cap-buck-switch-example"><strong>buck-switch-example</strong></a> | 
-   <a href="#cap-charger_example"><strong>charger_example</strong></a> | 
-   <a href="#cap-dcm-boost"><strong>dcm-boost</strong></a> | 
-   <a href="#cap-dcm-buck"><strong>dcm-buck</strong></a> | 
-   <a href="#cap-example-0"><strong>example-0</strong></a> | 
-   <a href="#cap-example-1"><strong>example-1</strong></a> | 
-   <a href="#cap-inverter_example"><strong>inverter_example</strong></a> | 
-   <a href="#cap-synchronous_rectifier"><strong>synchronous_rectifier</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-bb-cascade"><td></td><td>
-       <strong>bb-cascade</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="CircuitManipulation.html#bb-cascade"><code class="xref">bb-cascade</code></a> <em>(CircuitManipulation)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-buck-switch-example"><td></td><td>
-       <strong>buck-switch-example</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="SwitchRealisation.html#buck-switch-example"><code class="xref">buck-switch-example</code></a> <em>(SwitchRealisation)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-charger_example"><td></td><td>
-       <strong>charger_example</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="SwitchRealisation.html#charger_example"><code class="xref">charger_example</code></a> <em>(SwitchRealisation)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-dcm-boost"><td></td><td>
-       <strong>dcm-boost</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="DCM.html#dcm-boost"><code class="xref">dcm-boost</code></a> <em>(DCM)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-dcm-buck"><td></td><td>
-       <strong>dcm-buck</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="DCM.html#dcm-buck"><code class="xref">dcm-buck</code></a> <em>(DCM)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-0"><td></td><td>
-       <strong>example-0</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="Transformers.html#example-0"><code class="xref">example-0</code></a> <em>(Transformers)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-1"><td></td><td>
-       <strong>example-1</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="Poly.html#example-1"><code class="xref">example-1</code></a> <em>(Poly)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-inverter_example"><td></td><td>
-       <strong>inverter_example</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="SwitchRealisation.html#inverter_example"><code class="xref">inverter_example</code></a> <em>(SwitchRealisation)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-synchronous_rectifier"><td></td><td>
-       <strong>synchronous_rectifier</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="SwitchRealisation.html#synchronous_rectifier"><code class="xref">synchronous_rectifier</code></a> <em>(SwitchRealisation)</em></td><td>
-       <em>example</em></td></tr>
-   </table>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -374,6 +427,20 @@ title="Fullscreen mode"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Transformers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Transformers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="notebooks/RLC_Respone.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">An RLC low pass filter</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
