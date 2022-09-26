@@ -202,7 +202,7 @@ Loads may be connected in either line&ndash;neutral or line&ndash;line configura
 use of this flexibility is in a fairly commonly used distribution system with a line&ndash;neutral
 voltage of 120 V, RMS (about 170 V, peak). In this system the line&ndash;line voltage is 208 V, RMS
 (about 294 V, peak). Single-phase loads may be connected either line&ndash;line or line&ndash;neutral.
-Suppose it is necessary to build a resistive heater to deliver 6 kW, to be made of three elements which may be connected in either wye or delta. Each of the three elements must dis sipate 2000 W.
+Suppose it is necessary to build a resistive heater to deliver 6 kW, to be made of three elements which may be connected in either wye or delta. Each of the three elements must dissipate 2000 W.
 
 Thus, since $P =\dfrac{V^2}{R}$, the wye-connected resistors would be
 

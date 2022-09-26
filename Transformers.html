@@ -450,11 +450,7 @@ example, to convert 8 kV distribution voltage to the 120/240
 V level suitable for residential or commercial single-phase service, one would use a transformer with a turns ratio of <span class="math notranslate nohighlight">\(\frac{8000}{240} = 33\frac{1}{3}\)</span>.
 To split the low voltage in half, a center tap on the low voltage winding would be used.</p></li>
 <li><p>An ideal transformer does not consume, produce or store energy. From the equations above, the sum of power flows into an ideal
-transformer (with multiple output windings) is identically zero:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\sum_{i} p_i = 0\]</div>
-<ol class="simple">
+transformer (with multiple output windings) is identically zero: <span class="math notranslate nohighlight">\(\sum_{i} p_i = 0\)</span></p></li>
 <li><p>One can reflect elements through the windings of a transformer to construct equivalent circuits. The reflection of a voltage source, a current source, and an impedance through a transformer are presented below.</p></li>
 </ol>
 <a class="reference internal image-reference" href="_images/v_reflect.svg"><img alt="_images/v_reflect.svg" class="align-center" src="_images/v_reflect.svg" width="400px" /></a>
@@ -550,7 +546,7 @@ v_a = \dfrac{n_1+n_2}{n_2}v_b
 i_a = \dfrac{n_2}{n_1+n_2}i_b
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(i_b\)</span> is the current exiting the middle tap.</p>
-<p>Hence, an autotransformer with grounded <span class="math notranslate nohighlight">\(c\)</span> can be seen as a transformer with turn ratio of <span class="math notranslate nohighlight">\(n = 1 + {n_1}{n_2}\)</span>. The rating (colloquial for the total power transferred through the transformer), denoted by <span class="math notranslate nohighlight">\(VA\)</span> is:</p>
+<p>Hence, an autotransformer with grounded <span class="math notranslate nohighlight">\(c\)</span> can be seen as a transformer with turn ratio of <span class="math notranslate nohighlight">\(N = 1 + \dfrac{n_1}{n_2}\)</span>. The rating (colloquial for the total power transferred through the transformer), denoted by <span class="math notranslate nohighlight">\(VA\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
 VA = v_a i_a = v_b i_b
@@ -571,7 +567,7 @@ very large, such as connecting 138 and 345 kV circuits. They are also used in tr
 </section>
 <section id="three-phase-transformers">
 <h2>Three-phase Transformers<a class="headerlink" href="#three-phase-transformers" title="Permalink to this headline">#</a></h2>
-<p>Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. Figure 6.8 shows a cartoon of a three-phase core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.</p>
+<p>Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.</p>
 <p>A three-phase transformer operates as three single-phase transformers. The complication is that there are a number of ways of winding them and a number of ways of interconnecting them. On either side of a transformer connection (i.e. the high-voltage and low-voltage sides), it is possible to connect transformer windings either line to neutral (wye) or line to line (delta). Thus we may speak of transformer connections being wye–wye, delta–delta, wye–delta, or delta–wye.
 Connection of transformers in either wye–wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye–wye) or line–line (in the case of delta–delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye–delta or delta–wye transformers are a little more complex. <a class="reference internal" href="#delta-wye-trans"><span class="std std-numref">Fig. 113</span></a> depicts a delta–wye connection. In that picture,
 winding elements that appear parallel are wound on the same core segment, and so constitute a single-phase transformer.</p>

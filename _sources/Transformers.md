@@ -9,7 +9,7 @@ for at least two reasons.
 - Transmission line capacity to carry power is roughly proportional to the square of voltage, so to make intensive use of transmission line right-of-way, that is, to enable transmission lines to carry high power levels, high transmission voltages are required. This is true for underground cables as well as for above the ground transmission lines.
 
 For these reasons, a transformer is usually situated right at the output of each generating
-unit to transform the power from generation voltage, which is usually between 10 and 30 kV, and transmission voltage which is in the high or extra high voltage range, typically between 138 and 765 kV. At substations that connect transmission lines to distribution circuits the power is stepped down in voltage. Distribution circuits generally operate in the range of 6–35 kV. (However, there are still lower voltage distribution primaries and some higher voltage circuits might be classified as distribution.) Then, before electric power is connected to customer loads, there is yet another transformer to transform it from the distribution primary voltage to the customer at a voltage that is typically on the order of 240 V. In the United States that last transformer is center tapped to give the familiar 120 V, RMS, single-phase voltage used for most appliances. 
+unit to transform the power from generation voltage, which is usually between 10 and 30 kV, and transmission voltage which is in the high or extra high voltage range, typically between 138 and 765 kV. At substations that connect transmission lines to distribution circuits the power is stepped down in voltage. Distribution circuits generally operate in the range of 6–35 kV. (However, there are still lower voltage distribution primaries and some higher voltage circuits might be classified as distribution.) Then, before electric power is connected to customer loads, there is yet another transformer to transform it from the distribution primary voltage to the customer at a voltage that is typically on the order of 240 V. In the United States that last transformer is center tapped to give the familiar 120 V, RMS, single-phase voltage used for most appliances.
 
 ## Single-phase Transformers
 
@@ -41,10 +41,7 @@ V level suitable for residential or commercial single-phase service, one would u
 To split the low voltage in half, a center tap on the low voltage winding would be used.
 
 2. An ideal transformer does not consume, produce or store energy. From the equations above, the sum of power flows into an ideal
-transformer (with multiple output windings) is identically zero:
-
-$$\sum_{i} p_i = 0$$
-
+transformer (with multiple output windings) is identically zero: $\sum_{i} p_i = 0$
 3. One can reflect elements through the windings of a transformer to construct equivalent circuits. The reflection of a voltage source, a current source, and an impedance through a transformer are presented below.
 
 ```{image} fig/v_reflect.svg
@@ -167,7 +164,7 @@ i_a = \dfrac{n_2}{n_1+n_2}i_b
 $$
 where $i_b$ is the current exiting the middle tap.
 
-Hence, an autotransformer with grounded $c$ can be seen as a transformer with turn ratio of $n = 1 + {n_1}{n_2}$. The rating (colloquial for the total power transferred through the transformer), denoted by $VA$ is:
+Hence, an autotransformer with grounded $c$ can be seen as a transformer with turn ratio of $N = 1 + \dfrac{n_1}{n_2}$. The rating (colloquial for the total power transferred through the transformer), denoted by $VA$ is:
 
 $$
 VA = v_a i_a = v_b i_b
@@ -189,7 +186,7 @@ very large, such as connecting 138 and 345 kV circuits. They are also used in tr
 
 ## Three-phase Transformers
 
-Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. Figure 6.8 shows a cartoon of a three-phase core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.
+Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.
 
 A three-phase transformer operates as three single-phase transformers. The complication is that there are a number of ways of winding them and a number of ways of interconnecting them. On either side of a transformer connection (i.e. the high-voltage and low-voltage sides), it is possible to connect transformer windings either line to neutral (wye) or line to line (delta). Thus we may speak of transformer connections being wye&ndash;wye, delta&ndash;delta, wye&ndash;delta, or delta&ndash;wye.
 Connection of transformers in either wye&ndash;wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye&ndash;wye) or line–line (in the case of delta&ndash;delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye&ndash;delta or delta&ndash;wye transformers are a little more complex. {numref}`delta_wye_trans` depicts a delta&ndash;wye connection. In that picture,
