@@ -99,12 +99,12 @@ $$
 The magnitude of current flowing in each phase of the source is
 
 $$
-|\mathbf{I}| = \dfrac{\sqrt{2} V_{RMS}}{\sqrt{(\omega L_{eq})^2 R_{eq}^2}}
+|\mathbf{I}| = \dfrac{\sqrt{2} V_{RMS}}{\sqrt{(\omega L_{eq})^2 + R_{eq}^2}}
 $$
 Power dissipation in each phase is
 
 $$
-P= \dfrac{1}{2} |\mathbf{I}|^2 R_{eq} =  \dfrac{ V_{RMS}^2 R_{eq}}{(\omega L_{eq})^2 R_{eq}^2}
+P= \dfrac{1}{2} |\mathbf{I}|^2 R_{eq} =  \dfrac{ V_{RMS}^2 R_{eq}}{(\omega L_{eq})^2 + R_{eq}^2}
 $$
 Total power dissipated is three times the single-phase dissipation.
 
@@ -144,7 +144,7 @@ $$
 where $\mathbf{Z}_B$ is a base impedance and is defined as
 
 $$
-\mathbf{Z}_B := \dfrac{V_B}{\mathbf{V}_I}
+\mathbf{Z}_B := \dfrac{V_B}{I_B}
 $$
 
 This will also lead to the definition of a base power, which for a single phase system is
