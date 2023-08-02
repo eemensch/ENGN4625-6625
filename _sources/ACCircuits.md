@@ -301,7 +301,7 @@ The voltages satisfy the following
 
 $$
 \begin{align*}
-   \mathbf{V} &= \mathbf{V}_g \dfrac{\frac{R}{\jmath \omega C}}{\frac{R}{\jmath \omega C} + \jmath \omega L} \\&= \mathbf{V}_g \dfrac{1}{(1-\omega^2 LC) + \frac{\jmath \omega L}{R}}
+   \mathbf{V} &= \mathbf{V}_g \dfrac{\dfrac{\frac{R}{\jmath \omega C}}{R + \frac{1}{\jmath \omega C}}}{\dfrac{\frac{R}{\jmath \omega C}}{R + \frac{1}{\jmath \omega C}} + \jmath \omega L} \\&= \mathbf{V}_g \dfrac{1}{(1-\omega^2 LC) + \frac{\jmath \omega L}{R}}
 \end{align*}
 $$
 ````{prf:example}

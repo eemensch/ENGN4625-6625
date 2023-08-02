@@ -26,7 +26,7 @@ $$
 \begin{align*}
 V_{a1} - V_{a2} &= \jmath \omega L I_a + \jmath \omega M (I_b + I_c)\\
 V_{b1} - V_{b2} &= \jmath \omega LI_b + \jmath \omega M (I_a + I_c)\\
-V{c1} - V_{c2} &= \jmath \omega LI_c + \jmath \omega M (I_a + I_b)
+V_{c1} - V_{c2} &= \jmath \omega LI_c + \jmath \omega M (I_a + I_b)
 \end{align*}
 $$
 
@@ -42,7 +42,7 @@ $$
 \begin{align*}
 V_{a1} - V_{a2} &= \jmath \omega \overbrace{( L -M)}^{:= L_\ell} I_a \\
 V_{b1} - V_{b2} &= \jmath \omega ( L -M)I_b\\
-V{c1} - V_{c2} &= \jmath \omega ( L -M)I_c
+V_{c1} - V_{c2} &= \jmath \omega ( L -M)I_c
 \end{align*}
 $$
 
@@ -252,7 +252,7 @@ A one-line diagram is a way of conveying a lot of information about a power syst
 ```
 The following table provides the necessary information for making sense of the diagaram:
 
-Symbol |  Component | Base $P_B$, (MVA) | Base $V_B$ (kV) | Impedance (per-unit)
+Symbol |  Component | Base $P_B$, (MVA) | Base $V_B$ (kV) (line-to-line) | Impedance (per-unit)
 |:--------------:|:-----:|:-----------:|:-----:|:-----------:|
 $G_1$ |  Generator |200  | 13.8 | $\jmath 0.18$
 $T_1$ |  Transformer | 200 | 13.8/138 | $\jmath 0.12$
