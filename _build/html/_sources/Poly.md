@@ -25,7 +25,7 @@ Suppose this system of sources is connected to a "balanced load", as shown in {n
 width: 700px
 name: 2phase
 ---
-A two-phase systems and the phasor digram of the two phase voltage source (right)
+A two-phase systems and the phasor diagram of the two phase voltage source (right)
 ```
 Here, "balanced" means both load impedances have the same value $Z$. To compute the power flows in the system, it is convenient to re-write the voltages in complex form. If each source is connected to a load with impedance,
 
@@ -59,6 +59,7 @@ At least one of the advantages of polyphase power networks is now apparent. The 
 ## Three-Phase Systems
 
 Consider the arrangement of three voltage sources illustrated in {numref}`3phase`.
+
 ```{figure} fig/poly/main-figure19.svg
 ---
 width: 200px
@@ -70,9 +71,9 @@ Assume that the three-phase voltages are
 
 $$
 \begin{align}
-v_a &=V\cos\omega t = \Re\left \{V \mathrm{e}{\jmath \omega t} \right \}, \\
-v_b &=V\cos(\omega t - \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}{\jmath (\omega t-\frac{2\pi}{3})}\right \}\\
-v_c &=V\cos(\omega t + \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}{\jmath (\omega t + \frac{2\pi}{3})}\right \}
+v_a &=V\cos\omega t = \Re\left \{V \mathrm{e}^{\jmath \omega t} \right \}, \\
+v_b &=V\cos(\omega t - \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}^{\jmath (\omega t-\frac{2\pi}{3})}\right \}\\
+v_c &=V\cos(\omega t + \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}^{\jmath (\omega t + \frac{2\pi}{3})}\right \}
 \end{align}
 $$ (eq_vn)
 The waveforms in time domain are presented in {numref}`3phase_voltage`.
@@ -92,7 +93,7 @@ figclass: margin
 ---
 Phasor diagram: three-phase voltages.
 ```
-The instantaneous voltages may be visualized by imagining {numref}`spin_phasor` where the vectors spin counterclockwise with angular velocity $\omega$. The instantaneous voltages are just projections of the vectors of this “pinwheel” onto the horizontal axis.
+The instantaneous voltages may be visualised by imagining {numref}`spin_phasor` where the vectors spin counterclockwise with angular velocity $\omega$. The instantaneous voltages are just projections of the vectors of this “pinwheel” onto the horizontal axis.
 
 Consider connecting these three voltage sources to three identical loads, each with complex impedance $\mathbf{Z}$, as shown in {numref}`3p_balanced`
 
@@ -130,11 +131,12 @@ $$
 \end{align*}
 $$
 The sum of these three expressions is total instantaneous power, which is constant:
+
 $$
   p=p_a+p_b+p_c = \dfrac{3}{2} \dfrac{V^2}{Z}\cos\psi.
 $$
 
-Moreover, the current in the neutral wire, $i_n$ , in {numref}`3p_balanced`, is
+Moreover, the current in the neutral wire, $i_n$, in {numref}`3p_balanced`, is
 
 $$
 i_n=i_a+i_b+i_c =0
@@ -168,9 +170,9 @@ A balanced three-phase set of voltages has a well-defined set of line&ndash;line
 
 $$
 \begin{align}
-\mathbf{V}_{ab} &= v_a - v_b = \Re \left \{ V \left (1-\mathrm{e}^{-\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \} = \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{6}} \right \}\\
-\mathbf{V}_{bc} &= v_b - v_c = \Re \left \{ V \left (\mathrm{e}^{-\jmath \frac{2\pi}{3}}- \mathrm{e}^{\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{2}} \right \}\\
-\mathbf{V}_{ca} &= v_c - v_a = \Re \left \{ V \left (\mathrm{e}^{\jmath \frac{2\pi}{3}} - 1 \right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{5\pi}{6}} \right \}
+\mathbf{V}_{ab} &= v_a - v_b = \Re \left \{ V \left (1-\mathrm{e}^{-\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \} = \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{\pi}{6}} \mathrm{e}^{\jmath \omega t}\right \}\\
+\mathbf{V}_{bc} &= v_b - v_c = \Re \left \{ V \left (\mathrm{e}^{-\jmath \frac{2\pi}{3}}- \mathrm{e}^{\jmath \frac{2\pi}{3}}\right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{-\pi}{2}}\mathrm{e}^{\jmath \omega t} \right \}\\
+\mathbf{V}_{ca} &= v_c - v_a = \Re \left \{ V \left (\mathrm{e}^{\jmath \frac{2\pi}{3}} - 1 \right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{5\pi}{6}} \mathrm{e}^{\jmath \omega t} \right \}
 \end{align}
 $$
 The phasor relationship of line&ndash;neutral and line&ndash;line voltages is shown in {numref}`ll` and {numref}`llln`.
@@ -193,14 +195,14 @@ Wye (Y) and delta ($\Delta$) connected voltage sources
 Power system components (sources, transformer windings, loads, etc.) may be connected either line&ndash;neutral or line&ndash;line. The former
 connection is often called wye, the latter is called delta, for obvious reasons. It should be noted that the wye connection is at least potentially a four-terminal connection, and could be grounded or ungrounded. The delta connection is inherently three-terminal and necessarily ungrounded.
 
-```{prf:example} Wye- and Delta-connected Loads
-:nonumber:
+```{prf:example} Wye-and Delta-connected Loads
+
 
 Loads may be connected in either line&ndash;neutral or line&ndash;line configuration. An example of the
 use of this flexibility is in a fairly commonly used distribution system with a line&ndash;neutral
 voltage of 120 V, RMS (about 170 V, peak). In this system the line&ndash;line voltage is 208 V, RMS
 (about 294 V, peak). Single-phase loads may be connected either line&ndash;line or line&ndash;neutral.
-Suppose it is necessary to build a resistive heater to deliver 6 kW, to be made of three elements which may be connected in either wye or delta. Each of the three elements must dis sipate 2000 W.
+Suppose it is necessary to build a resistive heater to deliver 6 kW, to be made of three elements which may be connected in either wye or delta. Each of the three elements must dissipate 2000 W.
 
 Thus, since $P =\dfrac{V^2}{R}$, the wye-connected resistors would be
 
@@ -254,7 +256,6 @@ Z_\Delta = 3 Z_Y
 $$
 
 ````{prf:example} Use of Wye–Delta for Unbalanced Loads
-:nonumber:
 
 Consider the unbalanced load connected to a balanced voltage source as presented below.
 

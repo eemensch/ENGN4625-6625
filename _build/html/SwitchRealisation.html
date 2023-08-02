@@ -1,39 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Realising Switches Using Semi-conductor Devices &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,325 +63,307 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SwitchRealisation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Discontinuous Conduction Mode (DCM)" href="DCM.html" />
     <link rel="prev" title="Equivalent Circuit Model of Steady-State Converter" href="SteadyStateEquivCirc.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Power Systems and Power Electronics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Steady State Analysis of Converters
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Power Systems and Power Electronics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Steady State Analysis of Converters</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyState.html">
-   Principles of Steady-State Converter Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyStateEquivCirc.html">
-   Equivalent Circuit Model of Steady-State Converter
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Realising Switches Using Semi-conductor Devices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="DCM.html">
-   Discontinuous Conduction Mode (DCM)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CircuitManipulation.html">
-   Converter Circuit Manipulation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Realising Switches Using Semi-conductor Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Power Sysems Principles
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ACCircuits.html">
-   AC Voltage, Current, and Power
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Poly.html">
-   Polyphase Systems
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ACCircuits.html">AC Voltage, Current, and Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poly.html">Polyphase Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformers.html">Transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolySingleEq.html">Polyphase Lines and Single-phase Equivalents</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/RLC_Respone.html">
-   An RLC low pass filter
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/SwitchRealisation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SwitchRealisation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-        </div>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Realising Switches Using Semi-conductor Devices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#single-quadrant-switches">
-   Single-quadrant switches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diode">
-     Diode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transistors">
-     Transistors
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-quadrant-switches">
-   Two-Quadrant Switches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#current-bidirectional-two-quadrant-switch">
-     Current-bidirectional two-quadrant switch
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#voltage-bidirectional-two-quadrant-switch">
-     Voltage-bidirectional two-quadrant switch
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#four-quadrant-switch">
-   Four-quadrant switch
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synchronous-rectifiers">
-   Synchronous rectifiers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-quadrant-switches">Single-quadrant switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode">Diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transistors">Transistors</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-quadrant-switches">Two-Quadrant Switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-bidirectional-two-quadrant-switch">Current-bidirectional two-quadrant switch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-bidirectional-two-quadrant-switch">Voltage-bidirectional two-quadrant switch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-quadrant-switch">Four-quadrant switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-rectifiers">Synchronous rectifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Realising Switches Using Semi-conductor Devices</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#single-quadrant-switches">
-   Single-quadrant switches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diode">
-     Diode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transistors">
-     Transistors
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-quadrant-switches">
-   Two-Quadrant Switches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#current-bidirectional-two-quadrant-switch">
-     Current-bidirectional two-quadrant switch
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#voltage-bidirectional-two-quadrant-switch">
-     Voltage-bidirectional two-quadrant switch
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#four-quadrant-switch">
-   Four-quadrant switch
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synchronous-rectifiers">
-   Synchronous rectifiers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="realising-switches-using-semi-conductor-devices">
-<h1>Realising Switches Using Semi-conductor Devices<a class="headerlink" href="#realising-switches-using-semi-conductor-devices" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="realising-switches-using-semi-conductor-devices">
+<h1>Realising Switches Using Semi-conductor Devices<a class="headerlink" href="#realising-switches-using-semi-conductor-devices" title="Permalink to this headline">#</a></h1>
 <p>All power semiconductor devices function as SPST switches whose schematic is presented below.</p>
 <a class="reference internal image-reference" href="_images/SPST.svg"><img alt="_images/SPST.svg" class="align-center" src="_images/SPST.svg" width="200px" /></a>
 <p>Consider the buck converter depicted in <a class="reference internal" href="#buckspdt"><span class="std std-numref">Fig. 53</span></a>.  The converter involves a single pole double throw (SPDT) switch.</p>
-<div class="figure align-default" id="buckspdt">
+<figure class="align-default" id="buckspdt">
 <a class="reference internal image-reference" href="_images/BuckSPDT.svg"><img alt="_images/BuckSPDT.svg" src="_images/BuckSPDT.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Schematic of a buck converter with an SPDT switch.</span><a class="headerlink" href="#buckspdt" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Schematic of a buck converter with an SPDT switch.</span><a class="headerlink" href="#buckspdt" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>However, in practice such a device is realised using two single-pole single throw switches as shown in <a class="reference internal" href="#buckspst"><span class="std std-numref">Fig. 54</span></a>.</p>
-<div class="figure align-default" id="buckspst">
+<figure class="align-default" id="buckspst">
 <a class="reference internal image-reference" href="_images/BuckSPST.svg"><img alt="_images/BuckSPST.svg" src="_images/BuckSPST.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Schematic of a buck converter with two SPST switches.</span><a class="headerlink" href="#buckspst" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Schematic of a buck converter with two SPST switches.</span><a class="headerlink" href="#buckspst" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Replacing a single SPDT switch with two SPST switches is a nontrivial step as two SPST switches are not exactly equivalent to one SPDT switch. It is possible for both SPST switches to be simultaneously ON or OFF. Behaviour of converter is then potentially significantly modified. For example, the discontinuous conduction mode is a consequence of using two switches to realise an SPDT switch. Conducting state of an SPST switch may depend on applied voltage or current. For example, in the case of using a diode, the voltage at the two terminals or the current going through the diode determines if it conducts or not.</p>
 <p>SPST switches can be categorised into the following categories:</p>
 <ul class="simple">
@@ -388,92 +377,114 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Four-quadrant switch</p></li>
 </ul>
 <p>In what follows we explore these categories.</p>
-<div class="section" id="single-quadrant-switches">
-<h2>Single-quadrant switches<a class="headerlink" href="#single-quadrant-switches" title="Permalink to this headline">¶</a></h2>
+<section id="single-quadrant-switches">
+<h2>Single-quadrant switches<a class="headerlink" href="#single-quadrant-switches" title="Permalink to this headline">#</a></h2>
 <p>Any switch is either <em>active</em> or <em>passive</em>. Active switches are those that the switch state is controlled exclusively by a third terminal (also known as a control terminal), e.g. transistors. Passive switches on the other hand, are those where the switch state is controlled by the applied current and/or voltage at its terminals, e.g. diode. SCR (Silicon Controlled Rectifier), are a special case &amp;mdash turn-on transition is active, while turn-off transition is passive.
 In single-quadrant switches the on-state <span class="math notranslate nohighlight">\(i\)</span> and off-state <span class="math notranslate nohighlight">\(v\)</span> are unipolar.</p>
-<div class="section" id="diode">
-<h3>Diode<a class="headerlink" href="#diode" title="Permalink to this headline">¶</a></h3>
+<section id="diode">
+<h3>Diode<a class="headerlink" href="#diode" title="Permalink to this headline">#</a></h3>
 <p>Diodes are passive, single-quadrant switches. They conduct positive on-state currents and block negative off-state voltages. If the intended on-state and off-state operating points lie on the diode <span class="math notranslate nohighlight">\(i-v\)</span> characteristic depicted in <a class="reference internal" href="#diode-char"><span class="std std-numref">Fig. 55</span></a>, then the switch can be realised using a diode. The voltage and current polarities are consistent with <a class="reference internal" href="#diode-polar"><span class="std std-numref">Fig. 56</span></a></p>
-<div class="figure align-default" id="diode-char">
+<figure class="align-default" id="diode-char">
 <a class="reference internal image-reference" href="_images/diode_char.svg"><img alt="_images/diode_char.svg" src="_images/diode_char.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of diodes</span><a class="headerlink" href="#diode-char" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="diode-polar">
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of diodes</span><a class="headerlink" href="#diode-char" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="diode-polar">
 <a class="reference internal image-reference" href="_images/diode_polar.svg"><img alt="_images/diode_polar.svg" src="_images/diode_polar.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#diode-char"><span class="std std-numref">Fig. 55</span></a>.</span><a class="headerlink" href="#diode-polar" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="transistors">
-<h3>Transistors<a class="headerlink" href="#transistors" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#diode-char"><span class="std std-numref">Fig. 55</span></a>.</span><a class="headerlink" href="#diode-polar" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="transistors">
+<h3>Transistors<a class="headerlink" href="#transistors" title="Permalink to this headline">#</a></h3>
 <p>Bipolar Junction Transistor (BJT) and Insulated Gate Bipolar Transistor (IGBT) are examples for power transistors used for realising switches. They are active, single-quadrant switches, controlled by terminal <span class="math notranslate nohighlight">\(C\)</span>. Transistors conduct positive on-current and block positive off-state voltage. If the intended on-state and off-state operating points lie on the transistor <span class="math notranslate nohighlight">\(i-v\)</span> characteristic as shown in <a class="reference internal" href="#trans-char"><span class="std std-numref">Fig. 57</span></a>, then switch can be realised using a BJT or IGBT. The voltage and current polarities are consistent with <a class="reference internal" href="#trans-polar"><span class="std std-numref">Fig. 58</span></a>.</p>
-<div class="figure align-default" id="trans-char">
+<figure class="align-default" id="trans-char">
 <a class="reference internal image-reference" href="_images/transistor_char.svg"><img alt="_images/transistor_char.svg" src="_images/transistor_char.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of BJTs and IGBTs</span><a class="headerlink" href="#trans-char" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="trans-polar">
+<figcaption>
+<p><span class="caption-number">Fig. 57 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of BJTs and IGBTs</span><a class="headerlink" href="#trans-char" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="trans-polar">
 <a class="reference internal image-reference" href="_images/trans_polar.svg"><img alt="_images/trans_polar.svg" src="_images/trans_polar.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#trans-char"><span class="std std-numref">Fig. 57</span></a>.</span><a class="headerlink" href="#trans-polar" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#trans-char"><span class="std std-numref">Fig. 57</span></a>.</span><a class="headerlink" href="#trans-polar" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="proof example admonition" id="buck-switch-example">
-<p class="admonition-title"><span>Example </span></p>
-<div class="example-content section" id="proof-content">
+<p class="admonition-title"><span>Example </span> (Switches in a buck converter)</p>
+<section class="example-content" id="proof-content">
 <p>How can one realise the SPDT switch in a buck converter of <a class="reference internal" href="#buckspdt"><span class="std std-numref">Fig. 53</span></a> using transistors and diodes?</p>
 <p>First, one needs to determine the polarities (signs) of the currents that switch A and switch B need to conduct in their on state. Then, the polarities of the voltages that the switches need to block in their off state need to be determined. For the choices of reference current direction and voltage polarity <a class="reference internal" href="#buckspdt"><span class="std std-numref">Fig. 53</span></a> for each of the switches we have the following characteristics:</p>
 <a class="reference internal image-reference" href="_images/buck_switch_char.svg"><img alt="_images/buck_switch_char.svg" class="align-center" src="_images/buck_switch_char.svg" width="400px" /></a>
-<p>Consulting <a class="reference internal" href="#diode-char"><span class="std std-numref">Fig. 55</span></a> and <a class="reference internal" href="#trans-char"><span class="std std-numref">Fig. 57</span></a> one conclused that switch A is consistent with a transistor and switch B can be realised with a diode.</p>
-<p>The final converter circuit schematic with the semi-condutor devices is shown below.</p>
+<p>Consulting <a class="reference internal" href="#diode-char"><span class="std std-numref">Fig. 55</span></a> and <a class="reference internal" href="#trans-char"><span class="std std-numref">Fig. 57</span></a> one concludes that switch A is consistent with a transistor and switch B can be realised with a diode.</p>
+<p>The final converter circuit schematic with the semi-conductor devices is shown below.</p>
 <a class="reference internal image-reference" href="_images/semi_buck_realis.svg"><img alt="_images/semi_buck_realis.svg" class="align-center" src="_images/semi_buck_realis.svg" width="500px" /></a>
-</div>
+</section>
 </div><p>Metal-Oxide Semiconductor Field Effect Transistors (MOSFET) are another example of an active switch that is controlled by a terminal. These devices are normally used as single-quadrant switches, even though, they can conduct currents in both direction due to the presence of their <em>body diode</em>.
 The MOSFET <span class="math notranslate nohighlight">\(i-v\)</span> characteristic is shown in <a class="reference internal" href="#power-transistor"><span class="std std-numref">Fig. 59</span></a>. The voltage and current polarities are consistent with <a class="reference internal" href="#mosfet"><span class="std std-numref">Fig. 60</span></a>.</p>
-<div class="figure align-default" id="power-transistor">
+<figure class="align-default" id="power-transistor">
 <a class="reference internal image-reference" href="_images/power_transistor.svg"><img alt="_images/power_transistor.svg" src="_images/power_transistor.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of power MOSFET</span><a class="headerlink" href="#power-transistor" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="mosfet">
+<figcaption>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of power MOSFET</span><a class="headerlink" href="#power-transistor" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="mosfet">
 <a class="reference internal image-reference" href="_images/MOSFET.svg"><img alt="_images/MOSFET.svg" src="_images/MOSFET.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#power-transistor"><span class="std std-numref">Fig. 59</span></a>.</span><a class="headerlink" href="#mosfet" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">Assumed voltage and current polarities in <a class="reference internal" href="#power-transistor"><span class="std std-numref">Fig. 59</span></a>.</span><a class="headerlink" href="#mosfet" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In practice, to prevent the body diode from conducting (as it is a slow diode), external anti-parallel diodes are connected to a power MOSFET as shown in <a class="reference internal" href="#mosfetanti"><span class="std std-numref">Fig. 61</span></a>.</p>
-<div class="figure align-default" id="mosfetanti">
+<figure class="align-default" id="mosfetanti">
 <a class="reference internal image-reference" href="_images/MOSFETAnti.svg"><img alt="_images/MOSFETAnti.svg" src="_images/MOSFETAnti.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">External diodes to prevent conduction of body diode. The body diode is the one inside the dashed-line square.</span><a class="headerlink" href="#mosfetanti" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">External diodes to prevent conduction of body diode. The body diode is the one inside the dashed-line square.</span><a class="headerlink" href="#mosfetanti" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>If one retires the switch to conduct current in the both directions, a current-bidirectional two-quadrant switch must be used.</p>
-</div>
-</div>
-<div class="section" id="two-quadrant-switches">
-<h2>Two-Quadrant Switches<a class="headerlink" href="#two-quadrant-switches" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="current-bidirectional-two-quadrant-switch">
-<h3>Current-bidirectional two-quadrant switch<a class="headerlink" href="#current-bidirectional-two-quadrant-switch" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="two-quadrant-switches">
+<h2>Two-Quadrant Switches<a class="headerlink" href="#two-quadrant-switches" title="Permalink to this headline">#</a></h2>
+<section id="current-bidirectional-two-quadrant-switch">
+<h3>Current-bidirectional two-quadrant switch<a class="headerlink" href="#current-bidirectional-two-quadrant-switch" title="Permalink to this headline">#</a></h3>
 <p>Such switches are usually packaged as an active switch, controlled by terminal <span class="math notranslate nohighlight">\(C\)</span> where it can conduct positive and negative on-state current and can block positive off-state voltage. If the intended on-state and off-state operating points lie on the composite <span class="math notranslate nohighlight">\(i-v\)</span> characteristic as demonstrated in <a class="reference internal" href="#transistor-diode-char"><span class="std std-numref">Fig. 62</span></a>, then the switch can be realised using the diode/transistor composite circuit of <a class="reference internal" href="#diode-trans"><span class="std std-numref">Fig. 63</span></a>.</p>
-<div class="figure align-default" id="transistor-diode-char">
+<figure class="align-default" id="transistor-diode-char">
 <a class="reference internal image-reference" href="_images/transistor_diode_char.svg"><img alt="_images/transistor_diode_char.svg" src="_images/transistor_diode_char.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a current-bidirectional two-quadrant switch</span><a class="headerlink" href="#transistor-diode-char" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="diode-trans">
+<figcaption>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a current-bidirectional two-quadrant switch</span><a class="headerlink" href="#transistor-diode-char" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="diode-trans">
 <a class="reference internal image-reference" href="_images/diode_trans.svg"><img alt="_images/diode_trans.svg" src="_images/diode_trans.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">An example of a diode/transistor composite circuit with the assumed voltage and current polarities in <a class="reference internal" href="#transistor-diode-char"><span class="std std-numref">Fig. 62</span></a>.</span><a class="headerlink" href="#diode-trans" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">An example of a diode/transistor composite circuit with the assumed voltage and current polarities in <a class="reference internal" href="#transistor-diode-char"><span class="std std-numref">Fig. 62</span></a>.</span><a class="headerlink" href="#diode-trans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="proof example admonition" id="inverter_example">
 <p class="admonition-title"><span>Example </span> (A simple inverter)</p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Current-bidirectional two-quadrant switches can be used to construct a simple inverter. Consider the circuit depicted in <a class="reference internal" href="#inverter"><span class="std std-numref">Fig. 64</span></a>.</p>
-<div class="figure align-default" id="inverter">
+<figure class="align-default" id="inverter">
 <a class="reference internal image-reference" href="_images/inverter.svg"><img alt="_images/inverter.svg" src="_images/inverter.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">A simple inverter realised with current-bidirectional two-quadrant switches that turns an input dc voltage to ac voltage.</span><a class="headerlink" href="#inverter" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">A simple inverter realised with current-bidirectional two-quadrant switches that turns an input dc voltage to ac voltage.</span><a class="headerlink" href="#inverter" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Solving the inverter using the methods of steady-state analysis of the converters we arrive at the following relationship</p>
 <div class="math notranslate nohighlight">
 \[
 v_0(t)=(2D-1)V_g
 \]</div>
 <p>This relationship is depicted in <a class="reference internal" href="#inv-md"><span class="std std-numref">Fig. 65</span></a></p>
-<div class="figure align-default" id="inv-md">
+<figure class="align-default" id="inv-md">
 <a class="reference internal image-reference" href="_images/sin_mod.svg"><img alt="_images/sin_mod.svg" src="_images/sin_mod.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">The output voltage of the inverter presented in <a class="reference internal" href="#inverter"><span class="std std-numref">Fig. 64</span></a> as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#inv-md" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">The output voltage of the inverter presented in <a class="reference internal" href="#inverter"><span class="std std-numref">Fig. 64</span></a> as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#inv-md" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>One can modulate the duty cycle sinusoidally to produce an ac output. Let</p>
 <div class="math notranslate nohighlight">
 \[
@@ -490,67 +501,77 @@ v_0(t)= 2 D_m V_g \sin (\omega t)
 i_L(t)=\dfrac{v_0(t)}{R}=(2D-1) \dfrac{V_g}{R}
 \]</div>
 <p>Hence, current-bidirectional two-quadrant switches are required.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="charger_example">
 <p class="admonition-title"><span>Example </span> (Battery charger/discharger)</p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>It is common to use a dc-dc converter with bidirectional power flow when interfacing batteries to a circuit that can act as a sink for the power as well as the source. In such cases, current-bidirectional two-quadrant switches can be used to design a battery charger/discharger as presented in <a class="reference internal" href="#charger"><span class="std std-numref">Fig. 66</span></a>.</p>
-<div class="figure align-default" id="charger">
+<figure class="align-default" id="charger">
 <a class="reference internal image-reference" href="_images/charger.svg"><img alt="_images/charger.svg" src="_images/charger.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">A converter for charging and discharging.</span><a class="headerlink" href="#charger" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div></div>
-<div class="section" id="voltage-bidirectional-two-quadrant-switch">
-<h3>Voltage-bidirectional two-quadrant switch<a class="headerlink" href="#voltage-bidirectional-two-quadrant-switch" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">A converter for charging and discharging.</span><a class="headerlink" href="#charger" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</div></section>
+<section id="voltage-bidirectional-two-quadrant-switch">
+<h3>Voltage-bidirectional two-quadrant switch<a class="headerlink" href="#voltage-bidirectional-two-quadrant-switch" title="Permalink to this headline">#</a></h3>
 <p>A voltage-bidirectional two-quadrant switch is often an active switch, and is controlled by terminal <span class="math notranslate nohighlight">\(C\)</span> where it can conduct positive on-state current and can block positive and negative off-state voltage. If the intended on-state and off-state operating points lie on the composite <span class="math notranslate nohighlight">\(i-v\)</span> characteristic as demonstrated in <a class="reference internal" href="#bi-dir-voltage"><span class="std std-numref">Fig. 67</span></a>, then the switch can be realised using the diode/transistor composite circuit of <a class="reference internal" href="#series-dt"><span class="std std-numref">Fig. 68</span></a>.</p>
-<div class="figure align-default" id="bi-dir-voltage">
+<figure class="align-default" id="bi-dir-voltage">
 <a class="reference internal image-reference" href="_images/bi_dir_voltage.svg"><img alt="_images/bi_dir_voltage.svg" src="_images/bi_dir_voltage.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a voltage-bidirectional two-quadrant switch</span><a class="headerlink" href="#bi-dir-voltage" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="series-dt">
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a voltage-bidirectional two-quadrant switch</span><a class="headerlink" href="#bi-dir-voltage" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="series-dt">
 <a class="reference internal image-reference" href="_images/series_dt.svg"><img alt="_images/series_dt.svg" src="_images/series_dt.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">An example of a series interconnection of a diode and a transistor composite circuit with the assumed voltage and current polarities in <a class="reference internal" href="#bi-dir-voltage"><span class="std std-numref">Fig. 67</span></a>.</span><a class="headerlink" href="#series-dt" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="four-quadrant-switch">
-<h2>Four-quadrant switch<a class="headerlink" href="#four-quadrant-switch" title="Permalink to this headline">¶</a></h2>
+<figcaption>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">An example of a series interconnection of a diode and a transistor composite circuit with the assumed voltage and current polarities in <a class="reference internal" href="#bi-dir-voltage"><span class="std std-numref">Fig. 67</span></a>.</span><a class="headerlink" href="#series-dt" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="four-quadrant-switch">
+<h2>Four-quadrant switch<a class="headerlink" href="#four-quadrant-switch" title="Permalink to this headline">#</a></h2>
 <p>Four-quadrant switches are active switches that can conduct current in either directions and can block any polarities of voltage. Three possible realisation of such switches are presented below.</p>
 <a class="reference internal image-reference" href="_images/Quad1.svg"><img alt="_images/Quad1.svg" class="align-center" src="_images/Quad1.svg" width="200px" /></a>
 <a class="reference internal image-reference" href="_images/Quad2.svg"><img alt="_images/Quad2.svg" class="align-center" src="_images/Quad2.svg" width="200px" /></a>
 <a class="reference internal image-reference" href="_images/Quad3.svg"><img alt="_images/Quad3.svg" class="align-center" src="_images/Quad3.svg" width="200px" /></a>
-</div>
-<div class="section" id="synchronous-rectifiers">
-<h2>Synchronous rectifiers<a class="headerlink" href="#synchronous-rectifiers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="synchronous-rectifiers">
+<h2>Synchronous rectifiers<a class="headerlink" href="#synchronous-rectifiers" title="Permalink to this headline">#</a></h2>
 <p>One may want to replace the diode with a backwards-connected MOSFET, to obtain reduced conduction losses. Thus instead of using a diode with the polarity shown in <a class="reference internal" href="#diode-polar"><span class="std std-numref">Fig. 56</span></a>, one can connect a MOSFET as illustrated in <a class="reference internal" href="#synchrect"><span class="std std-numref">Fig. 69</span></a>.</p>
-<div class="figure align-default" id="synchrect">
+<figure class="align-default" id="synchrect">
 <a class="reference internal image-reference" href="_images/synchrect.svg"><img alt="_images/synchrect.svg" src="_images/synchrect.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">MOSFET as a synchronous rectifier.</span><a class="headerlink" href="#synchrect" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="synchrect-iv">
+<figcaption>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text">MOSFET as a synchronous rectifier.</span><a class="headerlink" href="#synchrect" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="synchrect-iv">
 <a class="reference internal image-reference" href="_images/reverse_mosfet_char.svg"><img alt="_images/reverse_mosfet_char.svg" src="_images/reverse_mosfet_char.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a MOSFET as a synchronous rectifier switch</span><a class="headerlink" href="#synchrect-iv" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 70 </span><span class="caption-text">Instantaneous <span class="math notranslate nohighlight">\(i-v\)</span> characteristic of a MOSFET as a synchronous rectifier switch</span><a class="headerlink" href="#synchrect-iv" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>When efficiency is important (almost always!) a synchronous rectifier should be used instead of a diode. A common application example is designing power supplies in low-voltage high-current applications, especially computer power supplies.</p>
 <div class="proof example admonition" id="synchronous_rectifier">
 <p class="admonition-title"><span>Example </span> (Buck converter with synchronous rectifier)</p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>The schematic of a buck converter with synchronous rectifiers is given below</p>
 <a class="reference internal image-reference" href="_images/buck_synch.svg"><img alt="_images/buck_synch.svg" class="align-center" src="_images/buck_synch.svg" width="700px" /></a>
 <p>MOSFET <span class="math notranslate nohighlight">\(Q_2\)</span> is controlled to turn on when diode would normally conduct. Semiconductor conduction loss can be made arbitrarily small, by reduction of MOSFET on-resistances. Thus, the losses can be made small in high-current applications. Using a synchronous rectifier transforms a discontinuous conduction mode scenario to a continuous one. (because even at no-load/ low inductor, the MOSFET can conduct in both direction.)</p>
 <p>The drawback, is the long <em>reverse recovery time</em> of the body diode. The main MOSFET should be off when the synchronous rectifier is off, and vice versa. Otherwise it leads to <em>shoot-through</em>. This is due to the fact that while the body-diode is recovering when the MOSFET is off it acts like a short-circuit.
 A schottkey diode (fast recovery) in parallel with MOSFET’s body diode will be used instead to make sure the body diode does not conduct.</p>
-</div>
-</div></div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+</div></section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>How an SPST ideal switch can be realised using semiconductor devices depends on the polarity of the voltage which the devices must block in the off-state, and on the polarity of the current which the devices must conduct in the on-state.
 Single-quadrant SPST switches can be realised using a single transistor or a single diode, depending on the relative polarities of the off-state voltage and on-state current.
 Two-quadrant SPST switches can be realised using a transistor and diode, connected in series (bidirectional-voltage) or in anti-parallel (bidirectional- current). Several four-quadrant schemes were also listed.</p>
 <p>A <em>synchronous rectifier</em> is a MOSFET connected to conduct reverse current, with gate drive control as necessary. This device can be used where a diode would otherwise be required. If a MOSFET with sufficiently low Ron is used, reduced conduction loss is obtained.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -564,7 +585,7 @@ Two-quadrant SPST switches can be realised using a transistor and diode, connect
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -572,44 +593,111 @@ Two-quadrant SPST switches can be realised using a transistor and diode, connect
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="SteadyStateEquivCirc.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Equivalent Circuit Model of Steady-State Converter</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SteadyStateEquivCirc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Equivalent Circuit Model of Steady-State Converter</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="DCM.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="DCM.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Discontinuous Conduction Mode (DCM)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-quadrant-switches">Single-quadrant switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode">Diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transistors">Transistors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-quadrant-switches">Two-Quadrant Switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-bidirectional-two-quadrant-switch">Current-bidirectional two-quadrant switch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-bidirectional-two-quadrant-switch">Voltage-bidirectional two-quadrant switch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-quadrant-switch">Four-quadrant switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronous-rectifiers">Synchronous rectifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iman Shames
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,39 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Principles of Steady-State Converter Analysis &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,563 +63,326 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SteadyState';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Equivalent Circuit Model of Steady-State Converter" href="SteadyStateEquivCirc.html" />
     <link rel="prev" title="Power Systems and Power Electronics" href="intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Power Systems and Power Electronics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Steady State Analysis of Converters
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Power Systems and Power Electronics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Steady State Analysis of Converters</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Principles of Steady-State Converter Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyStateEquivCirc.html">
-   Equivalent Circuit Model of Steady-State Converter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SwitchRealisation.html">
-   Realising Switches Using Semi-conductor Devices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="DCM.html">
-   Discontinuous Conduction Mode (DCM)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CircuitManipulation.html">
-   Converter Circuit Manipulation
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Principles of Steady-State Converter Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Power Systems Principles
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ACCircuits.html">
-   AC Voltage, Current, and Power
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Poly.html">
-   Polyphase Systems
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ACCircuits.html">AC Voltage, Current, and Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poly.html">Polyphase Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformers.html">Transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolySingleEq.html">Polyphase Lines and Single-phase Equivalents</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/RLC_Respone.html">
-   An RLC low pass filter
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/SteadyState.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SteadyState.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-        </div>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Principles of Steady-State Converter Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dc-dc-converter-example">
-   DC-DC Converter Example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resistive-voltage-divider">
-     Resistive Voltage Divider
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series-pass-regulator">
-     Series Pass Regulator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-of-an-spdt-switch">
-     Use of an SPDT Switch
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">
-   Inductor volt-second balance, capacitor charge balance, and the small ripple approximation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#buck-converter-analysis">
-   Buck converter analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-voltage-and-current-waveforms">
-     Inductor voltage and current waveforms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-magnitude">
-     Determination of inductor current ripple magnitude
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-current-waveform-during-turn-on-transient">
-     Inductor current waveform during turn-on transient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">
-     Numerical solution for
-     <span class="math notranslate nohighlight">
-      \(i_L(t)\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(v(t)\)
-     </span>
-     using a circuit simulator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">
-   The principles of inductor volt-second balance and capacitor charge balance
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-principle-of-inductor-volt-second-balance">
-     The principle of inductor volt-second balance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inductor-volt-second-balance-in-buck-converters">
-       Inductor volt-second balance in buck converters
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-principle-of-capacitor-charge-balance">
-     The principle of capacitor charge balance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boost-converter-analysis">
-   Boost Converter Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-volt-second-balance-in-boost-converters">
-     Inductor volt-second balance in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conversion-ratio-of-the-boost-converter-m-d">
-     Conversion ratio of the boost converter
-     <span class="math notranslate nohighlight">
-      \(M(D)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#capacitor-charge-balance-in-boost-converters">
-     Capacitor charge balance in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-in-boost-converters">
-     Determination of inductor current ripple in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-capacitor-voltage-ripple-in-boost-converters">
-     Determination of capacitor voltage ripple in boost converters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cuk-pronounced-chook-converter-analysis">
-   Ćuk (pronounced chook) converter analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-l-1-and-l-2-currents-ripples">
-     Determination of
-     <span class="math notranslate nohighlight">
-      \(L_1\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(L_2\)
-     </span>
-     currents ripples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-c-1-and-c-2-voltages-ripples">
-     Determination of
-     <span class="math notranslate nohighlight">
-      \(C_1\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(C_2\)
-     </span>
-     voltages ripples
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">
-   Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-current-ripple-in-two-pole-filters">
-     Inductor current ripple in two-pole filters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-dc-converter-example">DC-DC Converter Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-voltage-divider">Resistive Voltage Divider</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-pass-regulator">Series Pass Regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-an-spdt-switch">Use of an SPDT Switch</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">Inductor volt-second balance, capacitor charge balance, and the small ripple approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-converter-analysis">Buck converter analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-voltage-and-current-waveforms">Inductor voltage and current waveforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-magnitude">Determination of inductor current ripple magnitude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-current-waveform-during-turn-on-transient">Inductor current waveform during turn-on transient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">Numerical solution for <span class="math notranslate nohighlight">\(i_L(t)\)</span> and <span class="math notranslate nohighlight">\(v(t)\)</span> using a circuit simulator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">The principles of inductor volt-second balance and capacitor charge balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principle-of-inductor-volt-second-balance">The principle of inductor volt-second balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-in-buck-converters">Inductor volt-second balance in buck converters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principle-of-capacitor-charge-balance">The principle of capacitor charge balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boost-converter-analysis">Boost Converter Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-in-boost-converters">Inductor volt-second balance in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-ratio-of-the-boost-converter-m-d">Conversion ratio of the boost converter <span class="math notranslate nohighlight">\(M(D)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-charge-balance-in-boost-converters">Capacitor charge balance in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-in-boost-converters">Determination of inductor current ripple in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-capacitor-voltage-ripple-in-boost-converters">Determination of capacitor voltage ripple in boost converters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuk-pronounced-chook-converter-analysis">Ćuk (pronounced chook) converter analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-l-1-and-l-2-currents-ripples">Determination of <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> currents ripples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-c-1-and-c-2-voltages-ripples">Determination of <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> voltages ripples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-current-ripple-in-two-pole-filters">Inductor current ripple in two-pole filters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Principles of Steady-State Converter Analysis</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dc-dc-converter-example">
-   DC-DC Converter Example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resistive-voltage-divider">
-     Resistive Voltage Divider
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series-pass-regulator">
-     Series Pass Regulator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-of-an-spdt-switch">
-     Use of an SPDT Switch
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">
-   Inductor volt-second balance, capacitor charge balance, and the small ripple approximation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#buck-converter-analysis">
-   Buck converter analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-voltage-and-current-waveforms">
-     Inductor voltage and current waveforms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-magnitude">
-     Determination of inductor current ripple magnitude
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-current-waveform-during-turn-on-transient">
-     Inductor current waveform during turn-on transient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">
-     Numerical solution for
-     <span class="math notranslate nohighlight">
-      \(i_L(t)\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(v(t)\)
-     </span>
-     using a circuit simulator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">
-   The principles of inductor volt-second balance and capacitor charge balance
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-principle-of-inductor-volt-second-balance">
-     The principle of inductor volt-second balance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inductor-volt-second-balance-in-buck-converters">
-       Inductor volt-second balance in buck converters
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-principle-of-capacitor-charge-balance">
-     The principle of capacitor charge balance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boost-converter-analysis">
-   Boost Converter Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-volt-second-balance-in-boost-converters">
-     Inductor volt-second balance in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conversion-ratio-of-the-boost-converter-m-d">
-     Conversion ratio of the boost converter
-     <span class="math notranslate nohighlight">
-      \(M(D)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#capacitor-charge-balance-in-boost-converters">
-     Capacitor charge balance in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-in-boost-converters">
-     Determination of inductor current ripple in boost converters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-capacitor-voltage-ripple-in-boost-converters">
-     Determination of capacitor voltage ripple in boost converters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cuk-pronounced-chook-converter-analysis">
-   Ćuk (pronounced chook) converter analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-l-1-and-l-2-currents-ripples">
-     Determination of
-     <span class="math notranslate nohighlight">
-      \(L_1\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(L_2\)
-     </span>
-     currents ripples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determination-of-c-1-and-c-2-voltages-ripples">
-     Determination of
-     <span class="math notranslate nohighlight">
-      \(C_1\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(C_2\)
-     </span>
-     voltages ripples
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">
-   Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inductor-current-ripple-in-two-pole-filters">
-     Inductor current ripple in two-pole filters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="principles-of-steady-state-converter-analysis">
-<h1>Principles of Steady-State Converter Analysis<a class="headerlink" href="#principles-of-steady-state-converter-analysis" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="principles-of-steady-state-converter-analysis">
+<h1>Principles of Steady-State Converter Analysis<a class="headerlink" href="#principles-of-steady-state-converter-analysis" title="Permalink to this headline">#</a></h1>
 <p>Before we start our treatment of DC-DC converters, we need to be reacquainted to the notion of an <em>Ideal Switch</em> and get familiarised with the type of ideal switches that help us with analysing converters.</p>
 <p><strong>Single pole, single throw (SPST) Switch.</strong> A simple on-off switch.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/SPST.svg"><img alt="_images/SPST.svg" src="_images/SPST.svg" width="200px" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">An ideal SPST Switch</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">An ideal SPST Switch</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/SPST.svg) -->
 <ul class="simple">
 <li><p>Switch Closed: <span class="math notranslate nohighlight">\(v(t) = 0\)</span>.</p></li>
@@ -627,8 +397,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>They consume zero power. When they are off they block the current perfectly and when they conduct they have zero resistance (no voltage drop).</p>
 <p>In practice we use semi-conductor devices (e.g., diodes and transistors) to realise these switches. Semi-conductor devices are desired to operate like this (loss-less).</p>
 </div>
-<div class="section" id="dc-dc-converter-example">
-<h2>DC-DC Converter Example<a class="headerlink" href="#dc-dc-converter-example" title="Permalink to this headline">¶</a></h2>
+<section id="dc-dc-converter-example">
+<h2>DC-DC Converter Example<a class="headerlink" href="#dc-dc-converter-example" title="Permalink to this headline">#</a></h2>
 <p>In the circuit below, for <span class="math notranslate nohighlight">\(V_g=100\text{V}\)</span> and <span class="math notranslate nohighlight">\(R=5\Omega\)</span>, design a converter such that <span class="math notranslate nohighlight">\(V=50\text{V}\)</span>, <span class="math notranslate nohighlight">\(I=10\text{A}\)</span>.</p>
 <a class="reference internal image-reference" href="_images/dcdc_converter.svg"><img alt="_images/dcdc_converter.svg" class="align-center" src="_images/dcdc_converter.svg" width="400px" /></a>
 <!-- ![](fig/dcdc_converter.svg) -->
@@ -638,20 +408,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Series Pass Regulator (Dissipative realisation)</p></li>
 <li><p>Use of an SPDT Switch</p></li>
 </ul>
-<div class="section" id="resistive-voltage-divider">
-<h3>Resistive Voltage Divider<a class="headerlink" href="#resistive-voltage-divider" title="Permalink to this headline">¶</a></h3>
+<section id="resistive-voltage-divider">
+<h3>Resistive Voltage Divider<a class="headerlink" href="#resistive-voltage-divider" title="Permalink to this headline">#</a></h3>
 <p>A variable resistor in series with the load yields the following circuit.</p>
 <!-- ![](fig/divider.svg) -->
 <a class="reference internal image-reference" href="_images/divider.svg"><img alt="_images/divider.svg" class="align-center" src="_images/divider.svg" width="500px" /></a>
-</div>
-<div class="section" id="series-pass-regulator">
-<h3>Series Pass Regulator<a class="headerlink" href="#series-pass-regulator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="series-pass-regulator">
+<h3>Series Pass Regulator<a class="headerlink" href="#series-pass-regulator" title="Permalink to this headline">#</a></h3>
 <p>A series pass regulator (aka series voltage regulator) comprises of a transistor operating in the linear (aka ohmic, active) region.</p>
 <!-- ![](fig/linear_reg.svg) -->
 <a class="reference internal image-reference" href="_images/linear_reg.svg"><img alt="_images/linear_reg.svg" class="align-center" src="_images/linear_reg.svg" width="500px" /></a>
-</div>
-<div class="section" id="use-of-an-spdt-switch">
-<h3>Use of an SPDT Switch<a class="headerlink" href="#use-of-an-spdt-switch" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="use-of-an-spdt-switch">
+<h3>Use of an SPDT Switch<a class="headerlink" href="#use-of-an-spdt-switch" title="Permalink to this headline">#</a></h3>
 <p>Using an SPDT switch changes the dc component of the input voltage. If we switch back and forth between on and off position in effect we <em><strong>chop</strong></em> the input voltage.</p>
 <a class="reference internal image-reference" href="_images/proto_buck.svg"><img alt="_images/proto_buck.svg" class="align-center" src="_images/proto_buck.svg" width="500px" /></a>
 <!-- ![](fig/proto_buck.svg) -->
@@ -684,10 +454,12 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="_images/FT_fil.svg"><img alt="_images/FT_fil.svg" class="align-center" src="_images/FT_fil.svg" width="600px" /></a>
 <!-- ![](fig/FT_fil.svg) -->
 <p>To remove the switching harmonics one can implement the low-pass filter using <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(C\)</span> elements. Something that is known as an <span class="math notranslate nohighlight">\(L-C\)</span> low-pass filter (and ideally is loss-less). Placing the filter in the circuit one obtains</p>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="_images/buck_example.svg"><img alt="_images/buck_example.svg" src="_images/buck_example.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Our first buck converter!</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Our first buck converter!</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/buck_example.svg) -->
 <p>The cutoff frequency of the the filter should be much smaller than the switching frequency <span class="math notranslate nohighlight">\(f_s\)</span>. The circuit is a <em><strong>buck converter</strong></em>.</p>
 <p>The relationship between the DC component of the output voltage <span class="math notranslate nohighlight">\(v\)</span> and the input voltage <span class="math notranslate nohighlight">\(V_g\)</span> is given by</p>
@@ -697,10 +469,12 @@ V \approx \langle v_s \rangle = DV_g
 \]</div>
 <p>This relationship is presented below.</p>
 <!-- ![](fig/buck_VD.svg) -->
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/buck_VD.svg"><img alt="_images/buck_VD.svg" src="_images/buck_VD.svg" width="300px" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The graph of the conversion ratio of buck converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The graph of the conversion ratio of buck converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In an ideal scenario, the relationship between the input and the (steady-state) DC value of the output, <span class="math notranslate nohighlight">\(V\)</span> is a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span> and can be written as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -722,25 +496,31 @@ Desired: $f_0\ll f_s$ -->
 </ul>
 <p>The boost and buck-boost converters schematics realised using ideal switches are demonstrated in <a class="reference internal" href="#boost"><span class="std std-numref">Fig. 4</span></a> and <a class="reference internal" href="#buckboost"><span class="std std-numref">Fig. 5</span></a>, respectively.
 Taking a route similar to what we took to analyse buck converters, that is using Fourier analysis and filtering, is full peril and will not take us far enough. In general, Fourier analysis along with low pass filter arguments are not always easy to apply to arbitrary converters. A systematic approach is required to analyse different circuits. Understanding and applying such an approach is the focus of this chapter.</p>
-<div class="figure align-default" id="boost">
+<figure class="align-default" id="boost">
 <a class="reference internal image-reference" href="_images/boost.svg"><img alt="_images/boost.svg" src="_images/boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Boost converter with ideal switch</span><a class="headerlink" href="#boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Boost converter with ideal switch</span><a class="headerlink" href="#boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/boost.svg) -->
-<div class="figure align-default" id="buckboost">
+<figure class="align-default" id="buckboost">
 <a class="reference internal image-reference" href="_images/buck_boost.svg"><img alt="_images/buck_boost.svg" src="_images/buck_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Buck-boost converter with ideal switch</span><a class="headerlink" href="#buckboost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Buck-boost converter with ideal switch</span><a class="headerlink" href="#buckboost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/buck_boost.svg) -->
-</div>
-</div>
-<div class="section" id="inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">
-<h2>Inductor volt-second balance, capacitor charge balance, and the small ripple approximation<a class="headerlink" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">
+<h2>Inductor volt-second balance, capacitor charge balance, and the small ripple approximation<a class="headerlink" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation" title="Permalink to this headline">#</a></h2>
 <p>Consider the buck converter of <a class="reference internal" href="#buck"><span class="std std-numref">Fig. 6</span></a>.</p>
-<div class="figure align-default" id="buck">
+<figure class="align-default" id="buck">
 <a class="reference internal image-reference" href="_images/buck.svg"><img alt="_images/buck.svg" src="_images/buck.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Buck converter with ideal switch</span><a class="headerlink" href="#buck" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Buck converter with ideal switch</span><a class="headerlink" href="#buck" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/buck.svg) -->
 <p>The actual output voltage waveform will not be exactly equal to a constant DC value and it will look like what is depicted in <a class="reference internal" href="#act-wave"><span class="std std-numref">Fig. 7</span></a>. Let’s assume it takes the following form</p>
 <div class="math notranslate nohighlight">
@@ -748,22 +528,24 @@ Taking a route similar to what we took to analyse buck converters, that is using
 v(t)=V + v_{ripple}(t)
 \]</div>
 <p>For example, <span class="math notranslate nohighlight">\(V=1 \text{V}\)</span>, and the maximum of the additive ripple wave form is 10 mV, i.e., <span class="math notranslate nohighlight">\(\max |v_{ripple}(t)|=10 \text{mV}\)</span>.</p>
-<div class="figure align-default" id="act-wave">
+<figure class="align-default" id="act-wave">
 <a class="reference internal image-reference" href="_images/act_wave.svg"><img alt="_images/act_wave.svg" src="_images/act_wave.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A less-idealised representation of the output voltage waveform.</span><a class="headerlink" href="#act-wave" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">A less-idealised representation of the output voltage waveform.</span><a class="headerlink" href="#act-wave" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/act_wave.svg) -->
 <p>In a well-designed converter, the output voltage ripple is much smaller than the DC component. Hence, the waveforms can be easily determined by ignoring the ripple:
 <span class="math notranslate nohighlight">\(\|v_{ripple}(t)\|\ll V\)</span>
 Hence, <span class="math notranslate nohighlight">\(v(t) \approx V\)</span>: small-ripple approximation</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The small-ripple approximation is useful only for continuous waveforms. Particularly</p></li>
 </ol>
 <ul class="simple">
 <li><p>innductor currents</p></li>
 <li><p>capacitor voltages</p></li>
 </ul>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Small-ripple approximation cannot be applied to discontinous signals (e.g.~pulsating waveforms that switch)</p></li>
 <li><p>It is used to simplify the solutions to the ODEs describing the network. The small-ripple approximation let the solution to be calculated as linear functions. It is also known as the linear ripple approximation.</p></li>
 <li><p>It is only valid when <span class="math notranslate nohighlight">\(T_s\)</span> is short compared to the network time-constants.</p></li>
@@ -775,16 +557,18 @@ Reality:</p>
 <li><p>A physicist thinks reality is an approximation to equations.</p></li>
 <li><p>A mathematician doesn’t care.</p></li>
 </ul>
-</div>
-<div class="section" id="buck-converter-analysis">
-<h2>Buck converter analysis<a class="headerlink" href="#buck-converter-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="buck-converter-analysis">
+<h2>Buck converter analysis<a class="headerlink" href="#buck-converter-analysis" title="Permalink to this headline">#</a></h2>
 <p>Let’s revisit our trusty friend, the buck converter. In what follows we will go through the process of developing a systematic approach to analyse its behaviour at steady-state. To this aim we investigate the circuit for the two positions of the switch.</p>
 <!-- ![](fig/buck.svg) -->
 <p><strong>Switch in position 1:</strong></p>
-<div class="figure align-default" id="buck-sw1">
+<figure class="align-default" id="buck-sw1">
 <a class="reference internal image-reference" href="_images/buck_sw1.svg"><img alt="_images/buck_sw1.svg" src="_images/buck_sw1.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The buck converter circuit when the switch is in position 1.</span><a class="headerlink" href="#buck-sw1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">The buck converter circuit when the switch is in position 1.</span><a class="headerlink" href="#buck-sw1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/buck_sw1.svg) -->
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = V_g -v(t)\)</span></p></li>
@@ -802,10 +586,12 @@ Reality:</p>
 </div>
 <p><strong>Switch in position 2:</strong></p>
 <!-- ![](fig/buck_sw2.svg) -->
-<div class="figure align-default" id="buck-sw2">
+<figure class="align-default" id="buck-sw2">
 <a class="reference internal image-reference" href="_images/buck_sw2.svg"><img alt="_images/buck_sw2.svg" src="_images/buck_sw2.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The buck converter circuit when the switch is in position 2.</span><a class="headerlink" href="#buck-sw2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">The buck converter circuit when the switch is in position 2.</span><a class="headerlink" href="#buck-sw2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = -v(t)\)</span></p></li>
 <li><p>Small ripple approximation: <span class="math notranslate nohighlight">\(v_L \approx - V\)</span></p></li>
@@ -816,17 +602,19 @@ Reality:</p>
 <p class="admonition-title">Attention</p>
 <p>The inductor current changes with a constant slope.</p>
 </div>
-<div class="section" id="inductor-voltage-and-current-waveforms">
-<h3>Inductor voltage and current waveforms<a class="headerlink" href="#inductor-voltage-and-current-waveforms" title="Permalink to this headline">¶</a></h3>
+<section id="inductor-voltage-and-current-waveforms">
+<h3>Inductor voltage and current waveforms<a class="headerlink" href="#inductor-voltage-and-current-waveforms" title="Permalink to this headline">#</a></h3>
 <p>Now, let’s see how the voltage across the two terminals of the inductor behaves over a switching period. From the equations above we can depict the wave-form as below.</p>
 <!-- ```{image} fig/vL_buck.svg
 :width: 500px
 :align: center -->
 <!-- ``` -->
-<div class="figure align-default" id="vl-buck">
+<figure class="align-default" id="vl-buck">
 <a class="reference internal image-reference" href="_images/vL_buck.svg"><img alt="_images/vL_buck.svg" src="_images/vL_buck.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The inductor voltage waveform in a buck converter.</span><a class="headerlink" href="#vl-buck" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The inductor voltage waveform in a buck converter.</span><a class="headerlink" href="#vl-buck" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/vL_buck.svg) -->
 <p>Remember that the relationship between the current through and an inductor and its voltage is</p>
 <div class="math notranslate nohighlight">
@@ -844,18 +632,20 @@ Reality:</p>
 :width: 500px
 :align: center
 ``` -->
-<div class="figure align-default" id="il-buck">
+<figure class="align-default" id="il-buck">
 <a class="reference internal image-reference" href="_images/il_buck.svg"><img alt="_images/il_buck.svg" src="_images/il_buck.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The inductor current waveform in a buck converter.</span><a class="headerlink" href="#il-buck" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">The inductor current waveform in a buck converter.</span><a class="headerlink" href="#il-buck" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/il_buck.svg) -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In practice the ripple is set to be around 10-20 percent of the DC value.</p>
 </div>
-</div>
-<div class="section" id="determination-of-inductor-current-ripple-magnitude">
-<h3>Determination of inductor current ripple magnitude<a class="headerlink" href="#determination-of-inductor-current-ripple-magnitude" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="determination-of-inductor-current-ripple-magnitude">
+<h3>Determination of inductor current ripple magnitude<a class="headerlink" href="#determination-of-inductor-current-ripple-magnitude" title="Permalink to this headline">#</a></h3>
 <!-- ![](fig/il_buck.svg) -->
 <p>The total, <em>peak-to-peak</em> change in <span class="math notranslate nohighlight">\(i_L\)</span> as observable from <a class="reference internal" href="#il-buck"><span class="std std-numref">Fig. 11</span></a> in each sub-interval is</p>
 <div class="math notranslate nohighlight">
@@ -868,15 +658,15 @@ Reality:</p>
 \Delta i_L = \left ( \dfrac{V_g-V}{2L} \right) DT_s \quad \iff \quad L = \left ( \dfrac{V_g-V}{2\Delta i_L} \right) DT_s
 \]</div>
 <p>This relationship can be used to select the appropriate magnitude of <span class="math notranslate nohighlight">\(L\)</span> to achieve a certain ripple.</p>
-</div>
-<div class="section" id="inductor-current-waveform-during-turn-on-transient">
-<h3>Inductor current waveform during turn-on transient<a class="headerlink" href="#inductor-current-waveform-during-turn-on-transient" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inductor-current-waveform-during-turn-on-transient">
+<h3>Inductor current waveform during turn-on transient<a class="headerlink" href="#inductor-current-waveform-during-turn-on-transient" title="Permalink to this headline">#</a></h3>
 <p>Inductor current waveform during turn-on transient:</p>
 <p><img alt="" src="_images/il_trans_buck.svg" /></p>
 <p>Converter in equilibrium: <span class="math notranslate nohighlight">\(i_L((n+1)T_s)=i_L(nT_s)\)</span></p>
-</div>
-<div class="section" id="numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">
-<h3>Numerical solution for <span class="math notranslate nohighlight">\(i_L(t)\)</span> and <span class="math notranslate nohighlight">\(v(t)\)</span> using a circuit simulator<a class="headerlink" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">
+<h3>Numerical solution for <span class="math notranslate nohighlight">\(i_L(t)\)</span> and <span class="math notranslate nohighlight">\(v(t)\)</span> using a circuit simulator<a class="headerlink" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator" title="Permalink to this headline">#</a></h3>
 <p><img alt="" src="_images/num_iL_buck.svg" /></p>
 <p><img alt="" src="_images/num_v_buck.svg" /></p>
 <ul class="simple">
@@ -884,12 +674,12 @@ Reality:</p>
 <li><p>Note that the waveforms are made up of line segments.</p></li>
 <li><p>Ripple after <span class="math notranslate nohighlight">\(5 \text{ms}\)</span>: 0.01850875. Expected ripple at steady state: <span class="math notranslate nohighlight">\(\Delta i_L = \dfrac{V_g-V}{2L}DT_s=0.01875\)</span>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">
-<h2>The principles of inductor volt-second balance and capacitor charge balance<a class="headerlink" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-principle-of-inductor-volt-second-balance">
-<h3>The principle of inductor volt-second balance<a class="headerlink" href="#the-principle-of-inductor-volt-second-balance" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">
+<h2>The principles of inductor volt-second balance and capacitor charge balance<a class="headerlink" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance" title="Permalink to this headline">#</a></h2>
+<section id="the-principle-of-inductor-volt-second-balance">
+<h3>The principle of inductor volt-second balance<a class="headerlink" href="#the-principle-of-inductor-volt-second-balance" title="Permalink to this headline">#</a></h3>
 <p>Inductor defining relation: <span class="math notranslate nohighlight">\(v_L = L \dfrac{\mathrm{d} i_L(t)}{\mathrm{d}t}\)</span></p>
 <p>Integrating the current over one switching period results in</p>
 <div class="math notranslate nohighlight">
@@ -910,8 +700,8 @@ i_L(T_s) - i_L(0) = \dfrac{1}{L} \int_0^{T_s} v_L(t) \mathrm{d}t
 0 = \dfrac{1}{T_s} \int_0^{T_s} v_L(t) \mathrm{d}t = \langle v_L \rangle
 \]</div>
 </div>
-<div class="section" id="inductor-volt-second-balance-in-buck-converters">
-<h4>Inductor volt-second balance in buck converters<a class="headerlink" href="#inductor-volt-second-balance-in-buck-converters" title="Permalink to this headline">¶</a></h4>
+<section id="inductor-volt-second-balance-in-buck-converters">
+<h4>Inductor volt-second balance in buck converters<a class="headerlink" href="#inductor-volt-second-balance-in-buck-converters" title="Permalink to this headline">#</a></h4>
 <p>The integral of the voltage waveform (see <a class="reference internal" href="#vl-buck"><span class="std std-numref">Fig. 10</span></a>) is the area of rectangles:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -928,10 +718,10 @@ i_L(T_s) - i_L(0) = \dfrac{1}{L} \int_0^{T_s} v_L(t) \mathrm{d}t
 \[
 0 = DV_g -(D+D') V = DV_g -V \implies V = D V_g
 \]</div>
-</div>
-</div>
-<div class="section" id="the-principle-of-capacitor-charge-balance">
-<h3>The principle of capacitor charge balance<a class="headerlink" href="#the-principle-of-capacitor-charge-balance" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-principle-of-capacitor-charge-balance">
+<h3>The principle of capacitor charge balance<a class="headerlink" href="#the-principle-of-capacitor-charge-balance" title="Permalink to this headline">#</a></h3>
 <p>The capacitor defining relation is <span class="math notranslate nohighlight">\(i_C(t) = C \dfrac{\mathrm{d}v_C(t)}{\mathrm{d}t}\)</span>
 Integrating over one switching period:</p>
 <div class="math notranslate nohighlight">
@@ -956,23 +746,27 @@ v_C(T_s) - v_C(0) = \dfrac{1}{C} \int_0^{T_s} i_C(t) \mathrm{d}t
 <p class="admonition-title">Warning</p>
 <p>We have to be careful when we talk about charging a capacitor and a capacitor charge. There is a fundamental misunderstanding in thinking about capacitors as a place to store electric charge. We really store energy in a capacitor. A good discussion can be found <a class="reference external" href="http://amasci.com/emotor/cap1.html">here</a>. Please note that this discussion has no impact on how we use the principle of charge balance to study the behaviour of converters.</p>
 </div>
-</div>
-</div>
-<div class="section" id="boost-converter-analysis">
-<h2>Boost Converter Analysis<a class="headerlink" href="#boost-converter-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="boost-converter-analysis">
+<h2>Boost Converter Analysis<a class="headerlink" href="#boost-converter-analysis" title="Permalink to this headline">#</a></h2>
 <p>Consider the Boost converter with ideal switch of <a class="reference internal" href="#boost"><span class="std std-numref">Fig. 4</span></a>. As we will see in future chapters this circuit can be realised in practice with
 a power transistor and a (free-wheeling) diode. The practical circuit realisation is presented in <a class="reference internal" href="#boost-prac"><span class="std std-numref">Fig. 12</span></a>.</p>
-<div class="figure align-default" id="boost-prac">
+<figure class="align-default" id="boost-prac">
 <a class="reference internal image-reference" href="_images/boost_physical.svg"><img alt="_images/boost_physical.svg" src="_images/boost_physical.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">A practical realisation of the boost converter</span><a class="headerlink" href="#boost-prac" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">A practical realisation of the boost converter</span><a class="headerlink" href="#boost-prac" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/boost_physical.svg) -->
 <p><strong>Switch in position 1:</strong></p>
 <!-- ![](fig/boost_sw1.svg) -->
-<div class="figure align-default" id="boost-sw1">
+<figure class="align-default" id="boost-sw1">
 <a class="reference internal image-reference" href="_images/boost_sw1.svg"><img alt="_images/boost_sw1.svg" src="_images/boost_sw1.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The boost converter circuit when the switch is in position 1.</span><a class="headerlink" href="#boost-sw1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The boost converter circuit when the switch is in position 1.</span><a class="headerlink" href="#boost-sw1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The inductor voltage and capacitor current are</p>
 <div class="math notranslate nohighlight">
 \[
@@ -984,10 +778,12 @@ v_L = V_g, \quad i_C=-v/R
 v_L \approx V_g, \quad i_C \approx -V/R
 \]</div>
 <p><strong>Switch in position 2:</strong></p>
-<div class="figure align-default" id="boost-sw2">
+<figure class="align-default" id="boost-sw2">
 <a class="reference internal image-reference" href="_images/boost_sw2.svg"><img alt="_images/boost_sw2.svg" src="_images/boost_sw2.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The boost converter circuit when the switch is in position 2.</span><a class="headerlink" href="#boost-sw2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">The boost converter circuit when the switch is in position 2.</span><a class="headerlink" href="#boost-sw2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In this case the inductor voltage and capacitor current are</p>
 <div class="math notranslate nohighlight">
 \[
@@ -998,17 +794,19 @@ v_L = V_g - v, \quad i_C=i_L-v/R
 \[
 v_L \approx V_g-V, \quad i_C\approx I-V/R
 \]</div>
-<div class="section" id="inductor-volt-second-balance-in-boost-converters">
-<h3>Inductor volt-second balance in boost converters<a class="headerlink" href="#inductor-volt-second-balance-in-boost-converters" title="Permalink to this headline">¶</a></h3>
+<section id="inductor-volt-second-balance-in-boost-converters">
+<h3>Inductor volt-second balance in boost converters<a class="headerlink" href="#inductor-volt-second-balance-in-boost-converters" title="Permalink to this headline">#</a></h3>
 <!-- ![](fig/vL_boost.svg) -->
 <!-- ``{image} fig/il_buck.svg
 :width: 500px
 :align: center -->
 <!-- ``` -->
-<div class="figure align-default" id="vl-boost">
+<figure class="align-default" id="vl-boost">
 <a class="reference internal image-reference" href="_images/vL_boost.svg"><img alt="_images/vL_boost.svg" src="_images/vL_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The inductor voltage waveform in a boost converter.</span><a class="headerlink" href="#vl-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">The inductor voltage waveform in a boost converter.</span><a class="headerlink" href="#vl-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>From the volt-seconds balance principle applied to inductor:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1022,32 +820,36 @@ v_L \approx V_g-V, \quad i_C\approx I-V/R
 \[
 M(D) =\dfrac{V}{V_g} = \dfrac{1}{D'}=\dfrac{1}{1-D}
 \]</div>
-</div>
-<div class="section" id="conversion-ratio-of-the-boost-converter-m-d">
-<h3>Conversion ratio of the boost converter <span class="math notranslate nohighlight">\(M(D)\)</span><a class="headerlink" href="#conversion-ratio-of-the-boost-converter-m-d" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="conversion-ratio-of-the-boost-converter-m-d">
+<h3>Conversion ratio of the boost converter <span class="math notranslate nohighlight">\(M(D)\)</span><a class="headerlink" href="#conversion-ratio-of-the-boost-converter-m-d" title="Permalink to this headline">#</a></h3>
 <p>The conversion ratio of the boost converter as the function of the duty cycle is depicted in <a class="reference internal" href="#md-boost"><span class="std std-numref">Fig. 16</span></a> and is given below:</p>
 <div class="math notranslate nohighlight">
 \[
 M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 \]</div>
 <!-- ![](fig/MD_boost.svg) -->
-<div class="figure align-default" id="md-boost">
+<figure class="align-default" id="md-boost">
 <a class="reference internal image-reference" href="_images/MD_boost.svg"><img alt="_images/MD_boost.svg" src="_images/MD_boost.svg" width="300px" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The graph of the conversion ratio of boost converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#md-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The graph of the conversion ratio of boost converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#md-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ideal conversion rate goes to infinity. But real converters cannot achieve that. In fact, the maximum output of a converter is limited by the losses (we will study losses in the future.)</p>
 </div>
-</div>
-<div class="section" id="capacitor-charge-balance-in-boost-converters">
-<h3>Capacitor charge balance in boost converters<a class="headerlink" href="#capacitor-charge-balance-in-boost-converters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="capacitor-charge-balance-in-boost-converters">
+<h3>Capacitor charge balance in boost converters<a class="headerlink" href="#capacitor-charge-balance-in-boost-converters" title="Permalink to this headline">#</a></h3>
 <p>The waveform of the capacitor current in a boost converter is presented below:</p>
 <!-- ![](fig/iC_boost.svg) -->
-<div class="figure align-default" id="ic-boost">
+<figure class="align-default" id="ic-boost">
 <a class="reference internal image-reference" href="_images/iC_boost.svg"><img alt="_images/iC_boost.svg" src="_images/iC_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The capacitor current waveform in a boost converter.</span><a class="headerlink" href="#ic-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">The capacitor current waveform in a boost converter.</span><a class="headerlink" href="#ic-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Net charge applied to the capacitor over one period:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1057,9 +859,9 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
      I &amp;=\dfrac{V}{D'R} \implies I = \dfrac{V_g}{D'^2 R}
    \end{align*}
 \end{split}\]</div>
-</div>
-<div class="section" id="determination-of-inductor-current-ripple-in-boost-converters">
-<h3>Determination of inductor current ripple in boost converters<a class="headerlink" href="#determination-of-inductor-current-ripple-in-boost-converters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="determination-of-inductor-current-ripple-in-boost-converters">
+<h3>Determination of inductor current ripple in boost converters<a class="headerlink" href="#determination-of-inductor-current-ripple-in-boost-converters" title="Permalink to this headline">#</a></h3>
 <p>From the inductors defining relationship and in light of the voltage waveform of an inductor one can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1069,10 +871,12 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 \end{cases}\end{align*}
 \end{split}\]</div>
 <p>The waveform is depicted in <a class="reference internal" href="#il-boost"><span class="std std-numref">Fig. 18</span></a>.</p>
-<div class="figure align-default" id="il-boost">
+<figure class="align-default" id="il-boost">
 <a class="reference internal image-reference" href="_images/il_buck.svg"><img alt="_images/il_buck.svg" src="_images/il_buck.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">The inductor current waveform in a boost converter.</span><a class="headerlink" href="#il-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">The inductor current waveform in a boost converter.</span><a class="headerlink" href="#il-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/il_buck.svg) -->
 <p>The peak-to-peak change in inductor current during subinterval 1:</p>
 <div class="math notranslate nohighlight">
@@ -1080,9 +884,9 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 2 \Delta i_L = \dfrac{V_g}{L} D T_s \iff   \Delta i_L = \dfrac{V_g}{2L} DT_s
 \]</div>
 <p>One may choose <span class="math notranslate nohighlight">\(L\)</span> for a desired ripple magnitude given other circuit parameters.</p>
-</div>
-<div class="section" id="determination-of-capacitor-voltage-ripple-in-boost-converters">
-<h3>Determination of capacitor voltage ripple in boost converters<a class="headerlink" href="#determination-of-capacitor-voltage-ripple-in-boost-converters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="determination-of-capacitor-voltage-ripple-in-boost-converters">
+<h3>Determination of capacitor voltage ripple in boost converters<a class="headerlink" href="#determination-of-capacitor-voltage-ripple-in-boost-converters" title="Permalink to this headline">#</a></h3>
 <p>Using the defining equation for capacitors:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1092,10 +896,12 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 \end{cases}\end{align*}
 \end{split}\]</div>
 <p>The capacitor voltage waveform is presented in <a class="reference internal" href="#vc-boost"><span class="std std-numref">Fig. 19</span></a>.</p>
-<div class="figure align-default" id="vc-boost">
+<figure class="align-default" id="vc-boost">
 <a class="reference internal image-reference" href="_images/vC_boost.svg"><img alt="_images/vC_boost.svg" src="_images/vC_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">The capacitor voltage waveform in a boost converter.</span><a class="headerlink" href="#vc-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">The capacitor voltage waveform in a boost converter.</span><a class="headerlink" href="#vc-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/vC_boost.svg) -->
 <p>The peak-to-peak change in capacitor voltage during subinterval 1 is described by</p>
 <div class="math notranslate nohighlight">
@@ -1104,26 +910,32 @@ M(D)=\dfrac{V}{V_g}=\dfrac{1}{D'}=\dfrac{1}{1-D}
 \]</div>
 <p>As before, one can choose <span class="math notranslate nohighlight">\(C\)</span> for a desired ripple magnitude.
 In practice, capacitor equivalent series resistance (esr) leads to increased voltage ripple.</p>
-</div>
-</div>
-<div class="section" id="cuk-pronounced-chook-converter-analysis">
-<h2>Ćuk (pronounced chook) converter analysis<a class="headerlink" href="#cuk-pronounced-chook-converter-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="cuk-pronounced-chook-converter-analysis">
+<h2>Ćuk (pronounced chook) converter analysis<a class="headerlink" href="#cuk-pronounced-chook-converter-analysis" title="Permalink to this headline">#</a></h2>
 <p>A Ćuk converter with ideal switch is presented in <a class="reference internal" href="#cuk"><span class="std std-numref">Fig. 20</span></a>. The practical implementation of the circuit using transistors and diodes is given in <a class="reference internal" href="#cuk-prac"><span class="std std-numref">Fig. 21</span></a>.</p>
-<div class="figure align-default" id="cuk">
+<figure class="align-default" id="cuk">
 <a class="reference internal image-reference" href="_images/cuk.svg"><img alt="_images/cuk.svg" src="_images/cuk.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Ćuk converter with ideal switches</span><a class="headerlink" href="#cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Ćuk converter with ideal switches</span><a class="headerlink" href="#cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/cuk.svg) -->
-<div class="figure align-default" id="cuk-prac">
+<figure class="align-default" id="cuk-prac">
 <a class="reference internal image-reference" href="_images/cuk_physical.svg"><img alt="_images/cuk_physical.svg" src="_images/cuk_physical.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Ćuk converter practical realisation using power transistor and diode</span><a class="headerlink" href="#cuk-prac" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Ćuk converter practical realisation using power transistor and diode</span><a class="headerlink" href="#cuk-prac" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/cuk_physical.svg) -->
 <p><strong>Switch in position 1:</strong> When the switch is in position 1, the transistor conducts currents and <span class="math notranslate nohighlight">\(C_1\)</span> releases energy to the output. The equivalent circuit for this case is depicted below.</p>
-<div class="figure align-default" id="cuk-sw1">
+<figure class="align-default" id="cuk-sw1">
 <a class="reference internal image-reference" href="_images/cuk_sw1.svg"><img alt="_images/cuk_sw1.svg" src="_images/cuk_sw1.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">The Ćuk converter circuit when the switch is in position 1.</span><a class="headerlink" href="#cuk-sw1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">The Ćuk converter circuit when the switch is in position 1.</span><a class="headerlink" href="#cuk-sw1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/cuk_sw1.svg) -->
 <p>Inductor voltages and capacitor currents are</p>
 <div class="math notranslate nohighlight">
@@ -1146,10 +958,12 @@ In practice, capacitor equivalent series resistance (esr) leads to increased vol
 \end{aligned}
 \end{split}\]</div>
 <p><strong>Switch in position 2:</strong> In this case the diode conducts, and capacitor <span class="math notranslate nohighlight">\(C_1\)</span> is charged from the input. This circuit configuration for this case is presented below.</p>
-<div class="figure align-default" id="cuk-sw2">
+<figure class="align-default" id="cuk-sw2">
 <a class="reference internal image-reference" href="_images/cuk_sw2.svg"><img alt="_images/cuk_sw2.svg" src="_images/cuk_sw2.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">The Ćuk converter circuit when the switch is in position 2.</span><a class="headerlink" href="#cuk-sw2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">The Ćuk converter circuit when the switch is in position 2.</span><a class="headerlink" href="#cuk-sw2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/cuk_sw2.svg) -->
 <p>Inductor voltages and capacitor currents:</p>
 <div class="math notranslate nohighlight">
@@ -1173,14 +987,18 @@ In practice, capacitor equivalent series resistance (esr) leads to increased vol
 \end{split}\]</div>
 <p>The principles of inductor volt-second and capacitor charge balance state that <em><strong>the average values of the periodic inductor voltage and capacitor current waveforms are zero</strong></em>, when the converter operates in steady state. Hence, to determine the steady-state conditions in the converter, sketch the inductor voltage and capacitor current waveforms, and equate their average values to zero.</p>
 <p>The waveforms of the voltages of <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> are presented in <a class="reference internal" href="#vl1-cuk"><span class="std std-numref">Fig. 24</span></a> and <a class="reference internal" href="#vl2-cuk"><span class="std std-numref">Fig. 25</span></a>, respectively.</p>
-<div class="figure align-default" id="vl1-cuk">
+<figure class="align-default" id="vl1-cuk">
 <a class="reference internal image-reference" href="_images/vL1_cuk.svg"><img alt="_images/vL1_cuk.svg" src="_images/vL1_cuk.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_1\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vl1-cuk" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="vl2-cuk">
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_1\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vl1-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="vl2-cuk">
 <a class="reference internal image-reference" href="_images/vL2_cuk.svg"><img alt="_images/vL2_cuk.svg" src="_images/vL2_cuk.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_2\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vl2-cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_2\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vl2-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The volt-second balance principle applied to <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> give</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1193,14 +1011,18 @@ In practice, capacitor equivalent series resistance (esr) leads to increased vol
 \]</div>
 <!-- ![](fig/vL2_cuk.svg) -->
 <p>The waveforms of the currents of <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> are presented in <a class="reference internal" href="#ic1-cuk"><span class="std std-numref">Fig. 26</span></a> and <a class="reference internal" href="#ic2-cuk"><span class="std std-numref">Fig. 27</span></a>, respectively.</p>
-<div class="figure align-default" id="ic1-cuk">
+<figure class="align-default" id="ic1-cuk">
 <a class="reference internal image-reference" href="_images/iC1_cuk.svg"><img alt="_images/iC1_cuk.svg" src="_images/iC1_cuk.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_1\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#ic1-cuk" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="ic2-cuk">
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_1\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#ic1-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="ic2-cuk">
 <a class="reference internal image-reference" href="_images/iC2_cuk.svg"><img alt="_images/iC2_cuk.svg" src="_images/iC2_cuk.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_2\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#ic2-cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_2\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#ic2-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Applying the charge balance principle to <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> results in</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1219,13 +1041,15 @@ In practice, capacitor equivalent series resistance (esr) leads to increased vol
 M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
 \]</div>
 <p>Its graph in term of the duty cucle <span class="math notranslate nohighlight">\(D\)</span> is depicted below.</p>
-<div class="figure align-default" id="md-cuk">
+<figure class="align-default" id="md-cuk">
 <a class="reference internal image-reference" href="_images/cuk_MD.svg"><img alt="_images/cuk_MD.svg" src="_images/cuk_MD.svg" width="300px" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">The graph of the conversion ratio of Ćuk converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#md-cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">The graph of the conversion ratio of Ćuk converter as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#md-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/cuk_MD.svg) -->
-<div class="section" id="determination-of-l-1-and-l-2-currents-ripples">
-<h3>Determination of <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> currents ripples<a class="headerlink" href="#determination-of-l-1-and-l-2-currents-ripples" title="Permalink to this headline">¶</a></h3>
+<section id="determination-of-l-1-and-l-2-currents-ripples">
+<h3>Determination of <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> currents ripples<a class="headerlink" href="#determination-of-l-1-and-l-2-currents-ripples" title="Permalink to this headline">#</a></h3>
 <p>Using the defining equation for inductors <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> and given their voltages over a switching interval we obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1245,18 +1069,22 @@ M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
 \end{cases}\end{align*}
 \end{split}\]</div>
 <p>The corresponding currents waveforms are given below.</p>
-<div class="figure align-default" id="il1-cuk">
+<figure class="align-default" id="il1-cuk">
 <a class="reference internal image-reference" href="_images/iL1_ripple.svg"><img alt="_images/iL1_ripple.svg" src="_images/iL1_ripple.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_1\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#il1-cuk" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="il2-cuk">
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_1\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#il1-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="il2-cuk">
 <a class="reference internal image-reference" href="_images/iL2_ripple.svg"><img alt="_images/iL2_ripple.svg" src="_images/iL2_ripple.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_2\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#il2-cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><span class="math notranslate nohighlight">\(L_2\)</span> current waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#il2-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/iL2_ripple.svg) -->
-</div>
-<div class="section" id="determination-of-c-1-and-c-2-voltages-ripples">
-<h3>Determination of <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> voltages ripples<a class="headerlink" href="#determination-of-c-1-and-c-2-voltages-ripples" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="determination-of-c-1-and-c-2-voltages-ripples">
+<h3>Determination of <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> voltages ripples<a class="headerlink" href="#determination-of-c-1-and-c-2-voltages-ripples" title="Permalink to this headline">#</a></h3>
 <p>Applying the capacitor defining relationship to <span class="math notranslate nohighlight">\(C_1\)</span> and given its voltage waveform, one obtains</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1265,10 +1093,12 @@ M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
   \frac{I_1}{C_1} &amp; \text{Position 2}
   \end{cases}\end{align*}
 \end{split}\]</div>
-<div class="figure align-default" id="vc1-cuk">
+<figure class="align-default" id="vc1-cuk">
 <a class="reference internal image-reference" href="_images/vC1_ripple.svg"><img alt="_images/vC1_ripple.svg" src="_images/vC1_ripple.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_1\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vc1-cuk" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text"><span class="math notranslate nohighlight">\(C_1\)</span> voltage waveform in <a class="reference internal" href="#cuk"><span class="std std-ref">Ćuk converter with ideal switches</span></a></span><a class="headerlink" href="#vc1-cuk" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/vC1_ripple.svg) -->
 <p>Doing the same to <span class="math notranslate nohighlight">\(C_2\)</span> yields</p>
 <div class="math notranslate nohighlight">
@@ -1279,10 +1109,10 @@ M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
 <p class="admonition-title">Error</p>
 <p>This is weird! Of course there is ripple in the waveform. The small ripple approximation does not explain everything here. We need a better approximation.</p>
 </div>
-</div>
-</div>
-<div class="section" id="estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">
-<h2>Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)<a class="headerlink" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">
+<h2>Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)<a class="headerlink" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk" title="Permalink to this headline">#</a></h2>
 <p>Consider the circuit with an output two-pole filter as shown below.</p>
 <a class="reference internal image-reference" href="_images/two_pole.svg"><img alt="_images/two_pole.svg" class="align-center" src="_images/two_pole.svg" width="500px" /></a>
 <!-- ![](fig/two_pole.svg) -->
@@ -1290,10 +1120,12 @@ M(D) = \dfrac{V_2}{V_g}= - \dfrac{D}{1-D}
 <a class="reference internal image-reference" href="_images/iL_ripple.svg"><img alt="_images/iL_ripple.svg" class="align-center" src="_images/iL_ripple.svg" width="500px" /></a>
 <!-- ![](fig/iL_ripple.svg) -->
 <p>What is the capacitor current?</p>
-<div class="figure align-default" id="total-charge">
+<figure class="align-default" id="total-charge">
 <a class="reference internal image-reference" href="_images/total_charge.svg"><img alt="_images/total_charge.svg" src="_images/total_charge.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">The total charge in the capacitor.</span><a class="headerlink" href="#total-charge" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">The total charge in the capacitor.</span><a class="headerlink" href="#total-charge" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/total_charge.svg) -->
 <p>If the capacitor voltage ripple is small, then essentially all of the ac component of inductor current flows through the capacitor. The inductor current ripple must not be neglected.</p>
 <p>the current <span class="math notranslate nohighlight">\(i_C(t)\)</span> is positive for half of the switching period. This positive current causes the capacitor voltage <span class="math notranslate nohighlight">\(v_C(t)\)</span> to increase between its minimum and maximum extrema. During this time, the total charge <span class="math notranslate nohighlight">\(q\)</span> is deposited on the capacitor plates, where</p>
@@ -1320,16 +1152,18 @@ q = \dfrac{1}{2} \Delta i_L \dfrac{T_s}{2}
     \Delta v_1 = \dfrac{-I_2 D T_s}{ 2C_1}= \dfrac{V_g D^2 T_s }{2 D' RC_1}, &amp;\Delta v_2 = \dfrac{V_g D T_s^2}{ 16C_2 L_2}
     \end{array}
 \end{split}\]</div>
-<div class="section" id="inductor-current-ripple-in-two-pole-filters">
-<h3>Inductor current ripple in two-pole filters<a class="headerlink" href="#inductor-current-ripple-in-two-pole-filters" title="Permalink to this headline">¶</a></h3>
+<section id="inductor-current-ripple-in-two-pole-filters">
+<h3>Inductor current ripple in two-pole filters<a class="headerlink" href="#inductor-current-ripple-in-two-pole-filters" title="Permalink to this headline">#</a></h3>
 <p>Now consider a circuit with an input two-pole filter as shown in the following figure.</p>
 <a class="reference internal image-reference" href="_images/input_filter.svg"><img alt="_images/input_filter.svg" class="align-center" src="_images/input_filter.svg" width="500px" /></a>
 <!-- ![](fig/iL_ripple.svg) -->
 <!-- ![](fig/input_filter.svg) -->
-<div class="figure align-default" id="total-flux">
+<figure class="align-default" id="total-flux">
 <a class="reference internal image-reference" href="_images/total_flux.svg"><img alt="_images/total_flux.svg" src="_images/total_flux.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">The total flux in the inductor.</span><a class="headerlink" href="#total-flux" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">The total flux in the inductor.</span><a class="headerlink" href="#total-flux" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <!-- ![](fig/total_flux.svg) -->
 <p>The total linkage flux <span class="math notranslate nohighlight">\(\lambda\)</span> is the area of the triangle, as shown</p>
 <div class="math notranslate nohighlight">
@@ -1342,10 +1176,10 @@ q = \dfrac{1}{2} \Delta i_L \dfrac{T_s}{2}
 \Delta i_L = \dfrac{\Delta v T_s}{ 8L}
 \]</div>
 <p>As mentioned before inductor linkage flux is the same as its volt-seconds.</p>
-</div>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>The dc component of a converter waveform is given by its average value, or the integral over one switching period, divided by the switching period. Solution of a dc-dc converter to find its dc, or steady-state, voltages and currents therefore involves averaging the waveforms.</p>
 <p>The linear ripple approximation greatly simplifies the analysis. In a well-designed converter, the switching ripples in the inductor currents and capacitor voltages are small compared to the respective dc components, and can be neglected.</p>
 <p>The principle of inductor volt-second balance allows determination of the dc voltage components in any switching converter. In steady-state, the average voltage applied to an inductor must be zero.</p>
@@ -1353,8 +1187,8 @@ q = \dfrac{1}{2} \Delta i_L \dfrac{T_s}{2}
 <p>By knowledge of the slopes of the inductor current and capacitor voltage waveforms, the ac switching ripple magnitudes may be computed. Inductance and capacitance values can then be chosen to obtain desired ripple magnitudes.</p>
 <p>In converters containing multiple-pole filters, continuous (nonpulsating) voltages and currents are applied to one or more of the inductors or capacitors. Computation of the ac switching ripple in these elements can be done using capacitor charge and/or inductor flux-linkage arguments, without use of the small-ripple approximation.</p>
 <p>Converters capable of increasing (boost), decreasing (buck), and inverting the voltage polarity (buck-boost and Ćuk) have been described. Converter circuits are explored more fully in future.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1368,7 +1202,7 @@ q = \dfrac{1}{2} \Delta i_L \dfrac{T_s}{2}
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1376,44 +1210,138 @@ q = \dfrac{1}{2} \Delta i_L \dfrac{T_s}{2}
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Power Systems and Power Electronics</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Power Systems and Power Electronics</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="SteadyStateEquivCirc.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="SteadyStateEquivCirc.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Equivalent Circuit Model of Steady-State Converter</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-dc-converter-example">DC-DC Converter Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-voltage-divider">Resistive Voltage Divider</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series-pass-regulator">Series Pass Regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-an-spdt-switch">Use of an SPDT Switch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-capacitor-charge-balance-and-the-small-ripple-approximation">Inductor volt-second balance, capacitor charge balance, and the small ripple approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-converter-analysis">Buck converter analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-voltage-and-current-waveforms">Inductor voltage and current waveforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-magnitude">Determination of inductor current ripple magnitude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-current-waveform-during-turn-on-transient">Inductor current waveform during turn-on transient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-for-i-l-t-and-v-t-using-a-circuit-simulator">Numerical solution for <span class="math notranslate nohighlight">\(i_L(t)\)</span> and <span class="math notranslate nohighlight">\(v(t)\)</span> using a circuit simulator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principles-of-inductor-volt-second-balance-and-capacitor-charge-balance">The principles of inductor volt-second balance and capacitor charge balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principle-of-inductor-volt-second-balance">The principle of inductor volt-second balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-in-buck-converters">Inductor volt-second balance in buck converters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principle-of-capacitor-charge-balance">The principle of capacitor charge balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boost-converter-analysis">Boost Converter Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-volt-second-balance-in-boost-converters">Inductor volt-second balance in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-ratio-of-the-boost-converter-m-d">Conversion ratio of the boost converter <span class="math notranslate nohighlight">\(M(D)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-charge-balance-in-boost-converters">Capacitor charge balance in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-inductor-current-ripple-in-boost-converters">Determination of inductor current ripple in boost converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-capacitor-voltage-ripple-in-boost-converters">Determination of capacitor voltage ripple in boost converters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuk-pronounced-chook-converter-analysis">Ćuk (pronounced chook) converter analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-l-1-and-l-2-currents-ripples">Determination of <span class="math notranslate nohighlight">\(L_1\)</span> and <span class="math notranslate nohighlight">\(L_2\)</span> currents ripples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-of-c-1-and-c-2-voltages-ripples">Determination of <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> voltages ripples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-ripple-in-converters-containing-two-pole-low-pass-filters-e-g-buck-and-cuk">Estimating ripple in converters containing two-pole low-pass filters (e.g. Buck and Ćuk)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-current-ripple-in-two-pole-filters">Inductor current ripple in two-pole filters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iman Shames
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

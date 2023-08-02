@@ -4,7 +4,7 @@ The first ingredient of an equivalent circuit model is the _DC Transformer_.
 
 ## DC Transformer Model
 
-For an ideal converter with efficient $\eta =100 \%$:
+For an ideal converter with efficiency $\eta =100 \%$:
 
 $$
 P_{in}=P_{out}, \quad V_g I_g = V I
@@ -175,6 +175,7 @@ The boost converter circuit with a lossy inductor when the switch is in position
 - Inductor voltage: $v_L = V_g - iR_L-v$
 - Capacitor current:  $i_C=i-v/R$
 - Small ripple approximation:
+
 $$
 v_L \approx V_g-IR_L-V, \quad i_C \approx I-V/R
 $$

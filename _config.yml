@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: ENGN4625/ENGN6625 Power Systems & Power Electronics
-# author: Iman Shames
+author: Iman Shames
+copyright: "2022"  # Copyright year to be placed in the footer
 logo: logo.png
 
 # Force re-execution of notebooks on each build.

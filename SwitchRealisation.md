@@ -82,7 +82,7 @@ Assumed voltage and current polarities in {numref}`trans_char`.
 ```
 
 
-````{prf:example}
+````{prf:example} Switches in a buck converter
 :label: buck-switch-example
 :nonumber:
 
@@ -94,9 +94,9 @@ First, one needs to determine the polarities (signs) of the currents that switch
 :width: 400px
 :align: center
 ```
-Consulting {numref}`diode_char` and {numref}`trans_char` one conclused that switch A is consistent with a transistor and switch B can be realised with a diode.
+Consulting {numref}`diode_char` and {numref}`trans_char` one concludes that switch A is consistent with a transistor and switch B can be realised with a diode.
 
-The final converter circuit schematic with the semi-condutor devices is shown below.
+The final converter circuit schematic with the semi-conductor devices is shown below.
 
 ```{image} fig/semi_buck_realis.svg
 :width: 500px

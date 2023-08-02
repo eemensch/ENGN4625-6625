@@ -1,39 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Converter Circuit Manipulation &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,343 +63,329 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CircuitManipulation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="AC Voltage, Current, and Power" href="ACCircuits.html" />
     <link rel="prev" title="Discontinuous Conduction Mode (DCM)" href="DCM.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Power Systems and Power Electronics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Steady State Analysis of Converters
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Power Systems and Power Electronics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Steady State Analysis of Converters</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyState.html">
-   Principles of Steady-State Converter Analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyStateEquivCirc.html">
-   Equivalent Circuit Model of Steady-State Converter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SwitchRealisation.html">
-   Realising Switches Using Semi-conductor Devices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="DCM.html">
-   Discontinuous Conduction Mode (DCM)
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Converter Circuit Manipulation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Converter Circuit Manipulation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Power Systems Principles
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ACCircuits.html">
-   AC Voltage, Current, and Power
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Poly.html">
-   Polyphase Systems
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ACCircuits.html">AC Voltage, Current, and Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poly.html">Polyphase Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformers.html">Transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolySingleEq.html">Polyphase Lines and Single-phase Equivalents</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/RLC_Respone.html">
-   An RLC low pass filter
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/CircuitManipulation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CircuitManipulation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-        </div>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Converter Circuit Manipulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#circuit-manipulation">
-   Circuit Manipulation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inversion">
-     Inversion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cascade-interconnection">
-     Cascade Interconnection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differential-interconnection">
-     Differential Interconnection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-short-list-of-converters">
-   A short list of converters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converters-producing-unipolar-output-voltage">
-     Converters producing unipolar output voltage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converters-producing-bipolar-output-voltage">
-     Converters producing bipolar output voltage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-converters-in-the-class-of-two-inductor-converters">
-     Some Converters in the class of two-inductor converters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-manipulation">Circuit Manipulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inversion">Inversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cascade-interconnection">Cascade Interconnection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-interconnection">Differential Interconnection</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-short-list-of-converters">A short list of converters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converters-producing-unipolar-output-voltage">Converters producing unipolar output voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converters-producing-bipolar-output-voltage">Converters producing bipolar output voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-converters-in-the-class-of-two-inductor-converters">Some Converters in the class of two-inductor converters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Converter Circuit Manipulation</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#circuit-manipulation">
-   Circuit Manipulation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inversion">
-     Inversion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cascade-interconnection">
-     Cascade Interconnection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differential-interconnection">
-     Differential Interconnection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-short-list-of-converters">
-   A short list of converters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converters-producing-unipolar-output-voltage">
-     Converters producing unipolar output voltage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converters-producing-bipolar-output-voltage">
-     Converters producing bipolar output voltage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-converters-in-the-class-of-two-inductor-converters">
-     Some Converters in the class of two-inductor converters
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="converter-circuit-manipulation">
-<h1>Converter Circuit Manipulation<a class="headerlink" href="#converter-circuit-manipulation" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="converter-circuit-manipulation">
+<h1>Converter Circuit Manipulation<a class="headerlink" href="#converter-circuit-manipulation" title="Permalink to this headline">#</a></h1>
 <p>In this chapter we answer the following questions:</p>
 <ul class="simple">
 <li><p>Where do the boost, buck-boost, and other converters originate?</p></li>
 <li><p>How can we obtain a converter having given desired properties?</p></li>
 <li><p>What converters are possible?</p></li>
 </ul>
-<div class="section" id="circuit-manipulation">
-<h2>Circuit Manipulation<a class="headerlink" href="#circuit-manipulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="inversion">
-<h3>Inversion<a class="headerlink" href="#inversion" title="Permalink to this headline">¶</a></h3>
+<section id="circuit-manipulation">
+<h2>Circuit Manipulation<a class="headerlink" href="#circuit-manipulation" title="Permalink to this headline">#</a></h2>
+<section id="inversion">
+<h3>Inversion<a class="headerlink" href="#inversion" title="Permalink to this headline">#</a></h3>
 <p>Let’s revisit our trusty friend, the buck converter whose behaviour was derived from the first principles. We (hopefully) remember that the SPDT switch changes the dc component, and the output low-pass filter removes switching harmonics. The conversion ratio was <span class="math notranslate nohighlight">\(M(D)=D\)</span>.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/buck.svg"><img alt="_images/buck.svg" src="_images/buck.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">Schematic of a buck converter.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Schematic of a buck converter.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Let’s look at the circuit as a two-port network comprised of an SPDT switch and an inductor. In a buck converter, the flow of power is from the source to the load as depicted in <a class="reference internal" href="#power-l2r"><span class="std std-numref">Fig. 79</span></a>.</p>
-<div class="figure align-default" id="power-l2r">
+<figure class="align-default" id="power-l2r">
 <a class="reference internal image-reference" href="_images/power_l2r.svg"><img alt="_images/power_l2r.svg" src="_images/power_l2r.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">Power direction from the source to the load, <span class="math notranslate nohighlight">\(V_2= DV_1\)</span>.</span><a class="headerlink" href="#power-l2r" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Power direction from the source to the load, <span class="math notranslate nohighlight">\(V_2= DV_1\)</span>.</span><a class="headerlink" href="#power-l2r" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Now, consider the case where we swap the positions of the source and the RC load. The circuit is presented in <a class="reference internal" href="#power-r2l"><span class="std std-numref">Fig. 80</span></a>. In this case the power still travels from the source to the load.</p>
-<div class="figure align-default" id="power-r2l">
+<figure class="align-default" id="power-r2l">
 <a class="reference internal image-reference" href="_images/power_r2l.svg"><img alt="_images/power_r2l.svg" src="_images/power_r2l.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">Power direction from the source to the load, <span class="math notranslate nohighlight">\(V_2= DV_1 \implies V_1 = \dfrac{1}{D}V_2\)</span>.</span><a class="headerlink" href="#power-r2l" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Power direction from the source to the load, <span class="math notranslate nohighlight">\(V_2= DV_1 \implies V_1 = \dfrac{1}{D}V_2\)</span>.</span><a class="headerlink" href="#power-r2l" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>While we can do this for an ideal SPDT switch, the reversal of power flow requires new realisation of switches. The switches in <a class="reference internal" href="#power-r2l"><span class="std std-numref">Fig. 80</span></a> can be realised as shown in <a class="reference internal" href="#power-r2l-semi"><span class="std std-numref">Fig. 81</span></a>.</p>
-<div class="figure align-default" id="power-r2l-semi">
+<figure class="align-default" id="power-r2l-semi">
 <a class="reference internal image-reference" href="_images/power_r2l_semi.svg"><img alt="_images/power_r2l_semi.svg" src="_images/power_r2l_semi.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">Power direction from the source to the load with semiconductor switches.</span><a class="headerlink" href="#power-r2l-semi" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">Power direction from the source to the load with semiconductor switches.</span><a class="headerlink" href="#power-r2l-semi" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In this case the transistor conducts when switch is in position 2
 If we interchange <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(D'\)</span> (the choice of the intervals are really arbitrary) we obtain  <span class="math notranslate nohighlight">\(V_1=\dfrac{1}{D'}V_2\)</span>.</p>
 <div class="admonition attention">
@@ -400,15 +393,17 @@ If we interchange <span class="math notranslate nohighlight">\(D\)</span> and <s
 <p>Inversion of buck converter yields boost converter</p>
 </div>
 <p>We call this type of manipulation, <em><strong>inversion</strong></em>.</p>
-</div>
-<div class="section" id="cascade-interconnection">
-<h3>Cascade Interconnection<a class="headerlink" href="#cascade-interconnection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cascade-interconnection">
+<h3>Cascade Interconnection<a class="headerlink" href="#cascade-interconnection" title="Permalink to this headline">#</a></h3>
 <p>Next, we look into <em><strong>cascade interconnection</strong></em>.</p>
 <p>Consider the case of <a class="reference internal" href="#cascade"><span class="std std-numref">Fig. 82</span></a>, where two converters are connected back-to-back. Let’s further assume that both converters are driven with the same duty cycle signal (it does not have to be the case.).</p>
-<div class="figure align-default" id="cascade">
+<figure class="align-default" id="cascade">
 <a class="reference internal image-reference" href="_images/cascade.svg"><img alt="_images/cascade.svg" src="_images/cascade.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text">The cascade interconnection of two converters.</span><a class="headerlink" href="#cascade" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 82 </span><span class="caption-text">The cascade interconnection of two converters.</span><a class="headerlink" href="#cascade" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In this case, it is easy to note that <span class="math notranslate nohighlight">\(V_1=M_1(D)V_g\)</span> and <span class="math notranslate nohighlight">\(V=M_2(D)V_1\)</span>. Together they imply</p>
 <div class="math notranslate nohighlight">
 \[
@@ -416,7 +411,7 @@ If we interchange <span class="math notranslate nohighlight">\(D\)</span> and <s
 \]</div>
 <div class="proof example admonition" id="bb-cascade">
 <p class="admonition-title"><span>Example </span> (The cascade interconnection of a buck and a boost converter)</p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Here we consider the scenario where a buck converter and a boost converter are placed in a cascade interconnection as illustrated below.</p>
 <a class="reference internal image-reference" href="_images/buck_cascade_boost.svg"><img alt="_images/buck_cascade_boost.svg" class="align-center" src="_images/buck_cascade_boost.svg" width="700px" /></a>
 <p>From the steady-state analysis of buck and boost converters, we have</p>
@@ -442,17 +437,19 @@ If we interchange <span class="math notranslate nohighlight">\(D\)</span> and <s
 <a class="reference internal image-reference" href="_images/bb_intv2.svg"><img alt="_images/bb_intv2.svg" class="align-center" src="_images/bb_intv2.svg" width="200px" /></a>
 <p>Interestingly this second interval is consistent with a case where the one side of the inductor is always connected to the ground (compare this circuit and the one corresponding to the first interval). Hence, one can realise the circuit with only one SPDT switch:</p>
 <a class="reference internal image-reference" href="_images/bb.svg"><img alt="_images/bb.svg" class="align-center" src="_images/bb.svg" width="350px" /></a>
-</div>
+</section>
 </div><p>Properties of buck-boost converter follow from its derivation as buck cascaded by boost. The equivalent circuit model follows immediately. The buck’s <span class="math notranslate nohighlight">\(1:D\)</span> transformer is cascaded by boost <span class="math notranslate nohighlight">\(D':1\)</span> transformer. One has to consider the pulsating input current of the buck converter and the pulsating output current of boost converter in deriving the equivalent circuit.</p>
 <p>Other cascade connections are possible. For example, ‘{C}uk converter is obtained by a boost converter cascaded by a buck converter.</p>
-</div>
-<div class="section" id="differential-interconnection">
-<h3>Differential Interconnection<a class="headerlink" href="#differential-interconnection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="differential-interconnection">
+<h3>Differential Interconnection<a class="headerlink" href="#differential-interconnection" title="Permalink to this headline">#</a></h3>
 <p>Differential connection of load between two converters can be used to obtain bipolar output voltage. An example is given in <a class="reference internal" href="#diff"><span class="std std-numref">Fig. 83</span></a>.</p>
-<div class="figure align-default" id="diff">
+<figure class="align-default" id="diff">
 <a class="reference internal image-reference" href="_images/Lecture_10-figure21.svg"><img alt="_images/Lecture_10-figure21.svg" src="_images/Lecture_10-figure21.svg" width="350px" /></a>
-<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text">The differential interconnection of load between two converters.</span><a class="headerlink" href="#diff" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">The differential interconnection of load between two converters.</span><a class="headerlink" href="#diff" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Differential load voltage is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -460,10 +457,12 @@ V=V_1-V_2
 \]</div>
 <p>The outputs <span class="math notranslate nohighlight">\(V_1\)</span> and <span class="math notranslate nohighlight">\(V_2\)</span> may both be positive, but the differential output voltage <span class="math notranslate nohighlight">\(V\)</span> can be positive or negative. While the converters can be driven using uncorrelated duty cycles, one can choose <span class="math notranslate nohighlight">\(D_1=D\)</span> and <span class="math notranslate nohighlight">\(D_2=D'\)</span>.</p>
 <p>Consider the case where the converters are buck converters as shown in <a class="reference internal" href="#diff-buck"><span class="std std-numref">Fig. 84</span></a>. In this case Converter 1 transistor is driven with duty cycle <span class="math notranslate nohighlight">\(D\)</span> and Converter 2 transistor driven with duty cycle complement <span class="math notranslate nohighlight">\(D'\)</span>.</p>
-<div class="figure align-default" id="diff-buck">
+<figure class="align-default" id="diff-buck">
 <a class="reference internal image-reference" href="_images/Lecture_10-figure22.svg"><img alt="_images/Lecture_10-figure22.svg" src="_images/Lecture_10-figure22.svg" width="350px" /></a>
-<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">The differential interconnection of load between two buck converters.</span><a class="headerlink" href="#diff-buck" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">The differential interconnection of load between two buck converters.</span><a class="headerlink" href="#diff-buck" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The differential load voltage is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -473,24 +472,30 @@ V=V_1-V_2
 \end{aligned}
 \end{split}\]</div>
 <p>The conversion ratio of the differentially connected buck converters is <span class="math notranslate nohighlight">\(M(D)=2D-1\)</span> and is plotted below.</p>
-<div class="figure align-default" id="diff-buck-m">
+<figure class="align-default" id="diff-buck-m">
 <a class="reference internal image-reference" href="_images/diff_buck_M.svg"><img alt="_images/diff_buck_M.svg" src="_images/diff_buck_M.svg" width="350px" /></a>
-<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text">The differential interconnection of load between two converters.</span><a class="headerlink" href="#diff-buck-m" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text">The differential interconnection of load between two converters.</span><a class="headerlink" href="#diff-buck-m" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>We can further simplify the converter circuit. Instead of putting two output capacitors, one can bypass the load directly with one capacitor as demonstrated below:</p>
 <a class="reference internal image-reference" href="_images/Lecture_10-figure24.svg"><img alt="_images/Lecture_10-figure24.svg" class="align-center" src="_images/Lecture_10-figure24.svg" width="350px" /></a>
 <p>In turn the inductors can be consolidated into one (remember the notion of equivalent impedance from your elementary circuit course). This results in the following circuit:</p>
 <a class="reference internal image-reference" href="_images/Lecture_10-figure25.svg"><img alt="_images/Lecture_10-figure25.svg" class="align-center" src="_images/Lecture_10-figure25.svg" width="350px" /></a>
 <p>Equivalently, this circuit can be rearranged as the one given in <a class="reference internal" href="#hbridge"><span class="std std-numref">Fig. 86</span></a>. This is an H-bridge and is commonly used in single-phase inverter applications and in servo amplifier applications.</p>
-<div class="figure align-default" id="hbridge">
+<figure class="align-default" id="hbridge">
 <a class="reference internal image-reference" href="_images/Lecture_10-figure26.svg"><img alt="_images/Lecture_10-figure26.svg" src="_images/Lecture_10-figure26.svg" width="350px" /></a>
-<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">H-bridge or a bridge inverter.</span><a class="headerlink" href="#hbridge" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 86 </span><span class="caption-text">H-bridge or a bridge inverter.</span><a class="headerlink" href="#hbridge" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>One can connect three converters to construct a three-phase inverter and to connect to a three-phase load as shown below:</p>
-<div class="figure align-default" id="p-conv">
+<figure class="align-default" id="p-conv">
 <a class="reference internal image-reference" href="_images/3p_conv.svg"><img alt="_images/3p_conv.svg" src="_images/3p_conv.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text">Three converters connected differentially to form an inverter.</span><a class="headerlink" href="#p-conv" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 87 </span><span class="caption-text">Three converters connected differentially to form an inverter.</span><a class="headerlink" href="#p-conv" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>With balanced three-phase load, neutral voltage is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -515,10 +520,10 @@ V_{cn}=V_3-V_n
 <p>Or equivalenly:</p>
 <a class="reference internal image-reference" href="_images/3p_diff_conv2.svg"><img alt="_images/3p_diff_conv2.svg" class="align-center" src="_images/3p_diff_conv2.svg" width="500px" /></a>
 <p>This is known as the <em>Voltage-source inverter</em> or buck-derived three-phase inverter.</p>
-</div>
-</div>
-<div class="section" id="a-short-list-of-converters">
-<h2>A short list of converters<a class="headerlink" href="#a-short-list-of-converters" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="a-short-list-of-converters">
+<h2>A short list of converters<a class="headerlink" href="#a-short-list-of-converters" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Single-input single-output converters containing one inductor</p>
 <ul>
@@ -534,177 +539,177 @@ V_{cn}=V_3-V_n
 </ul>
 </li>
 </ul>
-<div class="section" id="converters-producing-unipolar-output-voltage">
-<h3>Converters producing unipolar output voltage<a class="headerlink" href="#converters-producing-unipolar-output-voltage" title="Permalink to this headline">¶</a></h3>
+<section id="converters-producing-unipolar-output-voltage">
+<h3>Converters producing unipolar output voltage<a class="headerlink" href="#converters-producing-unipolar-output-voltage" title="Permalink to this headline">#</a></h3>
 <p><strong>Buck converter, <span class="math notranslate nohighlight">\(M(D)=D\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="168903ca-6be4-4bfd-a436-5bfa178c4a00" name="510fcb21-bd6f-4b31-9da3-49993b3ed56d" type="radio">
-</input><label class="sd-tab-label" for="168903ca-6be4-4bfd-a436-5bfa178c4a00">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck_mini.svg"><img alt="_images/buck_mini.svg" class="align-center" src="_images/buck_mini.svg" width="400px" /></a>
 </div>
-<input id="c73923fe-bd1c-48d0-ac6f-d6694f4685bb" name="510fcb21-bd6f-4b31-9da3-49993b3ed56d" type="radio">
-</input><label class="sd-tab-label" for="c73923fe-bd1c-48d0-ac6f-d6694f4685bb">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck_M.svg"><img alt="_images/buck_M.svg" class="align-center" src="_images/buck_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Boost converter, <span class="math notranslate nohighlight">\(M(D)=\dfrac{1}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="65bf63b4-9663-4c0c-9392-d9102df1d29c" name="c8f8e01d-e12c-4551-ab2c-fe94db036b41" type="radio">
-</input><label class="sd-tab-label" for="65bf63b4-9663-4c0c-9392-d9102df1d29c">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/boost_mini.svg"><img alt="_images/boost_mini.svg" class="align-center" src="_images/boost_mini.svg" width="400px" /></a>
 </div>
-<input id="4e58e41e-8520-45c6-825b-430c5df18020" name="c8f8e01d-e12c-4551-ab2c-fe94db036b41" type="radio">
-</input><label class="sd-tab-label" for="4e58e41e-8520-45c6-825b-430c5df18020">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/boost_M.svg"><img alt="_images/boost_M.svg" class="align-center" src="_images/boost_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Buck-boost converter, <span class="math notranslate nohighlight">\(M(D)=-\dfrac{D}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1113d315-19d6-4f60-a8be-046de4f186bc" name="c23bbe4d-3ac6-4ad9-93aa-b3f2c7d93352" type="radio">
-</input><label class="sd-tab-label" for="1113d315-19d6-4f60-a8be-046de4f186bc">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/bb_mini.svg"><img alt="_images/bb_mini.svg" class="align-center" src="_images/bb_mini.svg" width="400px" /></a>
 </div>
-<input id="6439f17b-1431-4f38-a482-dc3c7bb556b0" name="c23bbe4d-3ac6-4ad9-93aa-b3f2c7d93352" type="radio">
-</input><label class="sd-tab-label" for="6439f17b-1431-4f38-a482-dc3c7bb556b0">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/BUCK_BOOST_M.svg"><img alt="_images/BUCK_BOOST_M.svg" class="align-center" src="_images/BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Noninverting buck-boost converter, <span class="math notranslate nohighlight">\(M(D)=\dfrac{D}{1-D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6a527508-a782-4dc8-85d9-59c9d146b032" name="8a8a5fc4-b135-4e45-9661-123a32c1c219" type="radio">
-</input><label class="sd-tab-label" for="6a527508-a782-4dc8-85d9-59c9d146b032">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_bb.svg"><img alt="_images/noninv_bb.svg" class="align-center" src="_images/noninv_bb.svg" width="400px" /></a>
 </div>
-<input id="818224ca-c029-4383-ac91-55885a5d59c7" name="8a8a5fc4-b135-4e45-9661-123a32c1c219" type="radio">
-</input><label class="sd-tab-label" for="818224ca-c029-4383-ac91-55885a5d59c7">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
-</div>
-<div class="section" id="converters-producing-bipolar-output-voltage">
-<h3>Converters producing bipolar output voltage<a class="headerlink" href="#converters-producing-bipolar-output-voltage" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="converters-producing-bipolar-output-voltage">
+<h3>Converters producing bipolar output voltage<a class="headerlink" href="#converters-producing-bipolar-output-voltage" title="Permalink to this headline">#</a></h3>
 <p><strong>Bridge, <span class="math notranslate nohighlight">\(M(D)=2D-1\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c2fc4e1f-bfaa-4da0-a7a3-9026fa9cfd8e" name="fbb00a95-3e2c-4746-ae8f-6e4525c57feb" type="radio">
-</input><label class="sd-tab-label" for="c2fc4e1f-bfaa-4da0-a7a3-9026fa9cfd8e">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Lecture_10-figure26.svg"><img alt="_images/Lecture_10-figure26.svg" class="align-center" src="_images/Lecture_10-figure26.svg" width="400px" /></a>
 </div>
-<input id="15e0bffb-36b3-4e32-8785-cafce4a09efd" name="fbb00a95-3e2c-4746-ae8f-6e4525c57feb" type="radio">
-</input><label class="sd-tab-label" for="15e0bffb-36b3-4e32-8785-cafce4a09efd">
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/diff_buck_M.svg"><img alt="_images/diff_buck_M.svg" class="align-center" src="_images/diff_buck_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Watkins-Johnson, <span class="math notranslate nohighlight">\(M(D)=\dfrac{2D-1}{D}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="530e3b37-39f2-4f20-b682-1098d690b647" name="f794cf25-84b3-45d7-b370-6b13c933b085" type="radio">
-</input><label class="sd-tab-label" for="530e3b37-39f2-4f20-b682-1098d690b647">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/WJ.svg"><img alt="_images/WJ.svg" class="align-center" src="_images/WJ.svg" width="400px" /></a>
 </div>
-<input id="908e5a7d-f910-4975-af7d-9deff2af5021" name="f794cf25-84b3-45d7-b370-6b13c933b085" type="radio">
-</input><label class="sd-tab-label" for="908e5a7d-f910-4975-af7d-9deff2af5021">
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/watkins.svg"><img alt="_images/watkins.svg" class="align-center" src="_images/watkins.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Current-fed bridge, <span class="math notranslate nohighlight">\(M(D)=\dfrac{1}{2D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="16de05ac-5f5f-4de9-a827-ba52a4e34cfe" name="8fbf2082-3198-4c0b-96c6-edcf514749d4" type="radio">
-</input><label class="sd-tab-label" for="16de05ac-5f5f-4de9-a827-ba52a4e34cfe">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/current_fed_bridge.svg"><img alt="_images/current_fed_bridge.svg" class="align-center" src="_images/current_fed_bridge.svg" width="400px" /></a>
 </div>
-<input id="3acff28b-6fba-4463-8a5a-92a46fce561c" name="8fbf2082-3198-4c0b-96c6-edcf514749d4" type="radio">
-</input><label class="sd-tab-label" for="3acff28b-6fba-4463-8a5a-92a46fce561c">
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/current_fed.svg"><img alt="_images/current_fed.svg" class="align-center" src="_images/current_fed.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Inverse Watkins-Johnson, <span class="math notranslate nohighlight">\(M(D)=\dfrac{D}{2D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d60abd37-0816-4319-b0c9-dbd11aed15c6" name="c17e1986-3f04-4773-9e35-797f2504aeb6" type="radio">
-</input><label class="sd-tab-label" for="d60abd37-0816-4319-b0c9-dbd11aed15c6">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Inverse_WJ.svg"><img alt="_images/Inverse_WJ.svg" class="align-center" src="_images/Inverse_WJ.svg" width="400px" /></a>
 </div>
-<input id="a7bca62b-f34b-4ed0-8253-4e0ec8ca813e" name="c17e1986-3f04-4773-9e35-797f2504aeb6" type="radio">
-</input><label class="sd-tab-label" for="a7bca62b-f34b-4ed0-8253-4e0ec8ca813e">
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/inv_watkins.svg"><img alt="_images/inv_watkins.svg" class="align-center" src="_images/inv_watkins.svg" width="400px" /></a>
 </div>
 </div>
-</div>
-<div class="section" id="some-converters-in-the-class-of-two-inductor-converters">
-<h3>Some Converters in the class of two-inductor converters<a class="headerlink" href="#some-converters-in-the-class-of-two-inductor-converters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="some-converters-in-the-class-of-two-inductor-converters">
+<h3>Some Converters in the class of two-inductor converters<a class="headerlink" href="#some-converters-in-the-class-of-two-inductor-converters" title="Permalink to this headline">#</a></h3>
 <p><strong>Ćuk, <span class="math notranslate nohighlight">\(M(D)=-\dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1abf0d61-ed04-433a-ace0-235047d65db7" name="4ceb5b46-efbf-42b8-a64f-1bd732772a72" type="radio">
-</input><label class="sd-tab-label" for="1abf0d61-ed04-433a-ace0-235047d65db7">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/cuk_mini.svg"><img alt="_images/cuk_mini.svg" class="align-center" src="_images/cuk_mini.svg" width="400px" /></a>
 </div>
-<input id="b12a1d64-8732-4a1d-9f29-a697e0b41cb6" name="4ceb5b46-efbf-42b8-a64f-1bd732772a72" type="radio">
-</input><label class="sd-tab-label" for="b12a1d64-8732-4a1d-9f29-a697e0b41cb6">
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/BUCK_BOOST_M.svg"><img alt="_images/BUCK_BOOST_M.svg" class="align-center" src="_images/BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>SEPIC, <span class="math notranslate nohighlight">\(M(D)= \dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1222eb3a-5849-413e-962b-6a3e4948eb6e" name="b22cfffa-08da-48e4-ac27-9f73df533106" type="radio">
-</input><label class="sd-tab-label" for="1222eb3a-5849-413e-962b-6a3e4948eb6e">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/SEPIC.svg"><img alt="_images/SEPIC.svg" class="align-center" src="_images/SEPIC.svg" width="400px" /></a>
 </div>
-<input id="68567cc3-7c40-4897-980e-5357a9ace781" name="b22cfffa-08da-48e4-ac27-9f73df533106" type="radio">
-</input><label class="sd-tab-label" for="68567cc3-7c40-4897-980e-5357a9ace781">
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Inverse of SEPIC, <span class="math notranslate nohighlight">\(M(D)= \dfrac{D}{D-1}\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="139022a0-e3f7-4917-949b-998c6257742a" name="4497813e-07f7-4a46-8401-8f744ae0b3bb" type="radio">
-</input><label class="sd-tab-label" for="139022a0-e3f7-4917-949b-998c6257742a">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/Inverse_SEPIC.svg"><img alt="_images/Inverse_SEPIC.svg" class="align-center" src="_images/Inverse_SEPIC.svg" width="400px" /></a>
 </div>
-<input id="0a1f89f3-c9ba-4bec-b692-c5e8b997768d" name="4497813e-07f7-4a46-8401-8f744ae0b3bb" type="radio">
-</input><label class="sd-tab-label" for="0a1f89f3-c9ba-4bec-b692-c5e8b997768d">
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/noninv_BUCK_BOOST_M.svg"><img alt="_images/noninv_BUCK_BOOST_M.svg" class="align-center" src="_images/noninv_BUCK_BOOST_M.svg" width="400px" /></a>
 </div>
 </div>
 <p><strong>Buck<span class="math notranslate nohighlight">\({}^2\)</span>, <span class="math notranslate nohighlight">\(M(D)= D^2\)</span></strong></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="adaf3c6e-b98c-4762-8467-c00a37ac9c27" name="476f809b-f863-477a-8ca3-af88941bbbae" type="radio">
-</input><label class="sd-tab-label" for="adaf3c6e-b98c-4762-8467-c00a37ac9c27">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 Circuit</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck2.svg"><img alt="_images/buck2.svg" class="align-center" src="_images/buck2.svg" width="400px" /></a>
 </div>
-<input id="d54877a6-004b-4367-aa28-2f9837727a61" name="476f809b-f863-477a-8ca3-af88941bbbae" type="radio">
-</input><label class="sd-tab-label" for="d54877a6-004b-4367-aa28-2f9837727a61">
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
 Conversion Ratio</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="_images/buck2_M.svg"><img alt="_images/buck2_M.svg" class="align-center" src="_images/buck2_M.svg" width="400px" /></a>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>The boost converter can be viewed as an inverse buck converter, while the buck-boost and Ćuk converters arise from cascade connections of buck and boost converters. The properties of these converters are consistent with their origins. Ac outputs can be obtained by differential connection of the load. An infinite number of converters are possible, and several are listed in this chapter.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -718,7 +723,7 @@ Conversion Ratio</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -726,44 +731,111 @@ Conversion Ratio</label><div class="sd-tab-content docutils">
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="DCM.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Discontinuous Conduction Mode (DCM)</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DCM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Discontinuous Conduction Mode (DCM)</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="ACCircuits.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="ACCircuits.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">AC Voltage, Current, and Power</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-manipulation">Circuit Manipulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inversion">Inversion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cascade-interconnection">Cascade Interconnection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-interconnection">Differential Interconnection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-short-list-of-converters">A short list of converters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converters-producing-unipolar-output-voltage">Converters producing unipolar output voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converters-producing-bipolar-output-voltage">Converters producing bipolar output voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-converters-in-the-class-of-two-inductor-converters">Some Converters in the class of two-inductor converters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iman Shames
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -41,7 +41,7 @@ name: buck_ccm_current
 ---
 Inductor and diode currents in a buck converter operating in continuous conduction mode (CCM).
 ```
-Now consider the case where $R$ is increased until until $I=\Delta i_L$. The inductor and diode currents for this case are presented in {numref}`buck_CCM_DCM_boundary`.
+Now consider the case where $R$ is increased until $I=\Delta i_L$. The inductor and diode currents for this case are presented in {numref}`buck_CCM_DCM_boundary`.
 
 ```{figure} fig/buck_CCM_DCM_boundary.svg
 ---
@@ -69,7 +69,7 @@ $$
 \dfrac{DV_g}{R}<\dfrac{DD' T_S V_g}{2L} \implies \dfrac{2L}{R T_s}<D'
 $$
 
-Define $K=\dfrac{2L}{R T_s}$ and $K_{crit}(D')=D'$. We can write the DCM condition as
+Define $K=\dfrac{2L}{R T_s}$ and $K_{crit}(D)=D'$. We can write the DCM condition as
 
  $$
  K<K_{crit}(D).
@@ -112,7 +112,7 @@ The relationship among $K$, $K_{crit}$, and $D$ for the two cases of $K<1$ and $
  Using the expressions for $I=\dfrac{V_g}{D'^2 R}$ and $\Delta i_L=\dfrac{V_g}{2L}DT_s$ from the steady-state analysis of boost converters, the converter operates in CCM when
 
  $$
- \dfrac{V_g}{C'^2R}>\dfrac{D T_s V_g}{2L}
+ \dfrac{V_g}{D'^2R}>\dfrac{D T_s V_g}{2L}
  $$
 
  $$
@@ -309,8 +309,8 @@ where $K=\dfrac{2L}{R T_s}$ and $K<K_{crit}(D)$. Thus,
 
 $$
 M(K,D)=\begin{cases}
-  D | K>K_{crit}(D)\\
-  \dfrac{2}{1+\sqrt{1+4K/D_1^2}} | K<K_{crit}(D)
+  D & K>K_{crit}(D)\\
+  \dfrac{2}{1+\sqrt{1+4K/D_1^2}} & K<K_{crit}(D)
 \end{cases}
 $$
 
@@ -479,8 +479,8 @@ Thus,
 
 $$
 M(K,D)=\begin{cases}
-  \dfrac{1}{1-D} | K>K_{crit}(D)\\
-  \dfrac{1+\sqrt{1+4D^2/K}}{2} | K<K_{crit}(D)
+  \dfrac{1}{1-D} & K>K_{crit}(D)\\
+  \dfrac{1+\sqrt{1+4D^2/K}}{2} & K<K_{crit}(D)
 \end{cases}
 $$
 Approximation:

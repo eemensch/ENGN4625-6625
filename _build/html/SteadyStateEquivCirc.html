@@ -1,39 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Equivalent Circuit Model of Steady-State Converter &#8212; ENGN4625/ENGN6625 Power Systems &amp; Power Electronics</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,339 +63,296 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SteadyStateEquivCirc';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Realising Switches Using Semi-conductor Devices" href="SwitchRealisation.html" />
     <link rel="prev" title="Principles of Steady-State Converter Analysis" href="SteadyState.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ENGN4625/ENGN6625 Power Systems & Power Electronics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Power Systems and Power Electronics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Steady State Analysis of Converters
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Power Systems and Power Electronics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Steady State Analysis of Converters</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="SteadyState.html">
-   Principles of Steady-State Converter Analysis
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Equivalent Circuit Model of Steady-State Converter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="SwitchRealisation.html">
-   Realising Switches Using Semi-conductor Devices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="DCM.html">
-   Discontinuous Conduction Mode (DCM)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CircuitManipulation.html">
-   Converter Circuit Manipulation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Equivalent Circuit Model of Steady-State Converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Power Systems Principles
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ACCircuits.html">
-   AC Voltage, Current, and Power
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Poly.html">
-   Polyphase Systems
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="ACCircuits.html">AC Voltage, Current, and Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poly.html">Polyphase Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformers.html">Transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolySingleEq.html">Polyphase Lines and Single-phase Equivalents</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/RLC_Respone.html">
-   An RLC low pass filter
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/SteadyStateEquivCirc.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SteadyStateEquivCirc.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-        </div>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equivalent Circuit Model of Steady-State Converter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dc-transformer-model">
-   DC Transformer Model
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transformer-review">
-     Transformer Review
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-example-of-application-of-the-dc-transformer-model">
-     An example of application of the DC transformer model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converter-analysis-in-the-presence-of-inductor-copper-loss">
-     Converter analysis in the presence of inductor copper loss
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equivalent-circuit-model-of-converters">
-   Equivalent circuit model of converters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l">
-     Equivalent circuit model of a boost converter with lossy
-     <span class="math notranslate nohighlight">
-      \(L\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l">
-     Equivalent circuit model of a buck converter with lossy
-     <span class="math notranslate nohighlight">
-      \(L\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">
-     Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">
-   A note on the accuracy of the averaged equivalent circuit in predicting losses
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-transformer-model">DC Transformer Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-review">Transformer Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-application-of-the-dc-transformer-model">An example of application of the DC transformer model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converter-analysis-in-the-presence-of-inductor-copper-loss">Converter analysis in the presence of inductor copper loss</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-converters">Equivalent circuit model of converters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l">Equivalent circuit model of a boost converter with lossy <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l">Equivalent circuit model of a buck converter with lossy <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">A note on the accuracy of the averaged equivalent circuit in predicting losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Equivalent Circuit Model of Steady-State Converter</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dc-transformer-model">
-   DC Transformer Model
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transformer-review">
-     Transformer Review
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-example-of-application-of-the-dc-transformer-model">
-     An example of application of the DC transformer model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#converter-analysis-in-the-presence-of-inductor-copper-loss">
-     Converter analysis in the presence of inductor copper loss
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equivalent-circuit-model-of-converters">
-   Equivalent circuit model of converters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l">
-     Equivalent circuit model of a boost converter with lossy
-     <span class="math notranslate nohighlight">
-      \(L\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l">
-     Equivalent circuit model of a buck converter with lossy
-     <span class="math notranslate nohighlight">
-      \(L\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">
-     Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">
-   A note on the accuracy of the averaged equivalent circuit in predicting losses
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="equivalent-circuit-model-of-steady-state-converter">
-<h1>Equivalent Circuit Model of Steady-State Converter<a class="headerlink" href="#equivalent-circuit-model-of-steady-state-converter" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equivalent-circuit-model-of-steady-state-converter">
+<h1>Equivalent Circuit Model of Steady-State Converter<a class="headerlink" href="#equivalent-circuit-model-of-steady-state-converter" title="Permalink to this headline">#</a></h1>
 <p>The first ingredient of an equivalent circuit model is the <em>DC Transformer</em>.</p>
-<div class="section" id="dc-transformer-model">
-<h2>DC Transformer Model<a class="headerlink" href="#dc-transformer-model" title="Permalink to this headline">¶</a></h2>
-<p>For an ideal converter with efficient <span class="math notranslate nohighlight">\(\eta =100 \%\)</span>:</p>
+<section id="dc-transformer-model">
+<h2>DC Transformer Model<a class="headerlink" href="#dc-transformer-model" title="Permalink to this headline">#</a></h2>
+<p>For an ideal converter with efficiency <span class="math notranslate nohighlight">\(\eta =100 \%\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 P_{in}=P_{out}, \quad V_g I_g = V I
@@ -398,32 +362,40 @@ P_{in}=P_{out}, \quad V_g I_g = V I
 \[
 V=M(D) V_g, \quad I_g = M(D) I
 \]</div>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/switchingdcdc.svg"><img alt="_images/switchingdcdc.svg" src="_images/switchingdcdc.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Schematic of a converter.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Schematic of a converter.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>These equations are valid in steady-state. During transients, energy storage within filter elements may cause <span class="math notranslate nohighlight">\(P_{in}\neq P_{out}\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-ideal">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ideal" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-ideal" title="Permalink to this equation">#</a></span>\[
 P_{in}=P_{out}, \quad V_g I_g = V I,\quad V=M(D) V_g,  \quad I_g = M(D) I
 \]</div>
 <p>An equivalent circuit that satisfies these equations is given below.</p>
-<div class="figure align-default" id="dep-source-dc-trans">
+<figure class="align-default" id="dep-source-dc-trans">
 <a class="reference internal image-reference" href="_images/DepSourceDCTrans.svg"><img alt="_images/DepSourceDCTrans.svg" src="_images/DepSourceDCTrans.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">A circuit with dependant sources that satisfy  <a class="reference internal" href="#equation-ideal">(1)</a>.</span><a class="headerlink" href="#dep-source-dc-trans" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">A circuit with dependant sources that satisfy  <a class="reference internal" href="#equation-ideal">(1)</a>.</span><a class="headerlink" href="#dep-source-dc-trans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>This equivalent circuit can in turn be represented with the DC transformer equivalent element as depicted below.</p>
-<div class="figure align-default" id="dctrans">
+<figure class="align-default" id="dctrans">
 <a class="reference internal image-reference" href="_images/DCTrans.svg"><img alt="_images/DCTrans.svg" src="_images/DCTrans.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">The DC transformer element equivalen to <a class="reference internal" href="#dep-source-dc-trans"><span class="std std-numref">Fig. 35</span></a>. Note the thick horizontal bar to remind ourself that this DC ``transformer’’ is just a model.</span><a class="headerlink" href="#dctrans" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="transformer-review">
-<h3>Transformer Review<a class="headerlink" href="#transformer-review" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">The DC transformer element equivalen to <a class="reference internal" href="#dep-source-dc-trans"><span class="std std-numref">Fig. 35</span></a>. Note the thick horizontal bar to remind ourself that this DC ``transformer’’ is just a model.</span><a class="headerlink" href="#dctrans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="transformer-review">
+<h3>Transformer Review<a class="headerlink" href="#transformer-review" title="Permalink to this headline">#</a></h3>
 <p>A multiple winding transformer is given below.</p>
-<div class="figure align-default" id="multi-trans">
+<figure class="align-default" id="multi-trans">
 <a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">A general multi-port transformer.</span><a class="headerlink" href="#multi-trans" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">A general multi-port transformer.</span><a class="headerlink" href="#multi-trans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="math notranslate nohighlight">
 \[
 \dfrac{v_1(t)}{n_1}=\dfrac{v_2(t)}{n_2}=\dfrac{v_3(t)}{n_3}
@@ -442,14 +414,16 @@ n_1 i_1(t)+n_2i_2(t) +n_3 i_3(t)=0
 <a class="reference internal image-reference" href="_images/dc_i_reflect.svg"><img alt="_images/dc_i_reflect.svg" class="align-center" src="_images/dc_i_reflect.svg" width="400px" /></a>
 <a class="reference internal image-reference" href="_images/dc_z_reflect.svg"><img alt="_images/dc_z_reflect.svg" class="align-center" src="_images/dc_z_reflect.svg" width="400px" /></a>
 <p>An ideal DC transformer would convert  DC voltages and currents with 100% efficiency where the conversion ratio <span class="math notranslate nohighlight">\(M(D)\)</span> controllable via the duty cycle.</p>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="_images/dc_trans_d.svg"><img alt="_images/dc_trans_d.svg" src="_images/dc_trans_d.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">The choice of the duty cycle <span class="math notranslate nohighlight">\(D\)</span> changes the turn-ratio in a DC transformer model.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">The choice of the duty cycle <span class="math notranslate nohighlight">\(D\)</span> changes the turn-ratio in a DC transformer model.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In the schematic, the solid line denotes ideal transformer model, capable of passing DC voltages and currents. This leads to a time-invariant model (no switching) which can be solved to find DC components of converter waveforms and simplifies the analysis.</p>
-</div>
-<div class="section" id="an-example-of-application-of-the-dc-transformer-model">
-<h3>An example of application of the DC transformer model<a class="headerlink" href="#an-example-of-application-of-the-dc-transformer-model" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="an-example-of-application-of-the-dc-transformer-model">
+<h3>An example of application of the DC transformer model<a class="headerlink" href="#an-example-of-application-of-the-dc-transformer-model" title="Permalink to this headline">#</a></h3>
 <p>Consider the case where an input voltage source of <span class="math notranslate nohighlight">\(V_1\)</span> with a resistance equal to <span class="math notranslate nohighlight">\(R_1\)</span> is connected to an ideal buck converter. What is the relationship between the output voltage and the input voltage?</p>
 <p>The circuit corresponding to this scenario is depicted below.</p>
 <a class="reference internal image-reference" href="_images/R1_circuit.svg"><img alt="_images/R1_circuit.svg" class="align-center" src="_images/R1_circuit.svg" width="400px" /></a>
@@ -460,9 +434,9 @@ n_1 i_1(t)+n_2i_2(t) +n_3 i_3(t)=0
 \[
 V = M(D) V_1 \dfrac{R}{R+M^2(D)R_1}
 \]</div>
-</div>
-<div class="section" id="converter-analysis-in-the-presence-of-inductor-copper-loss">
-<h3>Converter analysis in the presence of inductor copper loss<a class="headerlink" href="#converter-analysis-in-the-presence-of-inductor-copper-loss" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="converter-analysis-in-the-presence-of-inductor-copper-loss">
+<h3>Converter analysis in the presence of inductor copper loss<a class="headerlink" href="#converter-analysis-in-the-presence-of-inductor-copper-loss" title="Permalink to this headline">#</a></h3>
 <p>The DC transformer model can be extended to include converter nonidealities, in this case the copper loss of the inductor.</p>
 <p>The equivalent circuit of an inductor with some copper loss modelled as a resistance <span class="math notranslate nohighlight">\(R_L\)</span> is given below.</p>
 <a class="reference internal image-reference" href="_images/L_copper.svg"><img alt="_images/L_copper.svg" class="align-center" src="_images/L_copper.svg" width="200px" /></a>
@@ -470,10 +444,12 @@ V = M(D) V_1 \dfrac{R}{R+M^2(D)R_1}
 <a class="reference internal image-reference" href="_images/lossy_L_boost.svg"><img alt="_images/lossy_L_boost.svg" class="align-center" src="_images/lossy_L_boost.svg" width="400px" /></a>
 <p>Let’s consider the behaviour of the converter when the switch is in positions 1 and 2.</p>
 <p><strong>Switch in position 1:</strong></p>
-<div class="figure align-default" id="lossy-boost-sw1">
+<figure class="align-default" id="lossy-boost-sw1">
 <a class="reference internal image-reference" href="_images/lossy_boost_sw1.svg"><img alt="_images/lossy_boost_sw1.svg" src="_images/lossy_boost_sw1.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 1.</span><a class="headerlink" href="#lossy-boost-sw1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 1.</span><a class="headerlink" href="#lossy-boost-sw1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = V_g - iR_L\)</span></p></li>
 <li><p>Capacitor current:  <span class="math notranslate nohighlight">\(i_C=-v/R\)</span></p></li>
@@ -484,22 +460,27 @@ V = M(D) V_1 \dfrac{R}{R+M^2(D)R_1}
 v_L \approx V_g - I R_L, \quad i_C \approx -V/R
 \]</div>
 <p><strong>Switch in position 2:</strong></p>
-<div class="figure align-default" id="lossy-boost-sw2">
+<figure class="align-default" id="lossy-boost-sw2">
 <a class="reference internal image-reference" href="_images/lossy_boost_sw2.svg"><img alt="_images/lossy_boost_sw2.svg" src="_images/lossy_boost_sw2.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 2.</span><a class="headerlink" href="#lossy-boost-sw2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 2.</span><a class="headerlink" href="#lossy-boost-sw2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = V_g - iR_L-v\)</span></p></li>
 <li><p>Capacitor current:  <span class="math notranslate nohighlight">\(i_C=i-v/R\)</span></p></li>
-<li><p>Small ripple approximation:
-$<span class="math notranslate nohighlight">\(
-v_L \approx V_g-IR_L-V, \quad i_C \approx I-V/R
-\)</span>$</p></li>
+<li><p>Small ripple approximation:</p></li>
 </ul>
-<div class="figure align-default" id="vl-boost-lossy">
+<div class="math notranslate nohighlight">
+\[
+v_L \approx V_g-IR_L-V, \quad i_C \approx I-V/R
+\]</div>
+<figure class="align-default" id="vl-boost-lossy">
 <a class="reference internal image-reference" href="_images/vL_boost_lossy.svg"><img alt="_images/vL_boost_lossy.svg" src="_images/vL_boost_lossy.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">The voltage waveform of the inductor.</span><a class="headerlink" href="#vl-boost-lossy" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">The voltage waveform of the inductor.</span><a class="headerlink" href="#vl-boost-lossy" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Inductor volt-seconds balance in light of <a class="reference internal" href="#vl-boost-lossy"><span class="std std-numref">Fig. 41</span></a> is written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -508,10 +489,12 @@ v_L \approx V_g-IR_L-V, \quad i_C \approx I-V/R
      0&amp;=V_g -IR_L-D'V.
 \end{aligned}
 \end{split}\]</div>
-<div class="figure align-default" id="ic-boost-lossy">
+<figure class="align-default" id="ic-boost-lossy">
 <a class="reference internal image-reference" href="_images/iC_boost.svg"><img alt="_images/iC_boost.svg" src="_images/iC_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">The current waveform of the capacitor.</span><a class="headerlink" href="#ic-boost-lossy" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">The current waveform of the capacitor.</span><a class="headerlink" href="#ic-boost-lossy" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>From <a class="reference internal" href="#ic-boost-lossy"><span class="std std-numref">Fig. 42</span></a>, the capacitor charge balance yields</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -526,20 +509,22 @@ v_L \approx V_g-IR_L-V, \quad i_C \approx I-V/R
 M(D) = \dfrac{V}{V_g}=\dfrac{1}{D'} \dfrac{1}{(1+R_L/(RD'^2) )}
 \]</div>
 <p>For different ratios of <span class="math notranslate nohighlight">\(\dfrac{R_L}{R}\)</span>, the conversion ratio <span class="math notranslate nohighlight">\(M(D)\)</span> for the lossy boost converter of this example is depicted below.</p>
-<div class="figure align-default" id="boostlossymd">
+<figure class="align-default" id="boostlossymd">
 <a class="reference internal image-reference" href="_images/BoostLossyMD.svg"><img alt="_images/BoostLossyMD.svg" src="_images/BoostLossyMD.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text"><span class="math notranslate nohighlight">\(M(D)\)</span> for different <span class="math notranslate nohighlight">\(\dfrac{R_L}{R}\)</span>.</span><a class="headerlink" href="#boostlossymd" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="equivalent-circuit-model-of-converters">
-<h2>Equivalent circuit model of converters<a class="headerlink" href="#equivalent-circuit-model-of-converters" title="Permalink to this headline">¶</a></h2>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text"><span class="math notranslate nohighlight">\(M(D)\)</span> for different <span class="math notranslate nohighlight">\(\dfrac{R_L}{R}\)</span>.</span><a class="headerlink" href="#boostlossymd" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="equivalent-circuit-model-of-converters">
+<h2>Equivalent circuit model of converters<a class="headerlink" href="#equivalent-circuit-model-of-converters" title="Permalink to this headline">#</a></h2>
 <p>In the first example to illustrate the method we consider the setting of a boost converter with a lossy inductor, then we construct the equivalent circuit model of a book converter with a lossy inductor, and finally, we study the effect of semiconductor losses.</p>
-<div class="section" id="equivalent-circuit-model-of-a-boost-converter-with-lossy-l">
-<h3>Equivalent circuit model of a boost converter with lossy <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l" title="Permalink to this headline">¶</a></h3>
+<section id="equivalent-circuit-model-of-a-boost-converter-with-lossy-l">
+<h3>Equivalent circuit model of a boost converter with lossy <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l" title="Permalink to this headline">#</a></h3>
 <p>We use the setting of the last example. Remember:</p>
 <div class="math notranslate nohighlight" id="equation-lossy-boost-eq">
-<span class="eqno">(2)<a class="headerlink" href="#equation-lossy-boost-eq" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(2)<a class="headerlink" href="#equation-lossy-boost-eq" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
     \langle v_L\rangle &amp;=    0=V_g -IR_L-D'V\\
      \langle i_C\rangle &amp;= 0 = D' I -V/R
@@ -547,25 +532,33 @@ M(D) = \dfrac{V}{V_g}=\dfrac{1}{D'} \dfrac{1}{(1+R_L/(RD'^2) )}
 \end{split}\]</div>
 <p>These can be seen as loop and node equations for some circuit. The question is how to reconstruct this circuit?</p>
 <p>Note that the first equation is a loop equation obtained from the application of the Kirchoff’s voltage law: the dc components of voltage around a loop containing the inductor sum to zero. A circuit of the following form satisfies the equation</p>
-<div class="figure align-default" id="loop-boost">
+<figure class="align-default" id="loop-boost">
 <a class="reference internal image-reference" href="_images/Loop_boost.svg"><img alt="_images/Loop_boost.svg" src="_images/Loop_boost.svg" width="300px" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">A circuit satisfying <span class="math notranslate nohighlight">\(\langle v_L\rangle =    0=V_g -IR_L-D'V\)</span>.</span><a class="headerlink" href="#loop-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">A circuit satisfying <span class="math notranslate nohighlight">\(\langle v_L\rangle =    0=V_g -IR_L-D'V\)</span>.</span><a class="headerlink" href="#loop-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The second equation corresponds to a node equation obtained from the application of the Kirchoff’s current law: the dc components of current flowing into a node connected to the capacitor sum to zero.</p>
-<div class="figure align-default" id="node-boost">
+<figure class="align-default" id="node-boost">
 <a class="reference internal image-reference" href="_images/node_boost.svg"><img alt="_images/node_boost.svg" src="_images/node_boost.svg" width="300px" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">A circuit satisfying <span class="math notranslate nohighlight">\(\langle i_C\rangle = 0 = D' I -V/R\)</span>.</span><a class="headerlink" href="#node-boost" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">A circuit satisfying <span class="math notranslate nohighlight">\(\langle i_C\rangle = 0 = D' I -V/R\)</span>.</span><a class="headerlink" href="#node-boost" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Putting these two circuits side-by-side:</p>
-<div class="figure align-default" id="boost-equiv-circ">
+<figure class="align-default" id="boost-equiv-circ">
 <a class="reference internal image-reference" href="_images/boost_equiv_circ.svg"><img alt="_images/boost_equiv_circ.svg" src="_images/boost_equiv_circ.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">An equivalent circuit with dependent sources that satisfy <a class="reference internal" href="#equation-lossy-boost-eq">(2)</a>.</span><a class="headerlink" href="#boost-equiv-circ" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">An equivalent circuit with dependent sources that satisfy <a class="reference internal" href="#equation-lossy-boost-eq">(2)</a>.</span><a class="headerlink" href="#boost-equiv-circ" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Similar to <a class="reference internal" href="#dep-source-dc-trans"><span class="std std-numref">Fig. 35</span></a> and <a class="reference internal" href="#dctrans"><span class="std std-numref">Fig. 36</span></a>, the dependent sources can be modelled as a  <span class="math notranslate nohighlight">\(D' : 1\)</span> DC transformer:</p>
-<div class="figure align-default" id="equiv-boost-dctrans">
+<figure class="align-default" id="equiv-boost-dctrans">
 <a class="reference internal image-reference" href="_images/equiv_boost_dctrans.svg"><img alt="_images/equiv_boost_dctrans.svg" src="_images/equiv_boost_dctrans.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">An equivalent circuit with a DC transformer element that satisfies <a class="reference internal" href="#equation-lossy-boost-eq">(2)</a>.</span><a class="headerlink" href="#equiv-boost-dctrans" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">An equivalent circuit with a DC transformer element that satisfies <a class="reference internal" href="#equation-lossy-boost-eq">(2)</a>.</span><a class="headerlink" href="#equiv-boost-dctrans" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Pushing the elements through the transformer results in</p>
 <a class="reference internal image-reference" href="_images/lossy_boost_reflected.svg"><img alt="_images/lossy_boost_reflected.svg" class="align-center" src="_images/lossy_boost_reflected.svg" width="200px" /></a>
 <p>Output voltage:</p>
@@ -588,9 +581,9 @@ I = \dfrac{V_g}{D'^2 R+R_L}
 \end{split}\]</div>
 <p>Efficiency curves as a function of the duty cycle <span class="math notranslate nohighlight">\(D\)</span> for different <span class="math notranslate nohighlight">\(\dfrac{R_L}{R}\)</span> is given below.</p>
 <a class="reference internal image-reference" href="_images/lossy_boostefficiency.svg"><img alt="_images/lossy_boostefficiency.svg" class="align-center" src="_images/lossy_boostefficiency.svg" width="500px" /></a>
-</div>
-<div class="section" id="equivalent-circuit-model-of-a-buck-converter-with-lossy-l">
-<h3>Equivalent circuit model of a buck converter with lossy <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="equivalent-circuit-model-of-a-buck-converter-with-lossy-l">
+<h3>Equivalent circuit model of a buck converter with lossy <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l" title="Permalink to this headline">#</a></h3>
 <p>A buck converter with this lossy inductor would look like:</p>
 <a class="reference internal image-reference" href="_images/lossy_buck.svg"><img alt="_images/lossy_buck.svg" class="align-center" src="_images/lossy_buck.svg" width="400px" /></a>
 <p>Siimilar to the case of the boost converter studying the behaviour of the converter when the switch is in positions 1 and 2, and applying the small ripple approximation results in</p>
@@ -617,9 +610,9 @@ I_g=\dfrac{1}{T_s}\int_0^{T_s} i_g(t) dt = DI_L
 <a class="reference internal image-reference" href="_images/buck_sidebyside.svg"><img alt="_images/buck_sidebyside.svg" class="align-center" src="_images/buck_sidebyside.svg" width="600px" /></a>
 <p>The dependent sources are equivalent to a <span class="math notranslate nohighlight">\(1 : D\)</span> transformer, and the equivalent circuit becomes:</p>
 <a class="reference internal image-reference" href="_images/buck_equiv_dc.svg"><img alt="_images/buck_equiv_dc.svg" class="align-center" src="_images/buck_equiv_dc.svg" width="400px" /></a>
-</div>
-<div class="section" id="equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">
-<h3>Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses<a class="headerlink" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">
+<h3>Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses<a class="headerlink" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses" title="Permalink to this headline">#</a></h3>
 <p>The practical implementation of a boost converter is given below (we will learn about how to realise these devices using semiconductor devices later.)</p>
 <a class="reference internal image-reference" href="_images/boost_semi.svg"><img alt="_images/boost_semi.svg" class="align-center" src="_images/boost_semi.svg" width="400px" /></a>
 <p>We assume that the conduction losses of the semi-conductor devices in their on-state are modelled as the following:</p>
@@ -629,10 +622,12 @@ I_g=\dfrac{1}{T_s}\int_0^{T_s} i_g(t) dt = DI_L
 </ul>
 <p>Let’s consider the behaviour of the converter when the switch is in positions 1 and 2.</p>
 <p><strong>Switch in position 1:</strong></p>
-<div class="figure align-default" id="boost-semi-sw1">
+<figure class="align-default" id="boost-semi-sw1">
 <a class="reference internal image-reference" href="_images/boost_semi_sw1.svg"><img alt="_images/boost_semi_sw1.svg" src="_images/boost_semi_sw1.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 1.</span><a class="headerlink" href="#boost-semi-sw1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 1.</span><a class="headerlink" href="#boost-semi-sw1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = V_g - iR_L-iR_{on}\)</span></p></li>
 <li><p>Capacitor current:  <span class="math notranslate nohighlight">\( i_C= -v/R \)</span></p></li>
@@ -643,10 +638,12 @@ I_g=\dfrac{1}{T_s}\int_0^{T_s} i_g(t) dt = DI_L
 v_L \approx V_g - I R_L-IR_{on}, \quad i_C \approx -V/R
 \]</div>
 <p><strong>Switch in position 2:</strong></p>
-<div class="figure align-default" id="boost-semi-sw2">
+<figure class="align-default" id="boost-semi-sw2">
 <a class="reference internal image-reference" href="_images/boost_semi_sw2.svg"><img alt="_images/boost_semi_sw2.svg" src="_images/boost_semi_sw2.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 2.</span><a class="headerlink" href="#boost-semi-sw2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">The boost converter circuit with a lossy inductor when the switch is in position 2.</span><a class="headerlink" href="#boost-semi-sw2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Inductor voltage: <span class="math notranslate nohighlight">\(v_L = V_g - iR_L-V_D-iR_D-v\)</span></p></li>
 <li><p>Capacitor current:  <span class="math notranslate nohighlight">\(i_C=i-v/R\)</span></p></li>
@@ -656,10 +653,12 @@ v_L \approx V_g - I R_L-IR_{on}, \quad i_C \approx -V/R
 \[
 v_L \approx V_g-IR_L-V_D-IR_{D}-V, \quad i_C\approx I-V/R
 \]</div>
-<div class="figure align-default" id="vl-boost-semi">
+<figure class="align-default" id="vl-boost-semi">
 <a class="reference internal image-reference" href="_images/vL_boost_semi.svg"><img alt="_images/vL_boost_semi.svg" src="_images/vL_boost_semi.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">The voltage waveform of the inductor.</span><a class="headerlink" href="#vl-boost-semi" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">The voltage waveform of the inductor.</span><a class="headerlink" href="#vl-boost-semi" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Inductor volt-seconds balance in light of <a class="reference internal" href="#vl-boost-semi"><span class="std std-numref">Fig. 50</span></a> is written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -668,10 +667,12 @@ v_L \approx V_g-IR_L-V_D-IR_{D}-V, \quad i_C\approx I-V/R
      &amp;=V_g -IR_L -IDR_{on} -D'V_D -ID'R_D -D'V=0.
 \end{aligned}
 \end{split}\]</div>
-<div class="figure align-default" id="ic-boost-semi">
+<figure class="align-default" id="ic-boost-semi">
 <a class="reference internal image-reference" href="_images/iC_boost.svg"><img alt="_images/iC_boost.svg" src="_images/iC_boost.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">The current waveform of the capacitor.</span><a class="headerlink" href="#ic-boost-semi" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">The current waveform of the capacitor.</span><a class="headerlink" href="#ic-boost-semi" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>From <a class="reference internal" href="#ic-boost-semi"><span class="std std-numref">Fig. 51</span></a>, the capacitor charge balance yields</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -720,10 +721,10 @@ V = \dfrac{1}{D'} (V_g-D'V_D) \left (\dfrac{D'^2 R}{D'^2 R +R_L+DR_{on}+D'R_D} \
 <li><p><span class="math notranslate nohighlight">\(R_L+DR_{on}+D'R_D\ll D'^2 R \)</span></p></li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">
-<h2>A note on the accuracy of the averaged equivalent circuit in predicting losses<a class="headerlink" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">
+<h2>A note on the accuracy of the averaged equivalent circuit in predicting losses<a class="headerlink" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses" title="Permalink to this headline">#</a></h2>
 <p>RMS values need to be used to correctly model average power loss in resistor.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -735,10 +736,12 @@ P_{ave} &amp;= \langle i^2(t) R \rangle \\
 \end{aligned}
 \end{split}\]</div>
 <p>The models obtained above use average currents and voltages. For small ripples these values are very close. However, if the ripples are large the discrepency between these two models grow.</p>
-<div class="figure align-default" id="irms">
+<figure class="align-default" id="irms">
 <a class="reference internal image-reference" href="_images/iRMS.svg"><img alt="_images/iRMS.svg" src="_images/iRMS.svg" width="500px" /></a>
-<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Different current waveforms with <span class="math notranslate nohighlight">\(I_{rms} = \sqrt{D}I \sqrt{1+\dfrac{1}{3} \left ( \dfrac{\Delta i}{I}\right )^2}\)</span>.</span><a class="headerlink" href="#irms" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Different current waveforms with <span class="math notranslate nohighlight">\(I_{rms} = \sqrt{D}I \sqrt{1+\dfrac{1}{3} \left ( \dfrac{\Delta i}{I}\right )^2}\)</span>.</span><a class="headerlink" href="#irms" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The following table demonstrates the relationship between the consumed power using the average variables versus the real power computed using the RMS current value.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -762,14 +765,14 @@ P_{ave} &amp;= \langle i^2(t) R \rangle \\
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>The dc transformer model represents the primary functions of any dc-dc converter: transformation of dc voltage and current levels, ideally with 100% efficiency, and control of the conversion ratio <span class="math notranslate nohighlight">\(M\)</span> via the duty cycle <span class="math notranslate nohighlight">\(D\)</span>.</p>
 <p>The model can be refined to account for loss elements such as inductor winding resistance and semiconductor on-resistances and forward voltage drops. The refined model predicts the voltages, currents, and efficiency of practical nonideal converters.</p>
 <p>In general, the dc equivalent circuit for a converter can be derived from the inductor volt-second balance and capacitor charge balance equations. Equivalent circuits are constructed whose loop and node equations coincide with the volt-second and charge balance equations. In converters having a pulsating input current, an additional equation is needed to model the converter input port; this equation may be obtained by averaging the converter input current.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -783,7 +786,7 @@ P_{ave} &amp;= \langle i^2(t) R \rangle \\
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -791,44 +794,112 @@ P_{ave} &amp;= \langle i^2(t) R \rangle \\
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="SteadyState.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Principles of Steady-State Converter Analysis</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SteadyState.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Principles of Steady-State Converter Analysis</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="SwitchRealisation.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="SwitchRealisation.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Realising Switches Using Semi-conductor Devices</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-transformer-model">DC Transformer Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-review">Transformer Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-application-of-the-dc-transformer-model">An example of application of the DC transformer model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converter-analysis-in-the-presence-of-inductor-copper-loss">Converter analysis in the presence of inductor copper loss</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-converters">Equivalent circuit model of converters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-with-lossy-l">Equivalent circuit model of a boost converter with lossy <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-buck-converter-with-lossy-l">Equivalent circuit model of a buck converter with lossy <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-circuit-model-of-a-boost-converter-in-the-presence-of-semi-conductor-conduction-losses">Equivalent circuit model of a boost converter in the presence of semi-conductor conduction losses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-accuracy-of-the-averaged-equivalent-circuit-in-predicting-losses">A note on the accuracy of the averaged equivalent circuit in predicting losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Iman Shames
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

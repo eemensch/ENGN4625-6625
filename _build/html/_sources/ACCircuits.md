@@ -288,7 +288,7 @@ lines are largely inductive. The voltage across the
 resistor is
 
 $$
-\mathbf{V}_g = \mathbf{V} \dfrac{R}{R+\jmath \omega L }
+\mathbf{V} = \mathbf{V}_g \dfrac{R}{R+\jmath \omega L }
 $$
  The relationship between the complex vectors is depicted in the midle diagram of {numref}`RL`.
 
@@ -301,11 +301,10 @@ The voltages satisfy the following
 
 $$
 \begin{align*}
-   \mathbf{V} &= \mathbf{V}_g \dfrac{\frac{R}{\jmath \omega C}}{\frac{R}{\jmath \omega C} + \jmath \omega L} \\&= \mathbf{V}_g \dfrac{1}{(1-\omega^2 LC) + \frac{\jmath \omega L}{R}}
+   \mathbf{V} &= \mathbf{V}_g \dfrac{\dfrac{\frac{R}{\jmath \omega C}}{R + \frac{1}{\jmath \omega C}}}{\dfrac{\frac{R}{\jmath \omega C}}{R + \frac{1}{\jmath \omega C}} + \jmath \omega L} \\&= \mathbf{V}_g \dfrac{1}{(1-\omega^2 LC) + \frac{\jmath \omega L}{R}}
 \end{align*}
 $$
 ````{prf:example}
-:nonumber:
 
 Suppose the voltage source in the circuit of the bottom circuit of {numref}`RL` provides a sine wave with an RMS magnitude of $V_{g,RMS} = 10 kV$, the load resistor is $R = 10 \Omega$, the inductance is $L = 10$ mH, and the system frequency is $\omega = 2\pi × 60$ Hz = 377 rad/s. The relative magnitude of the output voltage is calculated as a function of the capacitor value and is shown  below.
 
