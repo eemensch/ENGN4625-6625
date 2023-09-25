@@ -192,7 +192,7 @@ A three-phase transformer operates as three single-phase transformers. The compl
 Connection of transformers in either wye&ndash;wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye&ndash;wye) or line–line (in the case of delta&ndash;delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye&ndash;delta or delta&ndash;wye transformers are a little more complex. {numref}`delta_wye_trans` depicts a delta&ndash;wye connection. In that picture,
 winding elements that appear parallel are wound on the same core segment, and so constitute a single-phase transformer.
 
-One might ask why bother with delta connections in the first place. As it turns out, transformer cores are nonlinear and draw harmonic currents. Third harmonic currents are in phase with each other, leading to currents flowing into the neutral connection in a wye, but that simply circulate around a delta. Thus in order to keep the core happy, most transformer connections include a delta on one side or the other. On the other hand, in order to oad phase to ground, one needs to have a wye connection. Thus many situations involve a
+One might ask why bother with delta connections in the first place. As it turns out, transformer cores are nonlinear and draw harmonic currents. Third harmonic currents are in phase with each other, leading to currents flowing into the neutral connection in a wye, but that simply circulate around a delta. Thus in order to keep the core happy, most transformer connections include a delta on one side or the other. On the other hand, in order to load phase to ground, one needs to have a wye connection. Thus many situations involve a
 delta/wye, where the wye is on the side to be loaded.
 
 
@@ -231,7 +231,7 @@ Then, the complex amplitudes on the wye side are
 $$
 \begin{aligned}
 \mathbf{V}_{aY} &= \dfrac{N_Y}{N_{\Delta}} \mathbf{V}  \left (1- \mathrm{e}^{-\jmath \frac{2\pi}{3}} \right ) = \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V} \mathrm{e}^{\frac{\jmath\pi}{6}}, \\
-\mathbf{V}_{bY} &= \dfrac{N_Y}{N_{\Delta}}\mathbf{V}  \left ( \mathrm{e}^{-\jmath \frac{2\pi}{3}} -  \mathrm{e}^{\jmath \frac{2\pi}{3}}\right )= \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V}\mathrm{e}^{ \frac{-\jmath\pi}{3}}\\
+\mathbf{V}_{bY} &= \dfrac{N_Y}{N_{\Delta}}\mathbf{V}  \left ( \mathrm{e}^{-\jmath \frac{2\pi}{3}} -  \mathrm{e}^{\jmath \frac{2\pi}{3}}\right )= \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V}\mathrm{e}^{ \frac{-\jmath\pi}{2}}\\
 \mathbf{V}_{cY} &= \dfrac{N_Y}{N_{\Delta}} \mathbf{V} \left ( \mathrm{e}^{\jmath \frac{2\pi}{3}} -1  \right )= \sqrt{3} \dfrac{N_Y}{N_{\Delta}}\mathbf{V}\mathrm{e}^{\frac{\jmath 5 \pi }{6}}
 \end{aligned}
 $$

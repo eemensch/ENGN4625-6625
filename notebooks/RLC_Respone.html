@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,8 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/RLC_Respone';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -371,12 +371,24 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3f824d2e806f7565552a1b5ca1dc12492d74f9204266f6142a9a05a04a33f6c.svg" src="../_images/c3f824d2e806f7565552a1b5ca1dc12492d74f9204266f6142a9a05a04a33f6c.svg" /></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_61072</span><span class="o">/</span><span class="mf">788269032.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;schemdraw&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>No energy is stored in the capacitor and inductor for <span class="math notranslate nohighlight">\(t&lt;0\)</span>. It is furthermore assumed that the input voltage <span class="math notranslate nohighlight">\(x(t) = 0\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span>. Hence <span class="math notranslate nohighlight">\(y(t) = 0\)</span> and <span class="math notranslate nohighlight">\(\frac{d y(t)}{dt} = 0\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span>. Let <span class="math notranslate nohighlight">\(L = 0.05\)</span>, <span class="math notranslate nohighlight">\(R = 2\)</span>, <span class="math notranslate nohighlight">\(C = 0.040\)</span> are used for the elements of the electrical network.</p>
 <section id="differential-equation">
 <h2>Differential Equation<a class="headerlink" href="#differential-equation" title="Permalink to this headline">#</a></h2>
-<p>The differential equation describing the input/output relation of the electrical network is derived by applying <a class="reference external" href="https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws">Kirchhoff’s circuit laws</a> to the network. This results in the following ODE</p>
+<p>The differential equation describing the input/output relation of the electrical network is derived by applying <a class="reference external" href="https://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws">Kirchhoff’s circuit laws</a> to the network. This results in the following ODE</p>
 <p>\begin{equation}
 C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
 \end{equation}</p>
@@ -460,7 +472,7 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6efc74bc203f546eb40922cf944b24eea93d35f2497c86a0e4350c71a0995fd1.svg" src="../_images/6efc74bc203f546eb40922cf944b24eea93d35f2497c86a0e4350c71a0995fd1.svg" /></div>
+<img alt="../_images/019b90e0dc1258bd500ebde0bea6cb80f887f1c0c0a8da303fb2696ca411013a.svg" src="../_images/019b90e0dc1258bd500ebde0bea6cb80f887f1c0c0a8da303fb2696ca411013a.svg" /></div>
 </div>
 </section>
 <section id="step-response">
@@ -476,7 +488,7 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3b7f65d0590914f179387363bd50c1aed7da4267bdc84e8feb39e9cb7705840.png" src="../_images/e3b7f65d0590914f179387363bd50c1aed7da4267bdc84e8feb39e9cb7705840.png" />
+<img alt="../_images/5c5cb98978acbb9d2c1d2c53fb9fa5eab8f8f401e0a59cbb6ec38142557805b8.png" src="../_images/5c5cb98978acbb9d2c1d2c53fb9fa5eab8f8f401e0a59cbb6ec38142557805b8.png" />
 </div>
 </div>
 <p>Let’s plot the step response</p>
@@ -487,7 +499,15 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/be8a469e90fd6aadbe0a635d3f3f1cd640fd7ed59b5ecf004aec6a37ef964aa3.svg" src="../_images/be8a469e90fd6aadbe0a635d3f3f1cd640fd7ed59b5ecf004aec6a37ef964aa3.svg" /></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_25512</span><span class="o">/</span><span class="mf">1692611031.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">he</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$h_\epsilon(t)$&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;he&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="transfer-function">
@@ -538,17 +558,7 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">control</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">RLC</span> <span class="o">=</span> <span class="p">{</span><span class="n">R</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="n">sym</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="s1">&#39;.05&#39;</span><span class="p">),</span> <span class="n">C</span><span class="p">:</span> <span class="n">sym</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="s1">&#39;.04&#39;</span><span class="p">)}</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;control&#39;
-</pre></div>
-</div>
-</div>
+<img alt="../_images/21f6337064fb3555aebf39f913369246e8a5b5675c0d60322b72affe3f2a9a9f.svg" src="../_images/21f6337064fb3555aebf39f913369246e8a5b5675c0d60322b72affe3f2a9a9f.svg" /></div>
 </div>
 </section>
 </section>
@@ -579,7 +589,10 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../PolySingleEq.html"
@@ -590,7 +603,10 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
         <p class="prev-next-title">Polyphase Lines and Single-phase Equivalents</p>
       </div>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -617,7 +633,7 @@ C L \frac{d^2 y(t)}{dt^2} + \dfrac{L}{R} \frac{d y(t)}{dt} + y(t) = x(t)
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -647,7 +663,7 @@ By Iman Shames
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -656,8 +672,8 @@ By Iman Shames
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

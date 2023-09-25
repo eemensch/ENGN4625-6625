@@ -1,42 +1,58 @@
 Traceback (most recent call last):
   File "/home/eemensch/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+  File "/usr/lib/python3/dist-packages/nbclient/client.py", line 1093, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+  File "/usr/lib/python3/dist-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+  File "/usr/lib/python3/dist-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
     return future.result()
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+  File "/usr/lib/python3/dist-packages/nbclient/client.py", line 559, in async_execute
     await self.async_execute_cell(
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/eemensch/.local/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/usr/lib/python3/dist-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/lib/python3/dist-packages/nbclient/client.py", line 756, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import control
-import numpy
+import schemdraw
+import schemdraw.elements as elm
 
-RLC = {R: 2, L: sym.Rational('.05'), C: sym.Rational('.04')}
+import matplotlib
 
-G = control.tf(1, [float((C*L).subs(RLC).evalf()), float((L/R).subs(RLC).evalf()), 1])
-omega = numpy.logspace(-2, 2, 1000)
+%matplotlib inline
+%config InlineBackend.figure_format = 'svg'
 
-control.bode(G, omega);
+d = schemdraw.Drawing(fontsize=12)
+d += (A1 := elm.Dot())
+d += (L := elm.Inductor2().label('L'))
+d += (C := elm.Capacitor().down().label('C', loc='bottom'))
+d += (w1 := elm.Line().left().tox(A1.start))
+d += (A2 := elm.Dot())
+d += (w2 := elm.Line().right().at(C.start))
+d += (R := elm.Resistor().down().label('R'))
+d += (w4 := elm.Line().right().at(R.start))
+d += (B1 := elm.Dot())
+d += (w3 := elm.Line().right().at(C.end))
+d += (w4 := elm.Line().right())
+d += (B2 := elm.Dot())
+d += (oc_out := elm.Gap().endpoints(B1.start, B2.end).label(['+', r'$y(t)$', '-']))
+d += (oc_in := elm.Gap().endpoints(A1.start, A2.end).label(['+', r'$x(t)$', '-']))
 
-
+d.draw()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [12][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mcontrol[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m
-[1;32m      4[0m RLC [38;5;241m=[39m {R: [38;5;241m2[39m, L: sym[38;5;241m.[39mRational([38;5;124m'[39m[38;5;124m.05[39m[38;5;124m'[39m), C: sym[38;5;241m.[39mRational([38;5;124m'[39m[38;5;124m.04[39m[38;5;124m'[39m)}
+[0;32m/tmp/ipykernel_61072/788269032.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0mschemdraw[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0mschemdraw[0m[0;34m.[0m[0melements[0m [0;32mas[0m [0melm[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'control'
-ModuleNotFoundError: No module named 'control'
+[0;31mModuleNotFoundError[0m: No module named 'schemdraw'
+ModuleNotFoundError: No module named 'schemdraw'
 

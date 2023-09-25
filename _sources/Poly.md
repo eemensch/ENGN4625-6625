@@ -227,7 +227,7 @@ $$ (D_in_Y)
 
 $$
 \begin{align*}
-Z_{a} &=  \dfrac{Z_{ab} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{b} &=  \dfrac{Z_{ab}Z_{bc}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{c} &=  \dfrac{Z_{bc}+Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}}
+Z_{a} &=  \dfrac{Z_{ab} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{b} &=  \dfrac{Z_{ab}Z_{bc}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{c} &=  \dfrac{Z_{bc} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}}
 \end{align*}
 $$ (Y_in_D)
 ```{figure} fig/poly/main-figure25.svg
