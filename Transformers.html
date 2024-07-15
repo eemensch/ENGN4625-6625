@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
@@ -176,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 </ul>
 
     </div>
@@ -362,7 +362,7 @@ unit to transform the power from generation voltage, which is usually between 10
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="400px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 109 </span><span class="caption-text">A general multi-port transformer.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 102 </span><span class="caption-text">A general multi-port transformer.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -429,14 +429,14 @@ reactive core elements are only approximations to actual transformer behaviour, 
 <figure class="align-default" id="trans-nonideal">
 <a class="reference internal image-reference" href="_images/transformer1.svg"><img alt="_images/transformer1.svg" src="_images/transformer1.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 110 </span><span class="caption-text">A nonideal transformer model.</span><a class="headerlink" href="#trans-nonideal" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 103 </span><span class="caption-text">A nonideal transformer model.</span><a class="headerlink" href="#trans-nonideal" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Reflecting the elements from the secondary yields:</p>
 <figure class="align-default" id="trans-nonideal-primary">
 <a class="reference internal image-reference" href="_images/transformer_eq.svg"><img alt="_images/transformer_eq.svg" src="_images/transformer_eq.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 111 </span><span class="caption-text">A nonideal transformer model with all elements on the primary side.</span><a class="headerlink" href="#trans-nonideal-primary" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 104 </span><span class="caption-text">A nonideal transformer model with all elements on the primary side.</span><a class="headerlink" href="#trans-nonideal-primary" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>where</p>
@@ -449,14 +449,14 @@ R = R_1 + \left ( \dfrac{n_1}{n_2} \right )^2 R_2, \quad X = X_1 + \left ( \dfra
 </section>
 <section id="autotransformers">
 <h3>Autotransformers<a class="headerlink" href="#autotransformers" title="Permalink to this headline">#</a></h3>
-<p>A special transformer connection is shown in <a class="reference internal" href="#auto-trans"><span class="std std-numref">Fig. 112</span></a>,
+<p>A special transformer connection is shown in <a class="reference internal" href="#auto-trans"><span class="std std-numref">Fig. 105</span></a>,
 called an <em>autotransformer</em>: two windings on the same core
 are connected in series. If the two windings have <span class="math notranslate nohighlight">\(n_1\)</span> and
 <span class="math notranslate nohighlight">\(n_2\)</span> turns, respectively, the voltages and currents are</p>
 <figure class="align-center" id="auto-trans">
 <a class="reference internal image-reference" href="_images/autotransformer.svg"><img alt="_images/autotransformer.svg" src="_images/autotransformer.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 112 </span><span class="caption-text">An autotransformer</span><a class="headerlink" href="#auto-trans" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 105 </span><span class="caption-text">An autotransformer</span><a class="headerlink" href="#auto-trans" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>An equivalent representation of an autoransformer is given in the right-most figure above.</p>
@@ -499,14 +499,14 @@ very large, such as connecting 138 and 345 kV circuits. They are also used in tr
 <h2>Three-phase Transformers<a class="headerlink" href="#three-phase-transformers" title="Permalink to this headline">#</a></h2>
 <p>Polyphase transformers can be implemented as three single-phase transformers or as three sets of winding on a suitable core. A set of windings, each constituting a single-phase transformer, would be wound around each leg of this three-legged core.</p>
 <p>A three-phase transformer operates as three single-phase transformers. The complication is that there are a number of ways of winding them and a number of ways of interconnecting them. On either side of a transformer connection (i.e. the high-voltage and low-voltage sides), it is possible to connect transformer windings either line to neutral (wye) or line to line (delta). Thus we may speak of transformer connections being wye–wye, delta–delta, wye–delta, or delta–wye.
-Connection of transformers in either wye–wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye–wye) or line–line (in the case of delta–delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye–delta or delta–wye transformers are a little more complex. <a class="reference internal" href="#delta-wye-trans"><span class="std std-numref">Fig. 113</span></a> depicts a delta–wye connection. In that picture,
+Connection of transformers in either wye–wye or delta–delta is reasonably easy to understand. Each of the line–neutral (in the case of wye–wye) or line–line (in the case of delta–delta) voltages is transformed by one of the three transformers. On the other hand, the interconnections of wye–delta or delta–wye transformers are a little more complex. <a class="reference internal" href="#delta-wye-trans"><span class="std std-numref">Fig. 106</span></a> depicts a delta–wye connection. In that picture,
 winding elements that appear parallel are wound on the same core segment, and so constitute a single-phase transformer.</p>
 <p>One might ask why bother with delta connections in the first place. As it turns out, transformer cores are nonlinear and draw harmonic currents. Third harmonic currents are in phase with each other, leading to currents flowing into the neutral connection in a wye, but that simply circulate around a delta. Thus in order to keep the core happy, most transformer connections include a delta on one side or the other. On the other hand, in order to load phase to ground, one needs to have a wye connection. Thus many situations involve a
 delta/wye, where the wye is on the side to be loaded.</p>
 <figure class="align-center" id="delta-wye-trans">
 <a class="reference internal image-reference" href="_images/delta_wye_trans.png"><img alt="_images/delta_wye_trans.png" src="_images/delta_wye_trans.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 113 </span><span class="caption-text">A a delta–wye transformer</span><a class="headerlink" href="#delta-wye-trans" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 106 </span><span class="caption-text">A a delta–wye transformer</span><a class="headerlink" href="#delta-wye-trans" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Assume that <span class="math notranslate nohighlight">\(N_{\Delta}\)</span> and <span class="math notranslate nohighlight">\(N_Y\)</span> are numbers of turns. If the individual transformers are considered to be ideal, then:</p>

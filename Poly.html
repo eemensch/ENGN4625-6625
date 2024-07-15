@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
@@ -176,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 </ul>
 
     </div>
@@ -357,11 +357,11 @@ possible.</p>
 \[
   \mathbf{V}_1=V\cos\omega t = \Re\left \{V \mathrm{e}^{\jmath \omega t} \right \}, \qquad \mathbf{V}_2=V\cos(\omega t - \frac{\pi}{2}) = \Re\left \{V \mathrm{e}^{\jmath (\omega t-\frac{\pi}{2})}\right \}
 \]</div>
-<p>Suppose this system of sources is connected to a “balanced load”, as shown in <a class="reference internal" href="#phase"><span class="std std-numref">Fig. 100</span></a>.</p>
+<p>Suppose this system of sources is connected to a “balanced load”, as shown in <a class="reference internal" href="#phase"><span class="std std-numref">Fig. 93</span></a>.</p>
 <figure class="align-default" id="phase">
 <a class="reference internal image-reference" href="_images/main-figure16.svg"><img alt="_images/main-figure16.svg" src="_images/main-figure16.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 100 </span><span class="caption-text">A two-phase systems and the phasor diagram of the two phase voltage source (right)</span><a class="headerlink" href="#phase" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 93 </span><span class="caption-text">A two-phase systems and the phasor diagram of the two phase voltage source (right)</span><a class="headerlink" href="#phase" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here, “balanced” means both load impedances have the same value <span class="math notranslate nohighlight">\(Z\)</span>. To compute the power flows in the system, it is convenient to re-write the voltages in complex form. If each source is connected to a load with impedance,</p>
@@ -377,7 +377,7 @@ for real and reactive power:</p>
   S_1= P_1+\jmath Q_1 &amp;= \dfrac{1}{2} \mathbf{V}_1 I_1^* = \dfrac{1}{2} \mathbf{V}_1  \dfrac{\mathbf{V}_1^*}{\mathbf{Z}^*} = \dfrac{V^2}{2Z}\cos\psi +\jmath \dfrac{V^2}{2Z}\sin\psi \\&amp;= \dfrac{1}{2} \mathbf{V}_2 \mathbf{I}_2^* = \dfrac{1}{2} \mathbf{V}_2  \dfrac{\mathbf{V}_2^*}{\mathbf{Z}^*} =P_2+\jmath Q_2 = S_2
 \end{align*}
 \end{split}\]</div>
-<p>Using <a class="reference internal" href="ACCircuits.html#equation-eq-piv">(4)</a> the instantaneous power is</p>
+<p>Using <a class="reference internal" href="ACCircuits.html#equation-eq-piv">(3)</a> the instantaneous power is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -394,41 +394,41 @@ p_1+p_2 = \dfrac{V^2}{Z} \cos\psi
 </section>
 <section id="three-phase-systems">
 <h2>Three-Phase Systems<a class="headerlink" href="#three-phase-systems" title="Permalink to this headline">#</a></h2>
-<p>Consider the arrangement of three voltage sources illustrated in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 101</span></a>.</p>
+<p>Consider the arrangement of three voltage sources illustrated in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 94</span></a>.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/main-figure19.svg"><img alt="_images/main-figure19.svg" src="_images/main-figure19.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Voltage source arrangement in a three-phase system</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 94 </span><span class="caption-text">Voltage source arrangement in a three-phase system</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Assume that the three-phase voltages are</p>
 <div class="math notranslate nohighlight" id="equation-eq-vn">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-vn" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-vn" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{align}
 v_a &amp;=V\cos\omega t = \Re\left \{V \mathrm{e}^{\jmath \omega t} \right \}, \\
 v_b &amp;=V\cos(\omega t - \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}^{\jmath (\omega t-\frac{2\pi}{3})}\right \}\\
 v_c &amp;=V\cos(\omega t + \frac{2\pi}{3}) = \Re\left \{V \mathrm{e}^{\jmath (\omega t + \frac{2\pi}{3})}\right \}
 \end{align}
 \end{split}\]</div>
-<p>The waveforms in time domain are presented in <a class="reference internal" href="#phase-voltage"><span class="std std-numref">Fig. 102</span></a>.</p>
+<p>The waveforms in time domain are presented in <a class="reference internal" href="#phase-voltage"><span class="std std-numref">Fig. 95</span></a>.</p>
 <figure class="align-default" id="phase-voltage">
 <a class="reference internal image-reference" href="_images/main-figure18.svg"><img alt="_images/main-figure18.svg" src="_images/main-figure18.svg" width="500px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 102 </span><span class="caption-text">The voltage waveforms in a three-phase system</span><a class="headerlink" href="#phase-voltage" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 95 </span><span class="caption-text">The voltage waveforms in a three-phase system</span><a class="headerlink" href="#phase-voltage" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin align-center" id="spin-phasor">
 <a class="reference internal image-reference" href="_images/main-figure20.svg"><img alt="_images/main-figure20.svg" src="_images/main-figure20.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 103 </span><span class="caption-text">Phasor diagram: three-phase voltages.</span><a class="headerlink" href="#spin-phasor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 96 </span><span class="caption-text">Phasor diagram: three-phase voltages.</span><a class="headerlink" href="#spin-phasor" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The instantaneous voltages may be visualised by imagining <a class="reference internal" href="#spin-phasor"><span class="std std-numref">Fig. 103</span></a> where the vectors spin counterclockwise with angular velocity <span class="math notranslate nohighlight">\(\omega\)</span>. The instantaneous voltages are just projections of the vectors of this “pinwheel” onto the horizontal axis.</p>
-<p>Consider connecting these three voltage sources to three identical loads, each with complex impedance <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, as shown in <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 104</span></a></p>
+<p>The instantaneous voltages may be visualised by imagining <a class="reference internal" href="#spin-phasor"><span class="std std-numref">Fig. 96</span></a> where the vectors spin counterclockwise with angular velocity <span class="math notranslate nohighlight">\(\omega\)</span>. The instantaneous voltages are just projections of the vectors of this “pinwheel” onto the horizontal axis.</p>
+<p>Consider connecting these three voltage sources to three identical loads, each with complex impedance <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, as shown in <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 97</span></a></p>
 <figure class="align-center" id="p-balanced">
 <a class="reference internal image-reference" href="_images/main-figure21.svg"><img alt="_images/main-figure21.svg" src="_images/main-figure21.svg" width="500px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 104 </span><span class="caption-text">Three-phase voltage sources connected to a balanced load.</span><a class="headerlink" href="#p-balanced" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 97 </span><span class="caption-text">Three-phase voltage sources connected to a balanced load.</span><a class="headerlink" href="#p-balanced" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If voltages are as given above, then the currents in the three phases are</p>
@@ -460,7 +460,7 @@ S = P+\jmath Q= \dfrac{V^2}{2 Z} (\cos \psi +\jmath \sin \psi)
 \[
   p=p_a+p_b+p_c = \dfrac{3}{2} \dfrac{V^2}{Z}\cos\psi.
 \]</div>
-<p>Moreover, the current in the neutral wire, <span class="math notranslate nohighlight">\(i_n\)</span>, in <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 104</span></a>, is</p>
+<p>Moreover, the current in the neutral wire, <span class="math notranslate nohighlight">\(i_n\)</span>, in <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 97</span></a>, is</p>
 <div class="math notranslate nohighlight">
 \[
 i_n=i_a+i_b+i_c =0
@@ -468,23 +468,23 @@ i_n=i_a+i_b+i_c =0
 <p>This shows the most important advantage of three-phase systems over two-phase systems:
 <em>a wire with no current in it does not have to be very large</em>. In fact, the neutral connection may be eliminated completely in many cases.</p>
 <p>There is a fundamental difference between grounded and ungrounded systems if perfectly balanced conditions are not maintained. In effect, the ground wire provides isolation between the phases by fixing the neutral voltage at the star point to be zero. If the load impedances are not equal the load is said to be <em>unbalanced</em>. If an unbalanced system is grounded
-there may be current in the neutral. If an unbalanced load is not grounded, the star point (see <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 104</span></a>) voltage may not be zero, and the voltages will be different in the three phases at the load, even if the voltage sources all have the same magnitude.</p>
+there may be current in the neutral. If an unbalanced load is not grounded, the star point (see <a class="reference internal" href="#p-balanced"><span class="std std-numref">Fig. 97</span></a>) voltage may not be zero, and the voltages will be different in the three phases at the load, even if the voltage sources all have the same magnitude.</p>
 <figure class="margin align-center" id="ll">
 <a class="reference internal image-reference" href="_images/main-figure22.svg"><img alt="_images/main-figure22.svg" src="_images/main-figure22.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 105 </span><span class="caption-text">From line–neutral to line–line Voltage Phasors</span><a class="headerlink" href="#ll" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 98 </span><span class="caption-text">From line–neutral to line–line Voltage Phasors</span><a class="headerlink" href="#ll" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin align-center" id="llln">
 <a class="reference internal image-reference" href="_images/main-figure23.svg"><img alt="_images/main-figure23.svg" src="_images/main-figure23.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 106 </span><span class="caption-text">line–neutral and line–line Voltage Phasors</span><a class="headerlink" href="#llln" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 99 </span><span class="caption-text">line–neutral and line–line Voltage Phasors</span><a class="headerlink" href="#llln" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="lineline-voltages">
 <h2>Line–Line Voltages<a class="headerlink" href="#lineline-voltages" title="Permalink to this headline">#</a></h2>
-<p>A balanced three-phase set of voltages has a well-defined set of line–line voltages. If the line–neutral voltages are given by <a class="reference internal" href="#equation-eq-vn">(5)</a>, then line–line voltages are</p>
+<p>A balanced three-phase set of voltages has a well-defined set of line–line voltages. If the line–neutral voltages are given by <a class="reference internal" href="#equation-eq-vn">(4)</a>, then line–line voltages are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -493,18 +493,18 @@ there may be current in the neutral. If an unbalanced load is not grounded, the 
 \mathbf{V}_{ca} &amp;= v_c - v_a = \Re \left \{ V \left (\mathrm{e}^{\jmath \frac{2\pi}{3}} - 1 \right ) \mathrm{e}^{\jmath \omega t} \right \}= \Re \left \{ \sqrt{3} V \mathrm{e}^{\jmath \frac{5\pi}{6}} \mathrm{e}^{\jmath \omega t} \right \}
 \end{align}
 \end{split}\]</div>
-<p>The phasor relationship of line–neutral and line–line voltages is shown in <a class="reference internal" href="#ll"><span class="std std-numref">Fig. 105</span></a> and <a class="reference internal" href="#llln"><span class="std std-numref">Fig. 106</span></a>.</p>
+<p>The phasor relationship of line–neutral and line–line voltages is shown in <a class="reference internal" href="#ll"><span class="std std-numref">Fig. 98</span></a> and <a class="reference internal" href="#llln"><span class="std std-numref">Fig. 99</span></a>.</p>
 <p>Two
 things should be noted about this relationship:</p>
 <ul class="simple">
 <li><p>The line–line voltage set has a magnitude that is larger than the line–neutral voltage by a factor of 3.</p></li>
 <li><p>Line–line voltages are phase shifted by 30 with respect to the line–neutral voltages.</p></li>
 </ul>
-<p>Line–line  voltages themselves form a three-phase set just as line–neutral voltages do. This is shown conceptually in <a class="reference internal" href="#yd-source"><span class="std std-numref">Fig. 107</span></a>.</p>
+<p>Line–line  voltages themselves form a three-phase set just as line–neutral voltages do. This is shown conceptually in <a class="reference internal" href="#yd-source"><span class="std std-numref">Fig. 100</span></a>.</p>
 <figure class="align-center" id="yd-source">
 <a class="reference internal image-reference" href="_images/main-figure24.svg"><img alt="_images/main-figure24.svg" src="_images/main-figure24.svg" width="600px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Wye (Y) and delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) connected voltage sources</span><a class="headerlink" href="#yd-source" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 100 </span><span class="caption-text">Wye (Y) and delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) connected voltage sources</span><a class="headerlink" href="#yd-source" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Power system components (sources, transformer windings, loads, etc.) may be connected either line–neutral or line–line. The former
@@ -530,15 +530,15 @@ R_\Delta =  \dfrac{208^2}{2000} =  21.6
 </section>
 </div><p>As is suggested by this example, wye- and delta-connected impedances are often directly
 equivalent. In fact, ungrounded connections are three-terminal networks which may be
-represented in two ways. The two networks shown in <a class="reference internal" href="#yd"><span class="std std-numref">Fig. 108</span></a>, combinations of three passive impedances, are directly equivalent and identical in their terminal behaviour if the relationships between elements are as given below</p>
+represented in two ways. The two networks shown in <a class="reference internal" href="#yd"><span class="std std-numref">Fig. 101</span></a>, combinations of three passive impedances, are directly equivalent and identical in their terminal behaviour if the relationships between elements are as given below</p>
 <div class="math notranslate nohighlight" id="equation-d-in-y">
-<span class="eqno">(6)<a class="headerlink" href="#equation-d-in-y" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(5)<a class="headerlink" href="#equation-d-in-y" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{align*}
   Z_{ab} &amp;=  \dfrac{Z_a Z_b + Z_b Z_c + Z_c Z_a}{Z_c},\\ Z_{bc} &amp;=  \dfrac{Z_a Z_b + Z_b Z_c + Z_c Z_a}{Z_a},\\ Z_{ca} &amp;=  \dfrac{Z_a Z_b + Z_b Z_c + Z_c Z_a}{Z_b}
 \end{align*}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-y-in-d">
-<span class="eqno">(7)<a class="headerlink" href="#equation-y-in-d" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(6)<a class="headerlink" href="#equation-y-in-d" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{align*}
 Z_{a} &amp;=  \dfrac{Z_{ab} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{b} &amp;=  \dfrac{Z_{ab}Z_{bc}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{c} &amp;=  \dfrac{Z_{bc} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}}
 \end{align*}
@@ -546,7 +546,7 @@ Z_{a} &amp;=  \dfrac{Z_{ab} Z_{ca}}{Z_{ab}+Z_{bc}+Z_{ca}},\\ Z_{b} &amp;=  \dfra
 <figure class="align-center" id="yd">
 <a class="reference internal image-reference" href="_images/main-figure25.svg"><img alt="_images/main-figure25.svg" src="_images/main-figure25.svg" width="600px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Wye (Y) and delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) connected loads</span><a class="headerlink" href="#yd" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Wye (Y) and delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) connected loads</span><a class="headerlink" href="#yd" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For the special case of balanced loads where</p>
@@ -578,7 +578,7 @@ v_b &amp;= V\cos \left ( \omega t -\dfrac{2\pi}{3}\right )\\
 v_c &amp;= V\cos \left ( \omega t +\dfrac{2\pi}{3}\right )
 \end{align}
 \end{split}\]</div>
-<p>To solve this problem, we convert the source to delta equivalent and use <a class="reference internal" href="#equation-d-in-y">(6)</a> convert the load to delta equivalent as shown in the circuit below.</p>
+<p>To solve this problem, we convert the source to delta equivalent and use <a class="reference internal" href="#equation-d-in-y">(5)</a> convert the load to delta equivalent as shown in the circuit below.</p>
 <a class="reference internal image-reference" href="_images/main-figure29.svg"><img alt="_images/main-figure29.svg" class="align-center" src="_images/main-figure29.svg" width="500px" /></a>
 <p>Thus, the values of the three resistors in <span class="math notranslate nohighlight">\(\Delta\)</span> configuration are</p>
 <div class="math notranslate nohighlight">

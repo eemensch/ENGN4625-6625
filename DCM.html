@@ -66,8 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'DCM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Converter Circuit Manipulation" href="CircuitManipulation.html" />
-    <link rel="prev" title="Realising Switches Using Semi-conductor Devices" href="SwitchRealisation.html" />
+    <link rel="prev" title="An RLC low pass filter" href="notebooks/RLC_Respone.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -159,11 +158,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Steady State Analysis of Converters</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Discontinuous Conduction Mode (DCM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
@@ -174,8 +172,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="PolySingleEq.html">Polyphase Lines and Single-phase Equivalents</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Discontinuous Conduction Mode (DCM)</a></li>
 </ul>
 
     </div>
@@ -353,7 +352,7 @@ Typical examples of cases where DCM occurs are dc-dc converter operating at ligh
 <figure class="align-default" id="buck-with-diode">
 <a class="reference internal image-reference" href="_images/buck-figure0.svg"><img alt="_images/buck-figure0.svg" src="_images/buck-figure0.svg" width="500px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 71 </span><span class="caption-text">Schematic of a buck converter with single-quadrant switches.</span><a class="headerlink" href="#buck-with-diode" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Schematic of a buck converter with single-quadrant switches.</span><a class="headerlink" href="#buck-with-diode" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Minimum diode current: <span class="math notranslate nohighlight">\(I-\Delta i_L\)</span>
@@ -363,26 +362,26 @@ Current ripple:</p>
 \[
 \Delta i_L = \dfrac{V_g-V}{2L}DT_s=\dfrac{V_g D D' T_s}{2L}
 \]</div>
-<p>The inductor and diode currents for the case where the converter operates <em>normally</em> in the continuous conduction mode (CCM) are depicted in <a class="reference internal" href="#buck-ccm-current"><span class="std std-numref">Fig. 72</span></a>.
+<p>The inductor and diode currents for the case where the converter operates <em>normally</em> in the continuous conduction mode (CCM) are depicted in <a class="reference internal" href="#buck-ccm-current"><span class="std std-numref">Fig. 109</span></a>.
 Note that <span class="math notranslate nohighlight">\(I\)</span> depends on the load, but <span class="math notranslate nohighlight">\(\Delta i_L\)</span> does not.</p>
 <figure class="align-default" id="buck-ccm-current">
 <a class="reference internal image-reference" href="_images/buck_ccm.svg"><img alt="_images/buck_ccm.svg" src="_images/buck_ccm.svg" width="400px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 72 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in continuous conduction mode (CCM).</span><a class="headerlink" href="#buck-ccm-current" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 109 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in continuous conduction mode (CCM).</span><a class="headerlink" href="#buck-ccm-current" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Now consider the case where <span class="math notranslate nohighlight">\(R\)</span> is increased until <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>. The inductor and diode currents for this case are presented in <a class="reference internal" href="#buck-ccm-dcm-boundary"><span class="std std-numref">Fig. 73</span></a>.</p>
+<p>Now consider the case where <span class="math notranslate nohighlight">\(R\)</span> is increased until <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>. The inductor and diode currents for this case are presented in <a class="reference internal" href="#buck-ccm-dcm-boundary"><span class="std std-numref">Fig. 110</span></a>.</p>
 <figure class="align-default" id="buck-ccm-dcm-boundary">
 <a class="reference internal image-reference" href="_images/buck_CCM_DCM_boundary.svg"><img alt="_images/buck_CCM_DCM_boundary.svg" src="_images/buck_CCM_DCM_boundary.svg" width="400px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 73 </span><span class="caption-text">Inductor and diode currents in a buck converter operating at the boundary between the continuous conduction mode (CCM) and the discontinuous conduction mode (DCM) where <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>.</span><a class="headerlink" href="#buck-ccm-dcm-boundary" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 110 </span><span class="caption-text">Inductor and diode currents in a buck converter operating at the boundary between the continuous conduction mode (CCM) and the discontinuous conduction mode (DCM) where <span class="math notranslate nohighlight">\(I=\Delta i_L\)</span>.</span><a class="headerlink" href="#buck-ccm-dcm-boundary" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In the next case, let’s increase <span class="math notranslate nohighlight">\(R\)</span>, until <span class="math notranslate nohighlight">\(I&lt;\Delta i_L\)</span>. We note that the load current will remain positive and nonzero.</p>
 <figure class="align-default" id="buck-dcm">
 <a class="reference internal image-reference" href="_images/buck_DCM.svg"><img alt="_images/buck_DCM.svg" src="_images/buck_DCM.svg" width="400px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 74 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in discontinuous conduction mode (CCM).</span><a class="headerlink" href="#buck-dcm" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 111 </span><span class="caption-text">Inductor and diode currents in a buck converter operating in discontinuous conduction mode (CCM).</span><a class="headerlink" href="#buck-dcm" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now we are ready to define <em>Mode Boundary</em> and <em>critical load resistance</em> <span class="math notranslate nohighlight">\(R_{crit}\)</span>.</p>
@@ -409,18 +408,18 @@ Using the expressions for <span class="math notranslate nohighlight">\(I\)</span
 \[
  R&gt;R_{crit}(D),\quad \text{Converter operating in DCM}
  \]</div>
-<p>The relationship among <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for the two cases of <span class="math notranslate nohighlight">\(K&lt;1\)</span> and <span class="math notranslate nohighlight">\(K&gt;1\)</span> in a buck converter is depicted in <a class="reference internal" href="#k-kcrit"><span class="std std-numref">Fig. 75</span></a>.</p>
+<p>The relationship among <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for the two cases of <span class="math notranslate nohighlight">\(K&lt;1\)</span> and <span class="math notranslate nohighlight">\(K&gt;1\)</span> in a buck converter is depicted in <a class="reference internal" href="#k-kcrit"><span class="std std-numref">Fig. 112</span></a>.</p>
 <figure class="align-default" id="k-kcrit">
 <a class="reference internal image-reference" href="_images/K_Kcrit.svg"><img alt="_images/K_Kcrit.svg" src="_images/K_Kcrit.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 75 </span><span class="caption-text">CCM and DCM for different values of <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for a buck converter.</span><a class="headerlink" href="#k-kcrit" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 112 </span><span class="caption-text">CCM and DCM for different values of <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(K_{crit}\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> for a buck converter.</span><a class="headerlink" href="#k-kcrit" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Next, we shift our focus to the analysis of a boost converter (<a class="reference internal" href="#boost-dcm"><span class="std std-numref">Fig. 76</span></a>) operating in DCM.</p>
+<p>Next, we shift our focus to the analysis of a boost converter (<a class="reference internal" href="#boost-dcm"><span class="std std-numref">Fig. 113</span></a>) operating in DCM.</p>
 <figure class="align-default" id="boost-dcm">
 <a class="reference internal image-reference" href="_images/boost_DCM.svg"><img alt="_images/boost_DCM.svg" src="_images/boost_DCM.svg" width="500px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Schematic of a boost converter with single-quadrant switches.</span><a class="headerlink" href="#boost-dcm" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 113 </span><span class="caption-text">Schematic of a boost converter with single-quadrant switches.</span><a class="headerlink" href="#boost-dcm" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>As in the case of a buck converter:</p>
@@ -577,7 +576,7 @@ i_L(t)=i_C(t)+V/R
 <p>Capacitor charge balance leads to <span class="math notranslate nohighlight">\(\langle i_C\rangle =0\)</span>.
 Hence,</p>
 <div class="math notranslate nohighlight" id="equation-ave-cur-dcm">
-<span class="eqno">(3)<a class="headerlink" href="#equation-ave-cur-dcm" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-ave-cur-dcm" title="Permalink to this equation">#</a></span>\[
 \langle i_L \rangle = V/R
 \]</div>
 <p>In this buck converter example, the DC component of inductor current must be computed and equated to load current. To this end, let’s compute the inductor peak current:</p>
@@ -796,7 +795,7 @@ M(D,K)\approx \dfrac{1}{2} + \dfrac{D}{\sqrt{K}}
 <figure class="align-default" id="dcm-summary">
 <a class="reference internal image-reference" href="_images/DCM_summary.svg"><img alt="_images/DCM_summary.svg" src="_images/DCM_summary.svg" width="500px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Summary of DCM characteristics of three converters.</span><a class="headerlink" href="#dcm-summary" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 114 </span><span class="caption-text">Summary of DCM characteristics of three converters.</span><a class="headerlink" href="#dcm-summary" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>DCM buck and boost characteristics are asymptotic to <span class="math notranslate nohighlight">\(M = 1\)</span> and to the DCM buck-boost characteristic. DCM buck-boost characteristic is linear. CCM and DCM characteristics intersect at mode boundary. Actual <span class="math notranslate nohighlight">\(M\)</span> follows characteristic having larger magnitude. DCM boost characteristic is nearly linear.</p>
@@ -840,22 +839,13 @@ M(D,K)\approx \dfrac{1}{2} + \dfrac{D}{\sqrt{K}}
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="SwitchRealisation.html"
+       href="notebooks/RLC_Respone.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Realising Switches Using Semi-conductor Devices</p>
+        <p class="prev-next-title">An RLC low pass filter</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="CircuitManipulation.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Converter Circuit Manipulation</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
@@ -176,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 </ul>
 
     </div>
@@ -351,11 +351,11 @@ between the two ends of the lines (called <em>sending</em> and <em>receiving</em
 <p>The phase conductors are arranged as parallel conductors in bundles. These wires are supported by insulators. In many cases these insulators are actually strings of individual plates, often made of ceramic material, arranged to have a very
 long surface between the conductor and ground. Usually there are also accompanying ground wires that serve to carry the inevitable but usually small neutral currents that result
 from system unbalance and fault currents, and that partially shield the active conductors from lightning.</p>
-<p>A schematic view of a line is shown <a class="reference internal" href="#mutual-coupling"><span class="std std-numref">Fig. 114</span></a>. Actually, only the inductance components of line impedance are shown, since they are the most interesting parts of line impedance. A simplifying approximation is made that the mutual inductance is the same for all pairs of conductors.</p>
+<p>A schematic view of a line is shown <a class="reference internal" href="#mutual-coupling"><span class="std std-numref">Fig. 107</span></a>. Actually, only the inductance components of line impedance are shown, since they are the most interesting parts of line impedance. A simplifying approximation is made that the mutual inductance is the same for all pairs of conductors.</p>
 <figure class="align-default" id="mutual-coupling">
 <a class="reference internal image-reference" href="_images/mutual_coupling.png"><img alt="_images/mutual_coupling.png" src="_images/mutual_coupling.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 114 </span><span class="caption-text">Schematic of a balanced three-phase line with mutual coupling.</span><a class="headerlink" href="#mutual-coupling" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Schematic of a balanced three-phase line with mutual coupling.</span><a class="headerlink" href="#mutual-coupling" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Working in complex amplitudes, it is possible to write the voltage drops for the three phases by</p>
@@ -369,7 +369,7 @@ V_{c1} - V_{c2} &amp;= \jmath \omega LI_c + \jmath \omega M (I_a + I_b)
 \end{split}\]</div>
 <p>If the currents form a balanced set:</p>
 <div class="math notranslate nohighlight" id="equation-balanced-i">
-<span class="eqno">(8)<a class="headerlink" href="#equation-balanced-i" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-balanced-i" title="Permalink to this equation">#</a></span>\[
 I_a + I_b + I_c = 0
 \]</div>
 <p>Then the voltage drops are</p>
@@ -382,7 +382,7 @@ V_{c1} - V_{c2} &amp;= \jmath \omega ( L -M)I_c
 \end{align*}
 \end{split}\]</div>
 <p>In this case, an apparent inductance, suitable for the balanced case, <span class="math notranslate nohighlight">\(L_\ell\)</span>, describes the behaviour of one phase in terms of its own current. It is most important
-to note that this inductance is a valid description of the line only if <a class="reference internal" href="#equation-balanced-i">(8)</a> holds.</p>
+to note that this inductance is a valid description of the line only if <a class="reference internal" href="#equation-balanced-i">(7)</a> holds.</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
 <section class="example-content" id="proof-content">

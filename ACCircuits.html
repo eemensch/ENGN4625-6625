@@ -163,7 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="SteadyState.html">Principles of Steady-State Converter Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SteadyStateEquivCirc.html">Equivalent Circuit Model of Steady-State Converter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SwitchRealisation.html">Realising Switches Using Semi-conductor Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CircuitManipulation.html">Converter Circuit Manipulation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Power Systems Principles</span></p>
@@ -176,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/RLC_Respone.html">An RLC low pass filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DCM.html">Discontinuous Conduction Mode (DCM)</a></li>
 </ul>
 
     </div>
@@ -364,14 +364,14 @@ circuit issues it is necessary to prepare to analyse systems with sinusoidal vol
 <h2>Sources and Power<a class="headerlink" href="#sources-and-power" title="Permalink to this headline">#</a></h2>
 <section id="voltage-and-current-sources">
 <h3>Voltage and Current Sources<a class="headerlink" href="#voltage-and-current-sources" title="Permalink to this headline">#</a></h3>
-<p>Consider the interconnection of two sources, as shown in <a class="reference internal" href="#sources"><span class="std std-numref">Fig. 88</span></a>. On the left is the symbol for a voltage source. This is a circuit element that maintains a voltage at its terminals, no matter what the current. On the right is the symbol for a current source. This
+<p>Consider the interconnection of two sources, as shown in <a class="reference internal" href="#sources"><span class="std std-numref">Fig. 81</span></a>. On the left is the symbol for a voltage source. This is a circuit element that maintains a voltage at its terminals, no matter what the current. On the right is the symbol for a current source. This
 is the complementary element: it maintains current no matter what the voltage. Obviously, these are idealisations, but they do serve as good proxies for reality. For example, the
 power system connection to a customer’s site is a good approximation to a voltage source.
 On the other hand, some types of generator interconnections to the power system, such as those from solar photovoltaic power plants and some types of wind turbines, approximate current sources.</p>
 <figure class="align-default" id="sources">
 <a class="reference internal image-reference" href="_images/main-figure0.svg"><img alt="_images/main-figure0.svg" src="_images/main-figure0.svg" width="300px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 88 </span><span class="caption-text">Current source and voltage source interconnection, e.g., a solar plant connected to the power system.</span><a class="headerlink" href="#sources" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">Current source and voltage source interconnection, e.g., a solar plant connected to the power system.</span><a class="headerlink" href="#sources" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If the voltage and current are both sine waves at the
@@ -426,7 +426,7 @@ out of the current source is also power in to the voltage source. If the angle <
 v(t) =  V \cos (\omega t + \phi) = \Re\{V \mathrm{e}^{\jmath \phi } \mathrm{e}^{\jmath \omega t } \}.
 \]</div>
 <p>This is the real part of a complex exponential with
-continuously increasing phase angle. In this case the complex amplitude of the voltage is as shown in <a class="reference internal" href="#phasor"><span class="std std-numref">Fig. 89</span></a>:</p>
+continuously increasing phase angle. In this case the complex amplitude of the voltage is as shown in <a class="reference internal" href="#phasor"><span class="std std-numref">Fig. 82</span></a>:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathbf{V} = V \mathrm{e}^{\jmath \phi}.
@@ -434,7 +434,7 @@ continuously increasing phase angle. In this case the complex amplitude of the v
 <figure class="align-default" id="phasor">
 <a class="reference internal image-reference" href="_images/main-figure1.svg"><img alt="_images/main-figure1.svg" src="_images/main-figure1.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 89 </span><span class="caption-text">Voltage phasor.</span><a class="headerlink" href="#phasor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 82 </span><span class="caption-text">Voltage phasor.</span><a class="headerlink" href="#phasor" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -444,7 +444,7 @@ continuously increasing phase angle. In this case the complex amplitude of the v
 </section>
 <section id="real-and-reactive-power">
 <h3>Real and Reactive Power<a class="headerlink" href="#real-and-reactive-power" title="Permalink to this headline">#</a></h3>
-<p>In a circuit such as that of <a class="reference internal" href="#sources"><span class="std std-numref">Fig. 88</span></a> in which there exists both voltage and current, as represented by two phasors in <a class="reference internal" href="#phasors"><span class="std std-numref">Fig. 90</span></a>, the voltage and current are</p>
+<p>In a circuit such as that of <a class="reference internal" href="#sources"><span class="std std-numref">Fig. 81</span></a> in which there exists both voltage and current, as represented by two phasors in <a class="reference internal" href="#phasors"><span class="std std-numref">Fig. 83</span></a>, the voltage and current are</p>
 <div class="math notranslate nohighlight">
 \[
 v = \Re\{V \mathrm{e}^{\jmath (\omega t + \phi ) } \}, \quad i= \Re\{I \mathrm{e}^{\jmath (\omega t + \phi -\psi) } \}
@@ -452,12 +452,12 @@ v = \Re\{V \mathrm{e}^{\jmath (\omega t + \phi ) } \}, \quad i= \Re\{I \mathrm{e
 <figure class="align-default" id="phasors">
 <a class="reference internal image-reference" href="_images/main-figure2.svg"><img alt="_images/main-figure2.svg" src="_images/main-figure2.svg" width="200px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 90 </span><span class="caption-text">Voltage and current phasors.</span><a class="headerlink" href="#phasors" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">Voltage and current phasors.</span><a class="headerlink" href="#phasors" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Note that <span class="math notranslate nohighlight">\(\Re\{X\} = \dfrac{1}{2} ( X + X^*)\)</span>, then instantaneous power (as depicted in <a class="reference internal" href="#piv"><span class="std std-numref">Fig. 91</span></a>) is</p>
+<p>Note that <span class="math notranslate nohighlight">\(\Re\{X\} = \dfrac{1}{2} ( X + X^*)\)</span>, then instantaneous power (as depicted in <a class="reference internal" href="#piv"><span class="std std-numref">Fig. 84</span></a>) is</p>
 <div class="math notranslate nohighlight" id="equation-eq-piv">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-piv" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-piv" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{align}
   p &amp;= \dfrac{1}{2}V I\cos\psi + \dfrac{1}{2}V I \cos (2(\omega t+ \phi) - \psi) \nonumber\\
   &amp;= \dfrac{1}{2}V I \left(  \cos\psi  (1 + \cos 2 (\omega t +\phi)) + \sin\psi \sin 2(\omega t +\phi) \right ).
@@ -479,7 +479,7 @@ Q =\dfrac{VI}{2}\sin\psi
 <figure class="align-default" id="piv">
 <a class="reference internal image-reference" href="_images/main-figure3.svg"><img alt="_images/main-figure3.svg" src="_images/main-figure3.svg" width="600px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 91 </span><span class="caption-text">Instantaneous power, voltage, and current as a function of time with <span class="math notranslate nohighlight">\(\cos\psi = 0.8\)</span> (i.e. power factor of 0.8).</span><a class="headerlink" href="#piv" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">Instantaneous power, voltage, and current as a function of time with <span class="math notranslate nohighlight">\(\cos\psi = 0.8\)</span> (i.e. power factor of 0.8).</span><a class="headerlink" href="#piv" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Note that the apparent power is just the magnitude of real plus reactive power, assuming reactive is “imaginary” in the real/imaginary number plane:</p>
@@ -490,11 +490,11 @@ S &amp;= P+\jmath Q = \dfrac{1}{2} \mathbf{V} \mathbf{I}^*\\
 |S| &amp;= |P+\jmath Q| = \dfrac{1}{2} |\mathbf{V}|\ |\mathbf{I}|
 \end{align*}
 \end{split}\]</div>
-<p>Here, real power is measured in <em>watts</em> (W), apparent power is measured in <em>volt-amperes</em> (VA) and reactive power is measured in <em>volt-amperes reactive</em> (VARs). An example is depicted in <a class="reference internal" href="#powers"><span class="std std-numref">Fig. 92</span></a>.</p>
+<p>Here, real power is measured in <em>watts</em> (W), apparent power is measured in <em>volt-amperes</em> (VA) and reactive power is measured in <em>volt-amperes reactive</em> (VARs). An example is depicted in <a class="reference internal" href="#powers"><span class="std std-numref">Fig. 85</span></a>.</p>
 <figure class="align-default" id="powers">
 <a class="reference internal image-reference" href="_images/main-figure4.svg"><img alt="_images/main-figure4.svg" src="_images/main-figure4.svg" width="600px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 92 </span><span class="caption-text">Apparent power, real power, and reactive power as a function of frequency <span class="math notranslate nohighlight">\(\omega = 2\pi f\)</span> with <span class="math notranslate nohighlight">\(\cos\psi = 0.8\)</span> (i.e. power factor of 0.8).</span><a class="headerlink" href="#powers" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text">Apparent power, real power, and reactive power as a function of frequency <span class="math notranslate nohighlight">\(\omega = 2\pi f\)</span> with <span class="math notranslate nohighlight">\(\cos\psi = 0.8\)</span> (i.e. power factor of 0.8).</span><a class="headerlink" href="#powers" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-root-mean-square-rms-amplitude admonition">
@@ -515,7 +515,7 @@ much of what happens in electric power systems, and electrical engineering in ge
 <figure class="margin align-center" id="id1">
 <a class="reference internal image-reference" href="_images/main-figure5.svg"><img alt="_images/main-figure5.svg" src="_images/main-figure5.svg" width="150px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 93 </span><span class="caption-text">A resistor.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 86 </span><span class="caption-text">A resistor.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -538,7 +538,7 @@ at its terminals is zero.</p>
 <figure class="margin align-center" id="id2">
 <a class="reference internal image-reference" href="_images/main-figure6.svg"><img alt="_images/main-figure6.svg" src="_images/main-figure6.svg" width="150px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 94 </span><span class="caption-text">An iductor.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 87 </span><span class="caption-text">An iductor.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -563,7 +563,7 @@ it will be small compared with the reactive power drawn. The inductor has <em>re
 <figure class="margin align-center" id="id3">
 <a class="reference internal image-reference" href="_images/main-figure7.svg"><img alt="_images/main-figure7.svg" src="_images/main-figure7.svg" width="150px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 95 </span><span class="caption-text">A capacitor.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 88 </span><span class="caption-text">A capacitor.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -589,11 +589,11 @@ profiles on electric power systems. For that reason, it
 is useful to start understanding the relationship
 between reactive power and voltage from the very
 start. Consider the simple circuit shown in the top figure in
-<a class="reference internal" href="#rl"><span class="std std-numref">Fig. 96</span></a>.</p>
+<a class="reference internal" href="#rl"><span class="std std-numref">Fig. 89</span></a>.</p>
 <figure class="margin align-center" id="rl">
 <a class="reference internal image-reference" href="_images/main-figure8.svg"><img alt="_images/main-figure8.svg" src="_images/main-figure8.svg" width="300px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 96 </span><span class="caption-text">An RL circuit driven by a sinusoidal voltage source (top). The voltage phasors in an RL circuit driven by a sinusoidal voltage source (middle).  The circuit after introducing a parallel capacitor (bottom).</span><a class="headerlink" href="#rl" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 89 </span><span class="caption-text">An RL circuit driven by a sinusoidal voltage source (top). The voltage phasors in an RL circuit driven by a sinusoidal voltage source (middle).  The circuit after introducing a parallel capacitor (bottom).</span><a class="headerlink" href="#rl" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A voltage source is connected to a resistive
@@ -605,11 +605,11 @@ resistor is</p>
 \[
 \mathbf{V} = \mathbf{V}_g \dfrac{R}{R+\jmath \omega L }
 \]</div>
-<p>The relationship between the complex vectors is depicted in the midle diagram of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 96</span></a>.</p>
+<p>The relationship between the complex vectors is depicted in the midle diagram of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 89</span></a>.</p>
 <p>The receiving end voltage is less than the
 source voltage, and the inequality will increase as
 the load increases (meaning current through the
-inductor increases). Consider what happens, however, when a capacitance is put in parallel with the resistor as shown in the bottom circuit of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 96</span></a>.</p>
+inductor increases). Consider what happens, however, when a capacitance is put in parallel with the resistor as shown in the bottom circuit of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 89</span></a>.</p>
 <p>The voltages satisfy the following</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -620,7 +620,7 @@ inductor increases). Consider what happens, however, when a capacitance is put i
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
-<p>Suppose the voltage source in the circuit of the bottom circuit of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 96</span></a> provides a sine wave with an RMS magnitude of <span class="math notranslate nohighlight">\(V_{g,RMS} = 10 kV\)</span>, the load resistor is <span class="math notranslate nohighlight">\(R = 10 \Omega\)</span>, the inductance is <span class="math notranslate nohighlight">\(L = 10\)</span> mH, and the system frequency is <span class="math notranslate nohighlight">\(\omega = 2\pi × 60\)</span> Hz = 377 rad/s. The relative magnitude of the output voltage is calculated as a function of the capacitor value and is shown  below.</p>
+<p>Suppose the voltage source in the circuit of the bottom circuit of <a class="reference internal" href="#rl"><span class="std std-numref">Fig. 89</span></a> provides a sine wave with an RMS magnitude of <span class="math notranslate nohighlight">\(V_{g,RMS} = 10 kV\)</span>, the load resistor is <span class="math notranslate nohighlight">\(R = 10 \Omega\)</span>, the inductance is <span class="math notranslate nohighlight">\(L = 10\)</span> mH, and the system frequency is <span class="math notranslate nohighlight">\(\omega = 2\pi × 60\)</span> Hz = 377 rad/s. The relative magnitude of the output voltage is calculated as a function of the capacitor value and is shown  below.</p>
 <a class="reference internal image-reference" href="_images/main-figure10.svg"><img alt="_images/main-figure10.svg" class="align-center" src="_images/main-figure10.svg" width="700px" /></a>
 </section>
 </div></section>
@@ -631,7 +631,7 @@ injection can provide some amount of voltage control. Indeed this is the case, a
 <figure class="align-center" id="support">
 <a class="reference internal image-reference" href="_images/main-figure11.svg"><img alt="_images/main-figure11.svg" src="_images/main-figure11.svg" width="300px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 97 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#support" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 90 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#support" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here, the capacitor is replaced by a more general reactive admittance, defined by</p>
@@ -656,11 +656,11 @@ Q =|\mathbf{V}|^2 B.
 <section id="voltage-stability">
 <h2>Voltage Stability<a class="headerlink" href="#voltage-stability" title="Permalink to this headline">#</a></h2>
 <p>In some situations, loads (real and/or reactive) are controlled to be independent of voltage. These sorts of loads produce interesting behaviour.</p>
-<p>The situation is illustrated in <a class="reference internal" href="#rl1"><span class="std std-numref">Fig. 98</span></a>.</p>
+<p>The situation is illustrated in <a class="reference internal" href="#rl1"><span class="std std-numref">Fig. 91</span></a>.</p>
 <figure class="align-center" id="rl1">
 <a class="reference internal image-reference" href="_images/main-figure13.svg"><img alt="_images/main-figure13.svg" src="_images/main-figure13.svg" width="300px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 98 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#rl1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 91 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#rl1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A voltage source is driving some load that is adjusting its impedance to draw a certain amount of real and reactive power. The question is, what is the voltage across that load? This is a situation that is more common than you might
@@ -690,11 +690,11 @@ P + jQ = \mathbf{V} \mathbf{I}^*
 can be transferred is found when the value under the square root vanishes, and the value of load voltage at that maximum point is simply calculated by what is outside of the square root.</p>
 </div>
 <p>The reactive power drawn by the load has a substantive impact on the voltage.
-Inductive reactive power reduces voltage and maximum power transfer, while capacitive reactive power increases voltage and maximum power transfer. <a class="reference internal" href="#vstab"><span class="std std-numref">Fig. 99</span></a> shows an example for <span class="math notranslate nohighlight">\(\mathbf{V}_g = 12\)</span> kV, <span class="math notranslate nohighlight">\(X = \omega L = 10\Omega\)</span>, <span class="math notranslate nohighlight">\(R = 1 \Omega\)</span>, and <span class="math notranslate nohighlight">\(Q = \pm 1\)</span> MVAR.</p>
+Inductive reactive power reduces voltage and maximum power transfer, while capacitive reactive power increases voltage and maximum power transfer. <a class="reference internal" href="#vstab"><span class="std std-numref">Fig. 92</span></a> shows an example for <span class="math notranslate nohighlight">\(\mathbf{V}_g = 12\)</span> kV, <span class="math notranslate nohighlight">\(X = \omega L = 10\Omega\)</span>, <span class="math notranslate nohighlight">\(R = 1 \Omega\)</span>, and <span class="math notranslate nohighlight">\(Q = \pm 1\)</span> MVAR.</p>
 <figure class="align-center" id="vstab">
 <a class="reference internal image-reference" href="_images/main-figure15.svg"><img alt="_images/main-figure15.svg" src="_images/main-figure15.svg" width="700px" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 99 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#vstab" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 92 </span><span class="caption-text">Power circuit with a generalised reactive element.</span><a class="headerlink" href="#vstab" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
